@@ -14,16 +14,12 @@
     nav a {color: #fff; padding: 14px 22px; text-decoration: none; font-weight: 500;}
     nav a:hover {background: #415a77;}
     .hero {background: linear-gradient(rgba(13,27,42,0.85), rgba(13,27,42,0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200') center/cover; color: #fff; text-align: center; padding: 90px 20px;}
-    .hero h2 {font-size: 2.6rem; margin-bottom: 15px;}
     .hero p {font-size: 1.15rem; max-width: 750px; margin: 0 auto 25px;}
     .btn {background: #e0a82e; color: #0d1b2a; padding: 13px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s;}
     .btn:hover {background: #f4c430; transform: translateY(-2px);}
     .container {max-width: 1150px; margin: auto; padding: 70px 20px;}
     .section-title {text-align: center; font-size: 2.1rem; margin-bottom: 45px; color: #0d1b2a;}
     .services {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;}
-    .service-box {background: #f8f9fa; padding: 32px 25px; border-radius: 8px; border-left: 4px solid #e0a82e; box-shadow: 0 3px 10px rgba(0,0,0,0.08); transition: 0.3s;}
-    .service-box:hover {transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.12);}
-    .service-box h3 {color: #1b263b; margin-bottom: 12px; font-size: 1.25rem;}
     .badge {background: #d90429; color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: 12px; margin-left: 8px; font-weight: 600;}
     .about {background: #f1f5f9;}
     .about-wrap {text-align: center; max-width: 850px; margin: 0 auto;}
@@ -34,51 +30,99 @@
     .contact-item {font-size: 1.1rem;}
     .contact-item strong {color: #1b263b; display: block; margin-bottom: 5px;}
     footer {background: #0d1b2a; color: #fff; text-align: center; padding: 25px 20px; font-size: 0.95rem;}
-    @media(max-width: 600px) {.hero h2 {font-size: 2rem;} .section-title {font-size: 1.8rem;}}
-/* Logo Theme Colors */
-.service-box h3 {
-  color: #1A2E5A;
-  font-weight: 700;
-}
-.service-box {
-  border-left: 5px solid #C5A35A;
-  background: #fafafa;
-}
-.service-box:hover {
-  box-shadow: 0 4px 12px rgba(26, 46, 90, 0.15);
-  border-left: 5px solid #1A2E5A;
-}
-.insurance-box {
-  border: 2px solid #C5A35A;
-}
-</style>
-  .hero h1 {
-  color: #C5A35A;
-  font-size: 3.8rem;
-  font-weight: 800;
-  margin: 0 0 1rem 0;
-  letter-spacing: 3px;
-}
-.hero .tagline {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 300;
-  margin: 0 0 2rem 0;
-}
-.service-box ul {
-  padding-left: 20px;
-}
-.service-box ul li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-@media(max-width: 600px) {
-  .hero h1 {font-size: 2.5rem;} 
-  .hero .tagline {font-size: 1.3rem;}
-}
+    
+    /* === NEW PREMIUM STYLES === */
+    .hero h1 {
+      color: #C5A35A;
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin: 0 0 1rem 0;
+      letter-spacing: 4px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero .tagline {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin: 0 0 2rem 0;
+    }
+    .service-box {
+      background: linear-gradient(145deg, #ffffff, #f5f7fa);
+      padding: 35px 28px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid #C5A35A;
+      box-shadow: 0 4px 15px rgba(26, 46, 90, 0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #1A2E5A, transparent);
+      transition: left 0.5s ease;
+    }
+    .service-box:hover::before {
+      left: 100%;
+    }
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(26, 46, 90, 0.15);
+      border-top: 4px solid #1A2E5A;
+    }
+    .service-box h3 {
+      color: #1A2E5A;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #C5A35A;
+    }
+    .service-box p {
+      color: #334155;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .service-box ul {
+      padding-left: 18px;
+      list-style: none;
+    }
+    .service-box ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      position: relative;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+    .service-box ul li::before {
+      content: '▸';
+      color: #C5A35A;
+      font-weight: bold;
+      position: absolute;
+      left: -18px;
+    }
+    .service-box ul li strong {
+      color: #1A2E5A;
+    }
+    .insurance-box {
+      border: 2px solid #C5A35A;
+    }
+    @media(max-width: 600px) {
+      .hero h1 {font-size: 3rem;} 
+      .hero .tagline {font-size: 1.3rem;}
+      .section-title {font-size: 1.8rem;}
+    }
+  </style>
+</head>
+<body>
   <section class="hero">
     <h1>AKSH FORENSIC</h1>
-<p class="tagline">Scientific Evidence. Legal Clarity.</p>
+    <p class="tagline">Scientific Evidence. Legal Clarity.</p>
     <p>Expert forensic analysis and courtroom-ready reports for advocates, corporates, and individuals. Maintaining strict chain of custody and confidentiality.</p>
     <a href="#contact" class="btn">Discuss Your Case</a>
   </section>
@@ -87,46 +131,91 @@
     <h2 class="section-title">Our Expertise</h2>
     <div class="services">
       <div class="service-box">
-        <h3>Fingerprint Examination (FP)</h3>
-        <p>Latent print development, comparison, and expert opinion for criminal & civil matters. Digital fingerprint analysis.</p>
+        <h3>Fingerprint Examination</h3>
+        <p>Advanced forensic fingerprint analysis for criminal & civil cases:</p>
+        <ul>
+          <li><strong>Latent Print Development:</strong> Powder, chemical & fuming methods on all surfaces</li>
+          <li><strong>Comparison & Identification:</strong> AFIS, ridge detail analysis, minutiae matching</li>
+          <li><strong>Digital Analysis:</strong> Enhanced prints from photos, documents, mobile screens</li>
+          <li><strong>Expert Opinion:</strong> Court-ready reports u/s 45 Evidence Act with demonstrative charts</li>
+        </ul>
       </div>
+
       <div class="service-box">
-        <div class="service-box">
-  <h3>Questioned Document Examination</h3>
-  <p>Comprehensive forensic analysis of disputed documents:</p>
-  <ul style="text-align: left; margin-top: 10px; font-size: 0.95rem;">
-    <li><strong>Handwriting & Signature:</strong> Authorship ID, forgery detection, disguised writing analysis</li>
-    <li><strong>Ink & Paper:</strong> Ink age, chemical analysis, paper dating via VSC</li>
-    <li><strong>Alterations:</strong> Erasures, obliterations, additions detection using ESDA</li>
-    <li><strong>Charred Documents:</strong> Recovery of burnt/damaged documents</li>
-    <li><strong>Indented Writing:</strong> Invisible impressions recovery</li>
-    <li><strong>Printed Docs:</strong> Printer/Photocopy source identification</li>
-  </ul>
-  <p style="margin-top: 12px; font-weight: 600; color: #1A2E5A;">Court admissible u/s 45 Indian Evidence Act</p>
-</div>
+        <h3>Questioned Document Examination</h3>
+        <p>Scientific analysis of disputed documents using forensic instrumentation:</p>
+        <ul>
+          <li><strong>Handwriting & Signature:</strong> Authorship ID, forgery & disguised writing detection</li>
+          <li><strong>Ink & Paper Analysis:</strong> Age determination, TLC, spectroscopy, paper dating via VSC</li>
+          <li><strong>Alterations:</strong> Erasures, obliterations, additions detected using ESDA & UV/IR</li>
+          <li><strong>Charred/Indented Writing:</strong> Recovery of burnt documents & invisible impressions</li>
+        </ul>
+      </div>
+
       <div class="service-box">
         <h3>Crime Scene Investigation</h3>
-        <p>Independent crime scene analysis, evidence documentation, reconstruction, and bloodstain pattern analysis.</p>
+        <p>Independent scientific reconstruction & evidence documentation:</p>
+        <ul>
+          <li><strong>Scene Processing:</strong> Photography, videography, sketching, evidence collection</li>
+          <li><strong>Bloodstain Pattern Analysis:</strong> Impact, cast-off, transfer patterns for sequence reconstruction</li>
+          <li><strong>Trace Evidence:</strong> Hair, fiber, glass, paint, soil collection & analysis</li>
+          <li><strong>Reconstruction:</strong> Scientific sequencing of events based on physical evidence</li>
+        </ul>
       </div>
+
       <div class="service-box">
         <h3>Arson Investigation</h3>
-        <p>Fire origin & cause determination, electrical vs intentional fire analysis, expert report for insurance/legal claims.</p>
+        <p>Fire origin & cause determination for insurance & legal purposes:</p>
+        <ul>
+          <li><strong>Origin Determination:</strong> Burn patterns, V-patterns, heat/ventilation analysis</li>
+          <li><strong>Cause Analysis:</strong> Electrical, accidental vs incendiary fire differentiation</li>
+          <li><strong>Fire Debris Analysis:</strong> Accelerant detection via GC-MS in NABL lab</li>
+          <li><strong>Expert Report:</strong> NFPA 921 compliant reports for claims & litigation</li>
+        </ul>
       </div>
-  <div class="service-box">
-  <h3>Insurance Investigation</h3>
-  <p>Scientific scrutiny of questionable claims through: Fire debris analysis & volatile residue detection via GC-MS to establish incendiary origin, vehicular crush analysis & momentum vector calculations for staged accident verification, ESDA & VSC examination for indented writing/forgery detection in policy documents. Expert opinions rendered under Sec 45 of Indian Evidence Act, 1872 adhering to chain of custody protocols.</p>
-</div>
+
+      <div class="service-box">
+        <h3>Insurance Investigation</h3>
+        <p>Scientific scrutiny of questionable claims through forensic methods:</p>
+        <ul>
+          <li><strong>Fire Claims:</strong> GC-MS for accelerant detection, electrical forensics</li>
+          <li><strong>Motor Claims:</strong> Crush analysis, momentum vectors, staged accident verification</li>
+          <li><strong>Document Fraud:</strong> ESDA & VSC for policy forgery & indented writing</li>
+          <li><strong>Admissible Opinion:</strong> Reports u/s 45 Evidence Act with chain of custody</li>
+        </ul>
+      </div>
+
       <div class="service-box">
         <h3>Courtroom Cross Examination Support</h3>
-        <p>Expert witness testimony, technical support to advocates during cross-examination of forensic evidence.</p>
+        <p>Technical assistance to advocates during forensic evidence disputes:</p>
+        <ul>
+          <li><strong>Expert Testimony:</strong> Deposition as expert witness u/s 45 Evidence Act</li>
+          <li><strong>Report Analysis:</strong> Critical review of opponent's forensic reports to find flaws</li>
+          <li><strong>Cross-Ex Questions:</strong> Preparation of technical questions for opposing experts</li>
+          <li><strong>Courtroom Demos:</strong> Visual aids & explanations for judges to understand science</li>
+        </ul>
       </div>
+
       <div class="service-box">
         <h3>Cyber Forensics <span class="badge">Upcoming</span></h3>
-        <p>Digital evidence recovery, mobile/computer forensics, email & social media authentication. Launching soon.</p>
+        <p>Digital evidence recovery & authentication launching soon:</p>
+        <ul>
+          <li><strong>Mobile Forensics:</strong> Deleted data, WhatsApp, call logs recovery</li>
+          <li><strong>Computer Forensics:</strong> Hard disk imaging, deleted file recovery</li>
+          <li><strong>Email & Social Media:</strong> Header analysis, authenticity verification</li>
+          <li><strong>Hash Value Reports:</strong> Court admissible MD5/SHA verification</li>
+        </ul>
       </div>
+
       <div class="service-box">
         <h3>Audio/Video Authentication <span class="badge">Upcoming</span></h3>
-        <p>Voice identification, video tampering detection, CCTV enhancement and forensic analysis. Launching soon.</p>
+        <p>Multimedia forensics & tampering detection launching soon:</p>
+        <ul>
+          <li><strong>Voice Identification:</strong> Spectrographic analysis, speaker comparison</li>
+          <li><strong>Video Authentication:</strong> Frame-by-frame analysis for cuts/insertions</li>
+          <li><strong>CCTV Enhancement:</strong> Face/license plate clarity, timestamp verification</li>
+          <li><strong>Deepfake Detection:</strong> AI-generated media identification reports</li>
+        </ul>
       </div>
     </div>
   </section>
