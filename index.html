@@ -51,8 +51,31 @@
 .insurance-box {
   border: 2px solid #C5A35A;
 }
-
 </style>
+  .hero h1 {
+  color: #C5A35A;
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  letter-spacing: 3px;
+}
+.hero .tagline {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0 0 2rem 0;
+}
+.service-box ul {
+  padding-left: 20px;
+}
+.service-box ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+@media(max-width: 600px) {
+  .hero h1 {font-size: 2.5rem;} 
+  .hero .tagline {font-size: 1.3rem;}
+}
   <section class="hero">
     <h1>AKSH FORENSIC</h1>
 <p class="tagline">Scientific Evidence. Legal Clarity.</p>
@@ -68,9 +91,19 @@
         <p>Latent print development, comparison, and expert opinion for criminal & civil matters. Digital fingerprint analysis.</p>
       </div>
       <div class="service-box">
-        <h3>Questioned Document (QD)</h3>
-        <p>Handwriting & signature verification, forgery detection, ink/age analysis, charred & altered document examination.</p>
-      </div>
+        <div class="service-box">
+  <h3>Questioned Document Examination</h3>
+  <p>Comprehensive forensic analysis of disputed documents:</p>
+  <ul style="text-align: left; margin-top: 10px; font-size: 0.95rem;">
+    <li><strong>Handwriting & Signature:</strong> Authorship ID, forgery detection, disguised writing analysis</li>
+    <li><strong>Ink & Paper:</strong> Ink age, chemical analysis, paper dating via VSC</li>
+    <li><strong>Alterations:</strong> Erasures, obliterations, additions detection using ESDA</li>
+    <li><strong>Charred Documents:</strong> Recovery of burnt/damaged documents</li>
+    <li><strong>Indented Writing:</strong> Invisible impressions recovery</li>
+    <li><strong>Printed Docs:</strong> Printer/Photocopy source identification</li>
+  </ul>
+  <p style="margin-top: 12px; font-weight: 600; color: #1A2E5A;">Court admissible u/s 45 Indian Evidence Act</p>
+</div>
       <div class="service-box">
         <h3>Crime Scene Investigation</h3>
         <p>Independent crime scene analysis, evidence documentation, reconstruction, and bloodstain pattern analysis.</p>
