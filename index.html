@@ -37,18 +37,15 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #0d1b2a;
-      text-decoration: none;
-    }
-    .logo span {color: #d90429;}
-    .nav-links {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-    }
+       .logo {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+   }
+   .logo img {
+     height: 55px;
+     width: auto;
+   }
     .nav-links a {
       color: #0d1b2a;
       text-decoration: none;
@@ -222,7 +219,9 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">Aksh <span>Forensics</span></a>
+      <a href="#" class="logo">
+  <img src="logo.png" alt="Aksh Forensics">
+</a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Expertise</a></li>
