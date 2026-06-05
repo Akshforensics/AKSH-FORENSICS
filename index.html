@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aksh Forensics - Private Forensic Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aksh Forensics | Advanced Forensic Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #222; background: #fff;}
-    
-    /* === TOP BAR === */
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;}
+    html {scroll-behavior: smooth;}
+    body {background: #f4f6f8; color: #1b1b1b; line-height: 1.6;}
+
+    /* Top Bar */
     .top-bar {
       background: #0d1b2a;
       color: #fff;
-      padding: 8px 20px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      padding: 8px 6%;
     }
-    .top-bar a {color: #fff; text-decoration: none;}
-    
-    /* === NAVBAR === */
+    .top-bar a {color: #C5A35A; text-decoration: none; margin-left: 15px;}
+    .top-bar a:hover {text-decoration: underline;}
+
+    /* Navbar */
     .navbar {
       background: #fff;
-      padding: 18px 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      border-bottom: 3px solid #C5A35A;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
     }
-    .nav-container {
+    .nav-inner {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 6%;
     }
-       .logo {
-     display: flex;
-     align-items: center;
-     text-decoration: none;
-   }
-   .logo img {
-     height: 55px;
-     width: auto;
-   }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 70px;
+      width: auto;
+    }
+    .logo-text {
+      margin-left: 12px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0d1b2a;
+      line-height: 1;
+    }
+    .logo-text span {
+      color: #d90429;
+    }
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      list-style: none;
+    }
     .nav-links a {
       color: #0d1b2a;
       text-decoration: none;
@@ -54,153 +75,175 @@
       transition: 0.3s;
     }
     .nav-links a:hover {color: #C5A35A;}
-    
-    /* === HERO SECTION === */
+
+    /* Hero */
     .hero {
-      background: linear-gradient(135deg, #0a1628 0%, #1a2e5a 50%, #0a1628 100%);
+      background: linear-gradient(rgba(13,27,42,0.85), rgba(13,27,42,0.85)), url('https://images.unsplash.com/photo-1581091870622-7e0cdfbb6795?auto=format&fit=crop&w=1400&q=80') center/cover;
       color: #fff;
       text-align: center;
       padding: 120px 20px 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     .hero h1 {
-      color: #fff;
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      margin: 0 0 1.5rem 0;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      max-width: 900px;
+      margin-bottom: 15px;
     }
     .hero p {
       font-size: 1.1rem;
-      max-width: 750px;
-      margin: 0 auto 40px;
-      font-weight: 300;
-      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 30px;
       opacity: 0.9;
     }
     .btn {
-      background: #e67e22;
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 5px;
-      text-decoration: none;
+      background: #C5A35A;
+      color: #0d1b2a;
+      padding: 14px 38px;
+      border-radius: 30px;
       font-weight: 600;
-      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s;
       display: inline-block;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
     }
     .btn:hover {
-      background: #d35400;
+      background: #b08f4e;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+      box-shadow: 0 5px 15px rgba(197,163,90,0.3);
     }
-    
-    .container {max-width: 1150px; margin: auto; padding: 70px 20px;}
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 6%;
+    }
     .section-title {
-      text-align: center; 
-      font-size: 2.1rem; 
-      margin-bottom: 15px; 
-      color: #1A2E5A;
-      font-weight: 600;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #0d1b2a;
+      font-weight: 700;
     }
     .section-subtitle {
       text-align: center;
-      color: #64748b;
+      color: #666;
+      margin-bottom: 50px;
       font-size: 1.05rem;
-      margin-bottom: 45px;
-      font-weight: 300;
     }
-    .title-underline {
-      width: 60px;
-      height: 3px;
-      background: #C5A35A;
-      margin: 0 auto 45px;
+
+    /* Expertise */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
-    
-    .services {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;}
-    .badge {background: #d90429; color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: 12px; margin-left: 8px; font-weight: 600;}
-    .about {background: #f1f5f9;}
-    .about-wrap {text-align: center; max-width: 850px; margin: 0 auto;}
-    .about-wrap p {margin-bottom: 25px; font-size: 1.05rem;}
-    .highlight {background: #0d1b2a; color: #e0a82e; padding: 18px 30px; border-radius: 6px; font-weight: 700; font-size: 1.2rem; display: inline-block; border: 2px solid #e0a82e;}
-    .contact {text-align: center;}
-    .contact-grid {display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 30px 0;}
-    .contact-item {font-size: 1.1rem;}
-    .contact-item strong {color: #1b263b; display: block; margin-bottom: 5px;}
-    footer {background: #0d1b2a; color: #fff; text-align: center; padding: 25px 20px; font-size: 0.95rem;}
-    
     .service-box {
-      background: linear-gradient(145deg, #ffffff, #f5f7fa);
-      padding: 35px 28px;
+      background: #fff;
       border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      border-top: 4px solid #C5A35A;
-      box-shadow: 0 4px 15px rgba(26, 46, 90, 0.08);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, #1A2E5A, transparent);
-      transition: left 0.5s ease;
-    }
-    .service-box:hover::before {
-      left: 100%;
+      padding: 30px 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: 0.3s;
+      border-left: 4px solid #C5A35A;
     }
     .service-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(26, 46, 90, 0.15);
-      border-top: 4px solid #1A2E5A;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     .service-box h3 {
-      color: #1A2E5A;
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      padding-bottom: 12px;
-      border-bottom: 1px dashed #C5A35A;
-    }
-    .service-box p {
-      color: #334155;
-      font-weight: 500;
+      color: #0d1b2a;
       margin-bottom: 12px;
+      font-size: 1.3rem;
     }
     .service-box ul {
       padding-left: 18px;
-      list-style: none;
+      color: #444;
     }
     .service-box ul li {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       line-height: 1.6;
-      position: relative;
-      color: #475569;
+    }
+
+    /* Process */
+    .process {
+      background: #fff;
+      border-radius: 12px;
+      padding: 50px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .step {
+      text-align: center;
+    }
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: #C5A35A;
+      color: #0d1b2a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 0 auto 15px;
+    }
+    .step h4 {
+      color: #0d1b2a;
+      margin-bottom: 8px;
+    }
+    .step p {
+      color: #666;
       font-size: 0.95rem;
     }
-    .service-box ul li::before {
-      content: '▸';
+
+    /* Contact */
+    .contact {
+      background: #0d1b2a;
+      color: #fff;
+      text-align: center;
+      border-radius: 12px;
+      padding: 60px 30px;
+    }
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .contact p {
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+    .contact-info {
+      margin-top: 20px;
+    }
+    .contact-info a {
       color: #C5A35A;
-      font-weight: bold;
-      position: absolute;
-      left: -18px;
+      text-decoration: none;
+      font-weight: 500;
     }
-    .service-box ul li strong {
-      color: #1A2E5A;
+
+    /* Footer */
+    footer {
+      background: #0a1621;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.9rem;
     }
-    
+    footer a {
+      color: #C5A35A;
+      text-decoration: none;
+    }
+
+    /* Responsive */
     @media(max-width: 768px) {
       .top-bar {flex-direction: column; gap: 5px; text-align: center;}
       .nav-links {display: none;}
+      .logo img {height: 50px;}
+      .logo-text {font-size: 1.4rem;}
       .hero h1 {font-size: 2.2rem;} 
       .hero p {font-size: 1rem;}
       .section-title {font-size: 1.8rem;}
@@ -210,161 +253,120 @@
   </style>
 </head>
 <body>
-  <!-- TOP BAR -->
+
+  <!-- Top Bar -->
   <div class="top-bar">
-    <div>📧 info@akshforensics.com</div>
-    <div>📞 +91-XXXXXXXXXX | Available Mon-Sat, 9:30 AM - 6:30 PM</div>
+    <div>Trusted Forensic Consultancy Since 2015</div>
+    <div>
+      <a href="tel:+919999999999">+91 99999 99999</a>
+      <a href="mailto:info@akshforensics.com">info@akshforensics.com</a>
+    </div>
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-inner">
       <a href="#" class="logo">
-  <img src="logo.png" alt="Aksh Forensics">
-</a>
+        <img src="logo.png" alt="Aksh Forensics">
+        <div class="logo-text">Aksh <span>Forensics</span></div>
+      </a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Expertise</a></li>
-        <li><a href="#about">Process</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <h1>Scientific Truth for Legal Clarity</h1>
-    <p>Aksh Forensics is an independent consultancy delivering unbiased forensic reports for courts, law firms, corporates and individuals across India.</p>
-    <a href="#contact" class="btn">Book a Consultation</a>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Advanced Digital & Cyber Forensic Solutions</h1>
+    <p>Providing scientific investigation, evidence analysis, and expert testimony for law enforcement, corporates, and legal professionals across India.</p>
+    <a href="#contact" class="btn">Request Consultation</a>
   </section>
 
-  <section id="services" class="container">
-    <h2 class="section-title">Areas of Expertise</h2>
-    <div class="title-underline"></div>
-    <p class="section-subtitle">We use validated scientific protocols and modern instrumentation for every case</p>
-    
+  <!-- Expertise -->
+  <section id="expertise">
+    <h2 class="section-title">Our Expertise</h2>
+    <p class="section-subtitle">Comprehensive forensic services backed by certified experts and cutting-edge technology</p>
     <div class="services">
       <div class="service-box">
-        <h3>Fingerprint Examination</h3>
-        <p>Advanced forensic fingerprint analysis for criminal & civil cases:</p>
+        <h3>Digital Forensics</h3>
         <ul>
-          <li><strong>Latent Print Development:</strong> Powder, chemical & fuming methods on all surfaces</li>
-          <li><strong>Comparison & Identification:</strong> AFIS, ridge detail analysis, minutiae matching</li>
-          <li><strong>Digital Analysis:</strong> Enhanced prints from photos, documents, mobile screens</li>
-          <li><strong>Expert Opinion:</strong> Court-ready reports u/s 45 Evidence Act with demonstrative charts</li>
+          <li>Computer & Laptop Analysis</li>
+          <li>Mobile Device Forensics</li>
+          <li>Data Recovery & Extraction</li>
+          <li>Malware Analysis</li>
         </ul>
       </div>
-
       <div class="service-box">
-        <h3>Questioned Document Examination</h3>
-        <p>Scientific analysis of disputed documents using forensic instrumentation:</p>
+        <h3>Cyber Crime Investigation</h3>
         <ul>
-          <li><strong>Handwriting & Signature:</strong> Authorship ID, forgery & disguised writing detection</li>
-          <li><strong>Ink & Paper Analysis:</strong> Age determination, TLC, spectroscopy, paper dating via VSC</li>
-          <li><strong>Alterations:</strong> Erasures, obliterations, additions detected using ESDA & UV/IR</li>
-          <li><strong>Charred/Indented Writing:</strong> Recovery of burnt documents & invisible impressions</li>
+          <li>Financial Fraud Investigation</li>
+          <li>Email & Social Media Forensics</li>
+          <li>Network Intrusion Analysis</li>
+          <li>IP Tracing & Attribution</li>
         </ul>
       </div>
-
       <div class="service-box">
-        <h3>Crime Scene Investigation</h3>
-        <p>Independent scientific reconstruction & evidence documentation:</p>
+        <h3>Expert Testimony</h3>
         <ul>
-          <li><strong>Scene Processing:</strong> Photography, videography, sketching, evidence collection</li>
-          <li><strong>Bloodstain Pattern Analysis:</strong> Impact, cast-off, transfer patterns for sequence reconstruction</li>
-          <li><strong>Trace Evidence:</strong> Hair, fiber, glass, paint, soil collection & analysis</li>
-          <li><strong>Reconstruction:</strong> Scientific sequencing of events based on physical evidence</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>Arson Investigation</h3>
-        <p>Fire origin & cause determination for insurance & legal purposes:</p>
-        <ul>
-          <li><strong>Origin Determination:</strong> Burn patterns, V-patterns, heat/ventilation analysis</li>
-          <li><strong>Cause Analysis:</strong> Electrical, accidental vs incendiary fire differentiation</li>
-          <li><strong>Fire Debris Analysis:</strong> Accelerant detection via GC-MS in NABL lab</li>
-          <li><strong>Expert Report:</strong> NFPA 921 compliant reports for claims & litigation</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>Insurance Investigation</h3>
-        <p>Scientific scrutiny of questionable claims through forensic methods:</p>
-        <ul>
-          <li><strong>Fire Claims:</strong> GC-MS for accelerant detection, electrical forensics</li>
-          <li><strong>Motor Claims:</strong> Crush analysis, momentum vectors, staged accident verification</li>
-          <li><strong>Document Fraud:</strong> ESDA & VSC for policy forgery & indented writing</li>
-          <li><strong>Admissible Opinion:</strong> Reports u/s 45 Evidence Act with chain of custody</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>Courtroom Cross Examination Support</h3>
-        <p>Technical assistance to advocates during forensic evidence disputes:</p>
-        <ul>
-          <li><strong>Expert Testimony:</strong> Deposition as expert witness u/s 45 Evidence Act</li>
-          <li><strong>Report Analysis:</strong> Critical review of opponent's forensic reports to find flaws</li>
-          <li><strong>Cross-Ex Questions:</strong> Preparation of technical questions for opposing experts</li>
-          <li><strong>Courtroom Demos:</strong> Visual aids & explanations for judges to understand science</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>Cyber Forensics <span class="badge">Upcoming</span></h3>
-        <p>Digital evidence recovery & authentication launching soon:</p>
-        <ul>
-          <li><strong>Mobile Forensics:</strong> Deleted data, WhatsApp, call logs recovery</li>
-          <li><strong>Computer Forensics:</strong> Hard disk imaging, deleted file recovery</li>
-          <li><strong>Email & Social Media:</strong> Header analysis, authenticity verification</li>
-          <li><strong>Hash Value Reports:</strong> Court admissible MD5/SHA verification</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>Audio/Video Authentication <span class="badge">Upcoming</span></h3>
-        <p>Multimedia forensics & tampering detection launching soon:</p>
-        <ul>
-          <li><strong>Voice Identification:</strong> Spectrographic analysis, speaker comparison</li>
-          <li><strong>Video Authentication:</strong> Frame-by-frame analysis for cuts/insertions</li>
-          <li><strong>CCTV Enhancement:</strong> Face/license plate clarity, timestamp verification</li>
-          <li><strong>Deepfake Detection:</strong> AI-generated media identification reports</li>
+          <li>Court-admissible Reports</li>
+          <li>Expert Witness Services</li>
+          <li>Legal Consultation</li>
+          <li>Evidence Documentation</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-wrap">
-        <h2 class="section-title">Why Aksh Forensics?</h2>
-        <p>We provide unbiased, scientific forensic opinions that stand up to legal scrutiny. Every examination follows established protocols with complete documentation and chain of custody maintenance for court admissibility.</p>
-        <div class="highlight">Report Delivery Time: Average 10 Days</div>
+  <!-- Process -->
+  <section id="process">
+    <h2 class="section-title">Our Process</h2>
+    <p class="section-subtitle">A systematic approach ensuring integrity and accuracy at every step</p>
+    <div class="process">
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Consultation</h4>
+          <p>Understanding your case requirements and scope of investigation</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Acquisition</h4>
+          <p>Forensically sound collection and preservation of digital evidence</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Analysis</h4>
+          <p>Detailed examination using advanced forensic tools and techniques</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Reporting</h4>
+          <p>Comprehensive documentation with findings admissible in court</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="container contact">
-    <h2 class="section-title">Get Expert Opinion</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <strong>Call / WhatsApp</strong>
-        +91-XXXXXXXXXX
-      </div>
-      <div class="contact-item">
-        <strong>Email</strong>
-        info@akshforensics.com
-      </div>
-      <div class="contact-item">
-        <strong>Service Area</strong>
-        Pan India Available
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact">
+      <h2>Get In Touch</h2>
+      <p>Need expert forensic assistance? Our team is ready to help you with your investigation.</p>
+      <a href="mailto:info@akshforensics.com" class="btn">Email Us</a>
+      <div class="contact-info">
+        <p>Call: <a href="tel:+919999999999">+91 99999 99999</a></p>
+        <p>Email: <a href="mailto:info@akshforensics.com">info@akshforensics.com</a></p>
       </div>
     </div>
-    <a href="tel:+91XXXXXXXXXX" class="btn">Call for Consultation</a>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Aksh Forensics. All Rights Reserved. | Confidential Forensic Services | Not affiliated with any Govt. Agency</p>
+    © 2024 Aksh Forensics. All Rights Reserved. | <a href="#">Privacy Policy</a>
   </footer>
 
 </body>
