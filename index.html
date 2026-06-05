@@ -16,7 +16,7 @@
       color: #fff;
       font-size: 0.9rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       padding: 8px 6%;
     }
     .top-bar a {color: #C5A35A; text-decoration: none; margin-left: 15px; font-weight: 500;}
@@ -83,33 +83,33 @@
     .nav-links a:hover::after {width: 100%;}
     .nav-links a:hover {color: #C5A35A;}
 
-    /* Premium Hero */
+    /* Premium Hero - FIXED CENTRE */
     .hero {
       background: linear-gradient(135deg, rgba(13,27,42,0.95), rgba(27,38,59,0.95)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400') center/cover; 
       color: #fff; 
       text-align: center; 
       padding: 120px 20px 100px;
-    }
-    .hero h1 {
-      color: #C5A35A;
-      font-size: 4.8rem;
-      font-weight: 800;
-      margin: 0 0 1rem 0;
-      letter-spacing: 4px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .hero .tagline {
-      color: #fff;
-      font-size: 1.9rem;
-      font-weight: 300;
+      color: #C5A35A;
+      font-size: 3.5rem;
+      font-weight: 700;
       margin: 0 0 2rem 0;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      width: 100%;
+      text-align: center;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
     .hero p {
       font-size: 1.2rem; 
       max-width: 800px; 
       margin: 0 auto 35px;
       opacity: 0.95;
+      text-align: center;
+      width: 100%;
     }
     .btn {
       background: linear-gradient(135deg, #C5A35A, #e0a82e);
@@ -274,12 +274,11 @@
     }
     
     @media(max-width: 768px) {
-      .top-bar {flex-direction: column; gap: 5px; text-align: center;}
+      .top-bar {justify-content: center;}
       .nav-links {display: none;}
       .logo img {height: 50px;}
       .logo-text {font-size: 1.5rem;}
-      .hero h1 {font-size: 3.2rem; letter-spacing: 2px;} 
-      .hero .tagline {font-size: 1.4rem;}
+      .hero .tagline {font-size: 2.2rem; letter-spacing: 1px;} 
       .section-title {font-size: 2rem;}
       .hero {padding: 80px 15px 70px;}
       .services {grid-template-columns: 1fr;}
@@ -288,9 +287,8 @@
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- Top Bar - SINCE 2015 REMOVED -->
   <div class="top-bar">
-    <div>Trusted Forensic Consultancy Since 2015</div>
     <div>
       <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a>
       <a href="mailto:info@akshforensics.com">info@akshforensics.com</a>
@@ -315,7 +313,6 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>AKSH FORENSIC</h1>
     <p class="tagline">Scientific Evidence. Legal Clarity.</p>
     <p>Expert forensic analysis and courtroom-ready reports for advocates, corporates, and individuals. Maintaining strict chain of custody and confidentiality.</p>
     <a href="#contact" class="btn">Discuss Your Case</a>
