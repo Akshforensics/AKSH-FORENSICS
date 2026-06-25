@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AKSH Forensics: Where Science Serves Justice</title>
-    <meta name="description" content="AKSH Forensic Consultancy - Expert questioned document examination, digital forensics, cyber forensics & AV forensics.">
+    <meta name="description" content="AKSH Forensic Consultancy - QD, Fingerprint, Crime Scene, Insurance, Arson, Cyber & AV Forensics. Court-admissible scientific analysis.">
+    <meta name="keywords" content="questioned documents, fingerprint analysis, crime scene investigation, arson investigation, insurance fraud, cyber forensics, AV forensics, AKSH Forensics">
     <link rel="icon" href="https://akshforensics.github.io/AKSH-FORENSICS/logo.png" type="image/png">
     <style>
         :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
+            --primary: #0a1628;
+            --secondary: #1e3a5f;
             --accent: #e94560;
             --gold: #d4af37;
+            --cyan: #00d9ff;
             --upcoming: #ff9f1c;
             --light: #f8fafc;
             --text: #334155;
@@ -19,74 +21,75 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; color: var(--text); background: #fff; }
-        header { background: var(--primary); color: #fff; padding: 0.8rem 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        header { background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px); color: #fff; padding: 0.8rem 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
         nav { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: auto; }
-        .logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #fff; }
-        .logo img { height: 45px; width: auto; }
-        .logo-text { font-size: 1.5rem; font-weight: 700; }
-        .logo-text span { color: var(--accent); }
+        .logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+        .logo img { height: 50px; width: auto; }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover { color: var(--cyan); }
         
-        /* HERO WITH 3D FORENSIC ANIMATION */
-        .hero { margin-top: 70px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; padding: 4rem 5% 6rem; position: relative; overflow: hidden; }
-        .hero-container { max-width: 1400px; margin: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
-        .hero-text h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
+        /* HERO WITH CUSTOM FORENSIC 3D RING */
+        .hero { margin-top: 70px; background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 50%, #0a1628 100%); color: #fff; padding: 5rem 5% 7rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+            radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 50%); }
+        .hero-container { max-width: 1400px; margin: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+        .hero-text h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(90deg, #fff, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .tagline { font-size: 1.8rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 300; }
         .hero-desc { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; }
-        .cta-btn { background: var(--accent); color: #fff; padding: 1rem 2.5rem; border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-block; font-weight: 600; transition: 0.3s; }
-        .cta-btn:hover { background: #d63851; transform: translateY(-2px); }
+        .cta-btn { background: linear-gradient(135deg, var(--accent), #d63851); color: #fff; padding: 1rem 2.5rem; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-block; font-weight: 600; transition: 0.3s; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4); }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(233, 69, 96, 0.6); }
 
-        /* 3D FORENSIC SCANNER ANIMATION */
-        .forensic-scanner { position: relative; width: 100%; max-width: 450px; margin: auto; perspective: 1000px; }
-        .scan-grid { background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transform-style: preserve-3d; animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px) rotateX(5deg) rotateY(-5deg); } 50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); } }
+        /* CUSTOM 3D EVIDENCE RING - NO BIOLOGY */
+        .hologram-wrapper { position: relative; width: 100%; max-width: 500px; margin: auto; perspective: 1200px; }
+        .hologram-scene { position: relative; width: 100%; aspect-ratio: 1; transform-style: preserve-3d; }
         
-        .scan-canvas { position: relative; width: 100%; aspect-ratio: 1; background: 
-            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
-            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-            background-size: 20px 20px; }
+        .evidence-core { position: absolute; top: 50%; left: 50%; width: 180px; height: 180px; transform: translate(-50%, -50%); transform-style: preserve-3d; animation: coreFloat 4s ease-in-out infinite; }
+        @keyframes coreFloat { 0%, 100% { transform: translate(-50%, -50%) translateY(0px); } 50% { transform: translate(-50%, -50%) translateY(-15px); } }
         
-        .fingerprint { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70%; height: 70%; }
-        .ring { position: absolute; top: 50%; left: 50%; border: 2px solid; border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; animation: pulse 3s ease-out infinite; }
-        .ring:nth-child(1) { width: 20%; height: 20%; border-color: var(--gold); animation-delay: 0s; }
-        .ring:nth-child(2) { width: 35%; height: 35%; border-color: #94a3b8; animation-delay: 0.3s; }
-        .ring:nth-child(3) { width: 50%; height: 50%; border-color: var(--gold); animation-delay: 0.6s; }
-        .ring:nth-child(4) { width: 65%; height: 65%; border-color: #94a3b8; animation-delay: 0.9s; }
-        .ring:nth-child(5) { width: 80%; height: 80%; border-color: var(--gold); animation-delay: 1.2s; }
+        .core-frame { position: absolute; inset: 0; border: 2px solid rgba(0, 217, 255, 0.4); border-radius: 12px; background: rgba(0, 217, 255, 0.03); backdrop-filter: blur(5px); }
+        .core-frame::before, .core-frame::after { content: ''; position: absolute; width: 30px; height: 30px; border: 2px solid var(--cyan); }
+        .core-frame::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .core-frame::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
         
-        @keyframes pulse { 0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); } 50% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); } }
+        .core-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; filter: drop-shadow(0 0 20px var(--cyan)); }
         
-        .scan-line { position: absolute; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); top: 50%; animation: scan 2s linear infinite; }
-        @keyframes scan { 0% { top: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+        .orbit-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 50%; transform: translate(-50%, -50%); }
+        .orbit-1 { width: 280px; height: 280px; animation: orbitRotate 18s linear infinite; }
+        .orbit-2 { width: 350px; height: 350px; animation: orbitRotate 25s linear infinite reverse; }
+        .orbit-3 { width: 420px; height: 420px; animation: orbitRotate 30s linear infinite; }
+        @keyframes orbitRotate { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
         
-        .corner { position: absolute; width: 20px; height: 20px; border: 2px solid var(--primary); }
-        .corner-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-        .corner-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+        .orbit-icon { position: absolute; width: 50px; height: 50px; background: rgba(10, 22, 40, 0.9); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; backdrop-filter: blur(10px); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        .icon-1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+        .icon-2 { top: 50%; right: 0; transform: translate(50%, -50%); }
+        .icon-3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+        .icon-4 { top: 50%; left: 0; transform: translate(-50%, -50%); }
         
-        .evidence-tag { position: absolute; background: var(--primary); color: #fff; padding: 0.5rem 1rem; font-size: 0.75rem; border-radius: 4px; font-weight: 600; }
-        .tag-1 { top: -15px; right: -15px; background: var(--primary); }
-        .tag-2 { bottom: -15px; left: -15px; background: #fff; color: var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .tag-2::before { content: '●'; color: #22c55e; margin-right: 5px; }
+        .scan-grid-line { position: absolute; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); top: 50%; animation: gridScan 3s ease-in-out infinite; }
+        @keyframes gridScan { 0%, 100% { opacity: 0; top: 0%; } 50% { opacity: 1; top: 100%; } }
         
-        .label { position: absolute; font-size: 0.7rem; color: var(--text); font-family: monospace; }
-        .label-1 { top: 20%; right: 15%; }
-        .label-2 { bottom: 25%; left: 15%; color: var(--gold); }
-        .specimen-label { position: absolute; bottom: 10px; left: 10px; font-size: 0.65rem; color: #64748b; letter-spacing: 1px; }
+        .holo-label { position: absolute; background: rgba(10, 22, 40, 0.95); border: 1px solid var(--cyan); padding: 0.7rem 1.3rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; backdrop-filter: blur(10px); white-space: nowrap; }
+        .label-top { top: -50px; left: 50%; transform: translateX(-50%); color: var(--cyan); }
+        .label-bottom { bottom: -50px; left: 50%; transform: translateX(-50%); color: var(--gold); }
+        .label-top::before { content: '● '; color: #22c55e; animation: blink 2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-        /* REST OF SECTIONS */
         .section { padding: 5rem 5%; max-width: 1400px; margin: auto; }
         .section-dark { background: var(--light); }
         .section h2 { text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: var(--primary); }
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2.5rem; }
         .card { background: #fff; padding: 2.5rem; border-radius: 12px; border-left: 5px solid var(--accent); position: relative; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-        .card h3 { margin-bottom: 1rem; color: var(--primary); font-size: 1.4rem; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); border-left-color: var(--cyan); }
+        .service-num { position: absolute; top: 1.5rem; right: 1.5rem; width: 35px; height: 35px; background: var(--primary); color: var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+        .card h3 { margin-bottom: 1rem; color: var(--primary); font-size: 1.5rem; padding-right: 3rem; }
+        .card p { margin-bottom: 1rem; color: #475569; }
         .card ul { margin-top: 1rem; padding-left: 1.2rem; }
-        .card li { margin-bottom: 0.5rem; }
-        .upcoming { position: absolute; top: 1rem; right: 1rem; background: var(--upcoming); color: var(--primary); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+        .card li { margin-bottom: 0.6rem; color: #64748b; }
+        .card li::marker { color: var(--accent); }
+        .upcoming { position: absolute; top: 1rem; left: 1rem; background: var(--upcoming); color: var(--primary); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
         footer { background: var(--primary); color: #fff; text-align: center; padding: 3rem 5% 2rem; }
         
         @media (max-width: 968px) { 
@@ -94,7 +97,13 @@
             .hero h1 { font-size: 2.5rem; } 
             .tagline { font-size: 1.4rem; }
             .nav-links { display: none; }
-            .forensic-scanner { max-width: 350px; margin-top: 2rem; }
+            .hologram-wrapper { max-width: 320px; margin-top: 3rem; }
+            .evidence-core { width: 140px; height: 140px; }
+            .orbit-1 { width: 220px; height: 220px; }
+            .orbit-2 { width: 270px; height: 270px; }
+            .orbit-3 { width: 320px; height: 320px; }
+            .services { grid-template-columns: 1fr; }
+            .logo img { height: 40px; }
         }
     </style>
 </head>
@@ -103,7 +112,6 @@
         <nav>
             <a href="#home" class="logo">
                 <img src="https://akshforensics.github.io/AKSH-FORENSICS/logo.png" alt="AKSH Forensics Logo">
-                <div class="logo-text">AKSH <span>Forensics</span></div>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -119,39 +127,32 @@
             <div class="hero-text">
                 <h1>AKSH Forensic Consultancy</h1>
                 <p class="tagline">Where Science Serves Justice</p>
-                <p class="hero-desc">Court-admissible forensic analysis with scientific precision. From questioned documents to cyber & AV evidence — truth decoded, justice served.</p>
+                <p class="hero-desc">Court-admissible forensic analysis from questioned documents to cyber evidence. Scientific precision, legal clarity.</p>
                 <a href="#contact" class="cta-btn">Request Expert Opinion</a>
             </div>
             
-            <!-- 3D FORENSIC SCANNER -->
-            <div class="forensic-scanner">
-                <div class="scan-grid">
-                    <div class="scan-canvas">
-                        <div class="corner corner-tl"></div>
-                        <div class="corner corner-br"></div>
-                        <div class="scan-line"></div>
-                        
-                        <div class="fingerprint">
-                            <div class="ring"></div>
-                            <div class="ring"></div>
-                            <div class="ring"></div>
-                            <div class="ring"></div>
-                            <div class="ring"></div>
-                        </div>
-                        
-                        <div class="label label-1">○ E-01 RIDGE</div>
-                        <div class="label label-2">○ E-02 MINUTIAE</div>
-                        <div class="specimen-label">SPECIMEN // LATENT PRINT ANALYSIS</div>
+            <!-- CUSTOM 3D FORENSIC EVIDENCE RING - NO DNA -->
+            <div class="hologram-wrapper">
+                <div class="hologram-scene">
+                    <div class="orbit-ring orbit-1">
+                        <div class="orbit-icon icon-1">📄</div>
+                        <div class="orbit-icon icon-3">🔍</div>
+                    </div>
+                    <div class="orbit-ring orbit-2">
+                        <div class="orbit-icon icon-2">🔥</div>
+                        <div class="orbit-icon icon-4">💾</div>
+                    </div>
+                    <div class="orbit-ring orbit-3"></div>
+                    
+                    <div class="evidence-core">
+                        <div class="core-frame"></div>
+                        <div class="core-icon">⚖️</div>
                     </div>
                     
-                    <div class="evidence-tag tag-1">
-                        CHAIN OF CUSTODY<br>
-                        <strong>Verified • Sealed</strong>
-                    </div>
-                    <div class="evidence-tag tag-2">
-                        REPORT STATUS<br>
-                        <strong>Court-Ready</strong>
-                    </div>
+                    <div class="scan-grid-line"></div>
+                    
+                    <div class="holo-label label-top">FORENSIC ANALYSIS: ACTIVE</div>
+                    <div class="holo-label label-bottom">CHAIN OF CUSTODY: VERIFIED</div>
                 </div>
             </div>
         </div>
@@ -159,86 +160,118 @@
 
     <section class="section" id="services">
         <h2>Our Forensic Services</h2>
-        <p class="section-subtitle">Comprehensive scientific examination across physical and digital evidence domains</p>
+        <p class="section-subtitle">Scientific examination across criminal, civil & corporate cases with court-admissible reporting</p>
         <div class="services">
+            <!-- 1. QD -->
             <div class="card">
-                <h3>Questioned Documents</h3>
-                <p>Scientific analysis of disputed documents for authenticity and authorship.</p>
+                <span class="service-num">1</span>
+                <h3>Questioned Document Examination</h3>
+                <p>Scientific analysis of disputed documents using forensic instrumentation:</p>
                 <ul>
-                    <li>Handwriting & Signature Verification</li>
-                    <li>Ink, Paper & Printing Process Analysis</li>
-                    <li>Alterations, Additions & Erasures Detection</li>
-                    <li>Stamp, Seal & Indented Writing Examination</li>
+                    <li><strong>Handwriting & Signature:</strong> Authorship ID, forgery & disguised writing detection</li>
+                    <li><strong>Ink & Paper Analysis:</strong> Age determination, TLC, spectroscopy, paper dating via VSC</li>
+                    <li><strong>Alterations:</strong> Erasures, obliterations, additions detected using ESDA & UV/IR</li>
+                    <li><strong>Charred/Indented Writing:</strong> Recovery of burnt documents & invisible impressions</li>
                 </ul>
             </div>
+            
+            <!-- 2. FP -->
             <div class="card">
-                <h3>Digital Forensics</h3>
-                <p>Recovery and authentication of electronic evidence for legal proceedings.</p>
+                <span class="service-num">2</span>
+                <h3>Fingerprint Examination</h3>
+                <p>Advanced forensic fingerprint analysis for criminal & civil cases:</p>
                 <ul>
-                    <li>Deleted Data Recovery & Analysis</li>
-                    <li>Metadata & Timestamp Verification</li>
-                    <li>Digital Document Authentication</li>
-                    <li>Email & Social Media Forensics</li>
+                    <li><strong>Latent Print Development:</strong> Powder, chemical & fuming methods on all surfaces</li>
+                    <li><strong>Comparison & Identification:</strong> AFIS, ridge detail analysis, minutiae matching</li>
+                    <li><strong>Digital Analysis:</strong> Enhanced prints from photos, documents, mobile screens</li>
+                    <li><strong>Expert Opinion:</strong> Court-ready reports u/s 45 Evidence Act with demonstrative charts</li>
                 </ul>
             </div>
+            
+            <!-- 3. CSI -->
+            <div class="card">
+                <span class="service-num">3</span>
+                <h3>Crime Scene Investigation</h3>
+                <p>Independent scientific reconstruction & evidence documentation:</p>
+                <ul>
+                    <li><strong>Scene Processing:</strong> Photography, videography, sketching, evidence collection</li>
+                    <li><strong>Bloodstain Pattern Analysis:</strong> Impact, cast-off, transfer patterns for sequence reconstruction</li>
+                    <li><strong>Trace Evidence:</strong> Hair, fiber, glass, paint, soil collection & analysis</li>
+                    <li><strong>Reconstruction:</strong> Scientific sequencing of events based on physical evidence</li>
+                </ul>
+            </div>
+            
+            <!-- 4. Insurance -->
+            <div class="card">
+                <span class="service-num">4</span>
+                <h3>Insurance Investigation</h3>
+                <p>Scientific scrutiny of questionable claims through forensic methods:</p>
+                <ul>
+                    <li><strong>Fire Claims:</strong> GC-MS for accelerant detection, electrical forensics</li>
+                    <li><strong>Motor Claims:</strong> Crush analysis, momentum vectors, staged accident verification</li>
+                    <li><strong>Document Fraud:</strong> ESDA & VSC for policy forgery & indented writing</li>
+                    <li><strong>Admissible Opinion:</strong> Reports u/s 45 Evidence Act with chain of custody</li>
+                </ul>
+            </div>
+            
+            <!-- 5. Arson -->
+            <div class="card">
+                <span class="service-num">5</span>
+                <h3>Arson Investigation</h3>
+                <p>Fire origin & cause determination for insurance & legal purposes:</p>
+                <ul>
+                    <li><strong>Origin Determination:</strong> Burn patterns, V-patterns, heat/ventilation analysis</li>
+                    <li><strong>Cause Analysis:</strong> Electrical, accidental vs incendiary fire differentiation</li>
+                    <li><strong>Fire Debris Analysis:</strong> Accelerant detection via GC-MS in NABL lab</li>
+                    <li><strong>Expert Report:</strong> NFPA 921 compliant reports for claims & litigation</li>
+                </ul>
+            </div>
+            
+            <!-- 6. Cyber -->
             <div class="card">
                 <span class="upcoming">UPCOMING</span>
+                <span class="service-num">6</span>
                 <h3>Cyber Forensics</h3>
-                <p>Investigation of cybercrimes and digital fraud with forensic integrity.</p>
+                <p>Digital evidence recovery & authentication launching soon:</p>
                 <ul>
-                    <li>Data Breach & Hacking Investigation</li>
-                    <li>Cyber Fraud & Financial Crime Analysis</li>
-                    <li>Network Forensics & Log Analysis</li>
-                    <li>E-Discovery & Litigation Support</li>
+                    <li><strong>Mobile Forensics:</strong> Deleted data, WhatsApp, call logs recovery</li>
+                    <li><strong>Computer Forensics:</strong> Hard disk imaging, deleted file recovery</li>
+                    <li><strong>Email & Social Media:</strong> Header analysis, authenticity verification</li>
+                    <li><strong>Hash Value Reports:</strong> Court admissible MD5/SHA verification</li>
                 </ul>
             </div>
+            
+            <!-- 7. AV -->
             <div class="card">
                 <span class="upcoming">UPCOMING</span>
-                <h3>Audio/Video Forensics</h3>
-                <p>Authentication and enhancement of AV evidence for court presentation.</p>
+                <span class="service-num">7</span>
+                <h3>Audio/Video Authentication</h3>
+                <p>Multimedia forensics & tampering detection launching soon:</p>
                 <ul>
-                    <li>Video & Audio Authentication</li>
-                    <li>Tampering & Deepfake Detection</li>
-                    <li>Voice Analysis & Speaker Identification</li>
-                    <li>Frame-by-Frame Video Analysis</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Expert Testimony & Reports</h3>
-                <p>Court-admissible documentation and expert witness services.</p>
-                <ul>
-                    <li>Detailed Forensic Reports for Court</li>
-                    <li>Expert Witness Testimony</li>
-                    <li>Case Consultation for Advocates</li>
-                    <li>Cross-Examination Support</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Forgery & Fraud Detection</h3>
-                <p>Advanced scientific methods to expose fraudulent activities.</p>
-                <ul>
-                    <li>Document & Currency Forgery Detection</li>
-                    <li>Cheque Fraud & Bank Document Analysis</li>
-                    <li>Property & Will Dispute Examination</li>
-                    <li>Insurance Fraud Investigation</li>
+                    <li><strong>Voice Identification:</strong> Spectrographic analysis, speaker comparison</li>
+                    <li><strong>Video Authentication:</strong> Frame-by-frame analysis for cuts/insertions</li>
+                    <li><strong>CCTV Enhancement:</strong> Face/license plate clarity, timestamp verification</li>
+                    <li><strong>Deepfake Detection:</strong> AI-generated media identification reports</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="section section-dark" id="about">
-        <h2>Why Choose AKSH Forensics</h2>
-        <p class="section-subtitle">Where forensic science meets legal justice with integrity</p>
+        <h2>Courtroom Cross Examination Support</h2>
+        <p class="section-subtitle">Technical assistance to advocates during forensic evidence disputes</p>
         <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem;">
-            At AKSH Forensic Consultancy, science serves justice. With forensic precision and legal expertise, 
-            we deliver court-admissible analysis from questioned documents to cyber & AV evidence.
+            <strong>Expert Testimony:</strong> Deposition as expert witness u/s 45 Evidence Act<br>
+            <strong>Report Analysis:</strong> Critical review of opponent's forensic reports to find flaws<br>
+            <strong>Cross-Ex Questions:</strong> Preparation of technical questions for opposing experts<br>
+            <strong>Courtroom Demos:</strong> Visual aids & explanations for judges to understand science
         </p>
     </section>
 
     <footer id="contact">
         <p>&copy; 2026 AKSH Forensic Consultancy | Where Science Serves Justice</p>
         <p style="margin-top: 0.5rem;">Email: contact@akshforensics.com | Ahmedabad, Gujarat</p>
-        <p style="margin-top: 0.5rem;"><a href="https://akshforensics.github.io/AKSH-FORENSICS/" style="color: #e94560;">akshforensics.github.io/AKSH-FORENSICS</a></p>
+        <p style="margin-top: 0.5rem;"><a href="https://akshforensics.github.io/AKSH-FORENSICS/" style="color: #00d9ff;">akshforensics.github.io/AKSH-FORENSICS</a></p>
     </footer>
 </body>
 </html>
