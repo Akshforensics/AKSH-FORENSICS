@@ -126,20 +126,6 @@
         .card li strong { color: var(--text-blue); }
         .upcoming { position: absolute; top: 1rem; right: 1rem; background: var(--upcoming); color: var(--white); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
         
-        /* EXPERT CONSULTATION - END SECTION */
-        .consultation-cta { background: var(--dark-bg); color: var(--white); padding: 6rem 5%; text-align: center; position: relative; overflow: hidden; }
-        .consultation-cta::before { content: ''; position: absolute; top: 50%; left: 50%; width: 600px; height: 600px; border: 1px solid rgba(255,255,255,0.05); border-radius: 50%; transform: translate(-50%, -50%); }
-        .consultation-content { max-width: 800px; margin: auto; position: relative; z-index: 1; }
-        .consultation-label { font-size: 0.85rem; color: var(--gold); font-weight: 700; letter-spacing: 3px; margin-bottom: 1.5rem; text-transform: uppercase; }
-        .consultation-title { font-size: 3.5rem; color: var(--white); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
-        .consultation-desc { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; line-height: 1.8; }
-        .consultation-btn { background: var(--gold); color: var(--dark-bg); padding: 1rem 2.5rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; transition: 0.3s; }
-        .consultation-btn:hover { background: #b45309; transform: translateY(-3px); }
-        .consultation-btn::after { content: '—'; font-weight: 400; }
-
-        footer { background: var(--text-blue); color: var(--white); text-align: center; padding: 3rem 5% 2rem; }
-        footer a { color: var(--white); text-decoration: underline; }
-        
         @media (max-width: 968px) { 
             .hero-container { grid-template-columns: 1fr; text-align: center; }
             .hero h1 { font-size: 2.5rem; } 
@@ -159,7 +145,6 @@
             .stats-bar { grid-template-columns: 1fr; gap: 2rem; }
             .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
             .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
-            .consultation-title { font-size: 2.2rem; }
             .section-title, .process-title { font-size: 2rem; }
         }
     </style>
@@ -443,3 +428,64 @@
                 <h3>Arson Investigation</h3>
                 <p>Fire origin & cause determination for insurance & legal purposes:</p>
                 <ul>
+                    <li><strong>Origin Determination:</strong> Burn patterns, V-patterns, heat/ventilation analysis</li>
+                    <li><strong>Cause Analysis:</strong> Electrical, accidental vs incendiary fire differentiation</li>
+                    <li><strong>Fire Debris Analysis:</strong> Accelerant detection via GC-MS in NABL lab</li>
+                    <li><strong>Expert Report:</strong> NFPA 921 compliant reports for claims & litigation</li>
+                </ul>
+            </div>
+                        
+            <div class="card">
+                <span class="upcoming">UPCOMING</span>
+                <h3>Cyber Forensics</h3>
+                <p>Digital evidence recovery & authentication launching soon:</p>
+                <ul>
+                    <li><strong>Mobile Forensics:</strong> Deleted data, WhatsApp, call logs recovery</li>
+                    <li><strong>Computer Forensics:</strong> Hard disk imaging, deleted file recovery</li>
+                    <li><strong>Email & Social Media:</strong> Header analysis, authenticity verification</li>
+                    <li><strong>Hash Value Reports:</strong> Court admissible MD5/SHA verification</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <span class="upcoming">UPCOMING</span>
+                <h3>Audio/Video Authentication</h3>
+                <p>Multimedia forensics & tampering detection launching soon:</p>
+                <ul>
+                    <li><strong>Voice Identification:</strong> Spectrographic analysis, speaker comparison</li>
+                    <li><strong>Video Authentication:</strong> Frame-by-frame analysis for cuts/insertions</li>
+                    <li><strong>CCTV Enhancement:</strong> Face/license plate clarity, timestamp verification</li>
+                    <li><strong>Deepfake Detection:</strong> AI-generated media identification reports</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray" id="about">
+        <h2>Courtroom Cross Examination Support</h2>
+        <p class="section-subtitle">Technical assistance to advocates during forensic evidence disputes</p>
+        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: var(--text-dark);">
+            <strong>Expert Testimony:</strong> Deposition as expert witness u/s 45 Evidence Act<br>
+            <strong>Report Analysis:</strong> Critical review of opponent's forensic reports to find flaws<br>
+            <strong>Cross-Ex Questions:</strong> Preparation of technical questions for opposing experts<br>
+            <strong>Courtroom Demos:</strong> Visual aids & explanations for judges to understand science
+        </p>
+    </section>
+
+    <!-- EXPERT CONSULTATION - END SECTION -->
+    <section class="consultation-cta" id="contact">
+        <div class="consultation-content">
+            <div class="consultation-label">EXPERT CONSULTATION</div>
+            <h2 class="consultation-title">Need a forensic opinion on your case?</h2>
+            <p class="consultation-desc">We work with advocates, insurers, and corporates nationwide. Independent analysis. Court-admissible reports. Confidential process.</p>
+            <a href="mailto:contact@akshforensics.com" class="consultation-btn">Request Expert Opinion</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AKSH FORENSICS | Evidence. Analysis. Truth</p>
+        <p style="margin-top: 0.5rem;">Email: contact@akshforensics.com | Ahmedabad, Gujarat</p>
+        <p style="margin-top: 0.5rem;"><a href="https://akshforensics.github.io/AKSH-FORENSICS/">akshforensics.github.io/AKSH-FORENSICS</a></p>
+    </footer>
+</body>
+</html>
