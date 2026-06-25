@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AKSH FORENSICS: Evidence. Analysis. Truth</title>
-    <meta name="description" content="AKSH Forensic Consultancy - QD, Fingerprint, Crime Scene, Insurance, Arson, Cyber & AV Forensics. Court-admissible scientific analysis.">
-    <meta name="keywords" content="questioned documents, fingerprint analysis, crime scene investigation, arson investigation, insurance fraud, cyber forensics, AV forensics, AKSH FORENSICS">
     <link rel="icon" href="https://akshforensics.github.io/AKSH-FORENSICS/logo.png" type="image/png">
     <style>
         :root {
             --primary: #0a1f44;
             --gold: #d97706;
-            --upcoming: #ea580c;
             --text-dark: #0f172a;
             --text-blue: #0a1f44;
             --border: #cbd5e1;
@@ -23,27 +20,23 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; color: var(--text-dark); background: #ffffff; }
         
-        /* HEADER - YOUR LOGO */
+        /* HEADER */
         header { background: var(--white); padding: 0 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
         nav { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: auto; height: 80px; }
         .logo-block { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
         .logo-block img { height: 55px; width: auto; }
-        
         .nav-right { display: flex; align-items: center; gap: 3rem; }
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: 0.3s; position: relative; padding-bottom: 4px; }
         .nav-links a:hover { color: var(--primary); }
         .nav-links a.active { color: var(--text-dark); font-weight: 600; }
         .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); }
-        
         .nav-btn { background: var(--dark-bg); color: var(--white); padding: 0.9rem 2rem; border: none; border-radius: 4px; font-size: 0.9rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; transition: 0.3s; }
         .nav-btn:hover { background: var(--primary); }
         .nav-btn::after { content: '—'; font-weight: 400; }
         
+        /* HERO + YOUR CIRCLE 3D HOLOGRAM */
         .hero { margin-top: 80px; background: var(--white); color: var(--text-dark); padding: 5rem 5% 3rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
-            radial-gradient(circle at 20% 50%, rgba(10, 31, 68, 0.04) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(10, 31, 68, 0.03) 0%, transparent 50%); }
         .hero-container { max-width: 1400px; margin: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
         .hero-text h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; color: var(--text-blue); line-height: 1.1; }
         .tagline { font-size: 1.8rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 400; font-style: italic; }
@@ -57,7 +50,7 @@
         .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--text-blue); margin-bottom: 0.5rem; line-height: 1; }
         .stat-label { font-size: 0.85rem; color: var(--text-dark); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 
-        /* HOLOGRAM - ONLY BLUE & WHITE */
+        /* YOUR CIRCLE 3D HOLOGRAM - SAME AS BEFORE */
         .hologram-wrapper { position: relative; width: 100%; max-width: 500px; margin: auto; perspective: 1200px; }
         .hologram-scene { position: relative; width: 100%; aspect-ratio: 1; transform-style: preserve-3d; }
         .evidence-core { position: absolute; top: 50%; left: 50%; width: 180px; height: 180px; transform: translate(-50%, -50%); transform-style: preserve-3d; animation: coreFloat 4s ease-in-out infinite; }
@@ -85,48 +78,7 @@
         .label-top::before { content: '● '; color: #16a34a; animation: blink 2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-        .section { padding: 5rem 5%; max-width: 1400px; margin: auto; background: var(--white); }
-        .section-gray { background: var(--bg-gray); }
-        .section-header { margin-bottom: 3rem; text-align: left; }
-        .section-number { font-size: 0.9rem; color: var(--gold); font-weight: 700; letter-spacing: 2px; margin-bottom: 0.5rem; text-align: left; }
-        .section-title { font-size: 2.5rem; color: var(--text-blue); font-weight: 700; margin-bottom: 1rem; text-align: left; line-height: 1.2; }
-        .section-desc { font-size: 1.1rem; color: var(--text-dark); max-width: 800px; text-align: left; }
-        
-        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 4rem; }
-        .feature-item { display: flex; gap: 1.5rem; align-items: flex-start; }
-        .feature-num { flex-shrink: 0; width: 45px; height: 45px; background: var(--primary); color: var(--white); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; }
-        .feature-content h3 { color: var(--text-blue); font-size: 1.3rem; margin-bottom: 0.5rem; text-align: left; }
-        .feature-content p { color: var(--text-dark); line-height: 1.7; text-align: left; }
-
-        .process-timeline { position: relative; margin-top: 4rem; padding: 2rem 0; }
-        .timeline-line { position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--border); transform: translateY(-50%); }
-        .process-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2rem; position: relative; z-index: 1; }
-        .process-step { text-align: center; }
-        .step-circle { width: 60px; height: 60px; background: var(--white); border: 2px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 700; font-size: 1.1rem; color: var(--primary); position: relative; z-index: 2; }
-        .step-title { color: var(--text-blue); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.8rem; }
-        .step-desc { color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; }
-
-        .industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
-        .industry-card { background: var(--white); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; text-align: left; }
-        .industry-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-3px); border-color: var(--primary); }
-        .industry-icon { width: 50px; height: 50px; background: var(--bg-gray); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
-        .industry-card h3 { color: var(--text-blue); font-size: 1.2rem; margin-bottom: 0.8rem; text-align: left; }
-        .industry-card p { color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; text-align: left; }
-
-        .section h2 { text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: var(--text-blue); }
-        .section-subtitle { text-align: center; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2.5rem; }
-        .card { background: var(--white); padding: 2.5rem; border-radius: 12px; border: 2px solid var(--border); border-left: 5px solid var(--primary); position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .card h3 { margin-bottom: 1rem; color: var(--text-blue); font-size: 1.5rem; text-align: left; }
-        .card p { margin-bottom: 1rem; color: var(--text-dark); text-align: left; }
-        .card ul { margin-top: 1rem; padding-left: 1.2rem; }
-        .card li { margin-bottom: 0.6rem; color: var(--text-dark); text-align: left; }
-        .card li::marker { color: var(--primary); }
-        .card li strong { color: var(--text-blue); }
-        .upcoming { position: absolute; top: 1rem; right: 1rem; background: var(--upcoming); color: var(--white); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-        
-        /* EXPERT CONSULTATION - PROFESSIONAL */
+        /* CONSULTATION CTA */
         .consultation-cta { background: var(--dark-bg); color: var(--white); padding: 7rem 5%; text-align: center; position: relative; overflow: hidden; }
         .consultation-cta::before { content: ''; position: absolute; top: 50%; left: 50%; width: 800px; height: 800px; border: 1px solid rgba(255,255,255,0.03); border-radius: 50%; transform: translate(-50%, -50%); }
         .consultation-content { max-width: 900px; margin: auto; position: relative; z-index: 1; }
@@ -137,7 +89,7 @@
         .consultation-btn:hover { background: #b45309; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3); }
         .consultation-btn::after { content: '→'; font-weight: 600; }
 
-        /* FOOTER - PROFESSIONAL */
+        /* FOOTER */
         footer { background: var(--text-blue); color: var(--white); padding: 4rem 5% 2.5rem; }
         .footer-content { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
         .footer-logo { display: flex; align-items: center; gap: 1.2rem; }
@@ -153,7 +105,7 @@
         
         @media (max-width: 968px) { 
             .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .hero h1 { font-size: 2.5rem; } 
+            .hero-text h1 { font-size: 2.5rem; } 
             .tagline { font-size: 1.4rem; }
             .nav-links { display: none; }
             .nav-btn { display: none; }
@@ -162,11 +114,6 @@
             .orbit-1 { width: 220px; height: 220px; }
             .orbit-2 { width: 270px; height: 270px; }
             .orbit-3 { width: 320px; height: 320px; }
-            .services { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
-            .process-steps { grid-template-columns: 1fr; gap: 3rem; }
-            .timeline-line { display: none; }
-            .industries-grid { grid-template-columns: 1fr; }
             .stats-bar { grid-template-columns: 1fr; gap: 2rem; }
             .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
             .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
@@ -174,7 +121,6 @@
             .footer-content { flex-direction: column; text-align: center; }
             .footer-brand, .footer-info { text-align: center; }
             .footer-logo { flex-direction: column; }
-            .section-title, .process-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -187,8 +133,6 @@
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#why">Why Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <a href="#contact" class="nav-btn">Request Expert Opinion</a>
@@ -246,261 +190,6 @@
         </div>
     </section>
 
-    <section class="section" id="why">
-        <div class="section-header">
-            <div class="section-number">01 / WHY AKSH FORENSICS</div>
-            <h2 class="section-title">Evidence handled with scientific rigour and legal precision</h2>
-            <p class="section-desc">Every engagement follows documented forensic protocol — from intake to expert testimony.</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-num">01</div>
-                <div class="feature-content">
-                    <h3>Scientific Methodology</h3>
-                    <p>Documented, peer-reviewable protocols applied to every examination — repeatable and defensible.</p>
-                </div>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-num">02</div>
-                <div class="feature-content">
-                    <h3>Independent Opinions</h3>
-                    <p>Unbiased expert findings, free of influence — the science leads, not the brief.</p>
-                </div>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-num">03</div>
-                <div class="feature-content">
-                    <h3>Court-Admissible Reports</h3>
-                    <p>Reports structured to evidentiary standards and ready for submission and cross-examination.</p>
-                </div>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-num">04</div>
-                <div class="feature-content">
-                    <h3>Chain of Custody</h3>
-                    <p>Sealed, logged, and traceable handling of every specimen from intake to testimony.</p>
-                </div>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-num">05</div>
-                <div class="feature-content">
-                    <h3>Pan India Services</h3>
-                    <p>Field response and laboratory analysis coordinated across jurisdictions nationwide.</p>
-                </div>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-num">06</div>
-                <div class="feature-content">
-                    <h3>Confidential Investigations</h3>
-                    <p>Strict confidentiality protocols protecting clients, parties, and case integrity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-gray" id="expertise">
-        <div class="section-header">
-            <div class="section-number">02 / OUR EXPERTISE</div>
-            <h2 class="section-title">Forensic disciplines, end to end</h2>
-            <p class="section-desc">Specialist examination across the evidence types that decide cases — each with documented methodology and court-ready reporting.</p>
-        </div>
-    </section>
-
-    <section class="section" id="process">
-        <div class="section-header">
-            <div class="section-number">03 / OUR INVESTIGATION PROCESS</div>
-            <h2 class="section-title">A documented chain — from consultation to courtroom</h2>
-        </div>
-        
-        <div class="process-timeline">
-            <div class="timeline-line"></div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-circle">01</div>
-                    <h3 class="step-title">Consultation</h3>
-                    <p class="step-desc">Case scope, objectives and feasibility reviewed with the client.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">02</div>
-                    <h3 class="step-title">Evidence Collection</h3>
-                    <p class="step-desc">Specimens recovered and sealed under documented chain of custody.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">03</div>
-                    <h3 class="step-title">Scientific Examination</h3>
-                    <p class="step-desc">Discipline-specific protocols applied by qualified examiners.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">04</div>
-                    <h3 class="step-title">Laboratory Analysis</h3>
-                    <p class="step-desc">Instrumental and comparative analysis under controlled conditions.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">05</div>
-                    <h3 class="step-title">Expert Opinion Report</h3>
-                    <p class="step-desc">Findings compiled to evidentiary, court-admissible standards.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">06</div>
-                    <h3 class="step-title">Courtroom Support</h3>
-                    <p class="step-desc">Expert testimony and exhibits presented and defended.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-gray" id="industries">
-        <div class="section-header">
-            <div class="section-number">04 / INDUSTRIES WE SERVE</div>
-            <h2 class="section-title">Trusted across the legal & commercial spectrum</h2>
-        </div>
-        
-        <div class="industries-grid">
-            <div class="industry-card">
-                <div class="industry-icon">⚖️</div>
-                <h3>Advocates & Law Firms</h3>
-                <p>Forensic support for litigation, expert opinions and case strategy.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">🛡️</div>
-                <h3>Insurance Companies</h3>
-                <p>Independent claim verification and fraud investigation.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">💼</div>
-                <h3>Corporates</h3>
-                <p>Internal investigations, document scrutiny and risk inquiry.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">🏛️</div>
-                <h3>Financial Institutions</h3>
-                <p>Signature, document and transaction authenticity examination.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">🔍</div>
-                <h3>Investigation Agencies</h3>
-                <p>Specialist forensic analysis augmenting field investigations.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">👤</div>
-                <h3>Private Clients</h3>
-                <p>Confidential personal matters handled with discretion.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="services">
-        <h2>Our Forensic Services</h2>
-        <p class="section-subtitle">Scientific examination across criminal, civil & corporate cases with court-admissible reporting</p>
-        <div class="services">
-            <div class="card">
-                <h3>Questioned Document Examination</h3>
-                <p>Scientific analysis of disputed documents using forensic instrumentation:</p>
-                <ul>
-                    <li><strong>Handwriting & Signature:</strong> Authorship ID, forgery & disguised writing detection</li>
-                    <li><strong>Ink & Paper Analysis:</strong> Age determination, TLC, spectroscopy, paper dating via VSC</li>
-                    <li><strong>Alterations:</strong> Erasures, obliterations, additions detected using ESDA & UV/IR</li>
-                    <li><strong>Charred/Indented Writing:</strong> Recovery of burnt documents & invisible impressions</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Fingerprint Examination</h3>
-                <p>Advanced forensic fingerprint analysis for criminal & civil cases:</
-                                        <li><strong>Latent Print Development:</strong> Powder, chemical & fuming methods on all surfaces</li>
-                    <li><strong>Comparison & Identification:</strong> AFIS, ridge detail analysis, minutiae matching</li>
-                    <li><strong>Digital Analysis:</strong> Enhanced prints from photos, documents, mobile screens</li>
-                    <li><strong>Expert Opinion:</strong> Court-ready reports u/s 45 Evidence Act with demonstrative charts</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Crime Scene Investigation</h3>
-                <p>Independent scientific reconstruction & evidence documentation:</p>
-                <ul>
-                    <li><strong>Scene Processing:</strong> Photography, videography, sketching, evidence collection</li>
-                    <li><strong>Bloodstain Pattern Analysis:</strong> Impact, cast-off, transfer patterns for sequence reconstruction</li>
-                    <li><strong>Trace Evidence:</strong> Hair, fiber, glass, paint, soil collection & analysis</li>
-                    <li><strong>Reconstruction:</strong> Scientific sequencing of events based on physical evidence</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Insurance Investigation</h3>
-                <p>Scientific scrutiny of questionable claims through forensic methods:</p>
-                <ul>
-                    <li><strong>Fire Claims:</strong> GC-MS for accelerant detection, electrical forensics</li>
-                    <li><strong>Motor Claims:</strong> Crush analysis, momentum vectors, staged accident verification</li>
-                    <li><strong>Document Fraud:</strong> ESDA & VSC for policy forgery & indented writing</li>
-                    <li><strong>Admissible Opinion:</strong> Reports u/s 45 Evidence Act with chain of custody</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>Arson Investigation</h3>
-                <p>Fire origin & cause determination for insurance & legal purposes:</p>
-                <ul>
-                    <li><strong>Origin Determination:</strong> Burn patterns, V-patterns, heat/ventilation analysis</li>
-                    <li><strong>Cause Analysis:</strong> Electrical, accidental vs incendiary fire differentiation</li>
-                    <li><strong>Fire Debris Analysis:</strong> Accelerant detection via GC-MS in NABL lab</li>
-                    <li><strong>Expert Report:</strong> NFPA 921 compliant reports for claims & litigation</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <span class="upcoming">UPCOMING</span>
-                <h3>Cyber Forensics</h3>
-                <p>Digital evidence recovery & authentication launching soon:</p>
-                <ul>
-                    <li><strong>Mobile Forensics:</strong> Deleted data, WhatsApp, call logs recovery</li>
-                    <li><strong>Computer Forensics:</strong> Hard disk imaging, deleted file recovery</li>
-                    <li><strong>Email & Social Media:</strong> Header analysis, authenticity verification</li>
-                    <li><strong>Hash Value Reports:</strong> Court admissible MD5/SHA verification</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <span class="upcoming">UPCOMING</span>
-                <h3>Audio/Video Authentication</h3>
-                <p>Multimedia forensics & tampering detection launching soon:</p>
-                <ul>
-                    <li><strong>Voice Identification:</strong> Spectrographic analysis, speaker comparison</li>
-                    <li><strong>Video Authentication:</strong> Frame-by-frame analysis for cuts/insertions</li>
-                    <li><strong>CCTV Enhancement:</strong> Face/license plate clarity, timestamp verification</li>
-                    <li><strong>Deepfake Detection:</strong> AI-generated media identification reports</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-gray" id="about">
-        <h2>Courtroom Cross Examination Support</h2>
-        <p class="section-subtitle">Technical assistance to advocates during forensic evidence disputes</p>
-        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: var(--text-dark);">
-            <strong>Expert Testimony:</strong> Deposition as expert witness u/s 45 Evidence Act<br>
-            <strong>Report Analysis:</strong> Critical review of opponent's forensic reports to find flaws<br>
-            <strong>Cross-Ex Questions:</strong> Preparation of technical questions for opposing experts<br>
-            <strong>Courtroom Demos:</strong> Visual aids & explanations for judges to understand science
-        </p>
-    </section>
-
-    <!-- EXPERT CONSULTATION - PROFESSIONAL -->
     <section class="consultation-cta" id="contact">
         <div class="consultation-content">
             <div class="consultation-label">EXPERT CONSULTATION</div>
