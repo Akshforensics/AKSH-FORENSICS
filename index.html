@@ -6,8 +6,6 @@
 
 <title>AKSH FORENSICS | Scientific Precision</title>
 
-<meta name="description" content="AKSH FORENSICS provides professional forensic services including Fingerprint, Document Examination, Crime Scene Investigation, Cyber Forensics and Expert Legal Support.">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
@@ -62,6 +60,7 @@ letter-spacing:2px;
 color:#d6b24a;
 }
 
+/* ================= NAV ================= */
 nav a{
 color:white;
 text-decoration:none;
@@ -156,7 +155,7 @@ margin-bottom:10px;
 
 .title p{
 color:#bfbfbf;
-max-width:850px;
+max-width:900px;
 margin:auto;
 line-height:1.8;
 }
@@ -169,7 +168,7 @@ gap:25px;
 margin-top:40px;
 }
 
-/* ================= CARDS ================= */
+/* ================= CARD ================= */
 .card{
 background:#0d1f38;
 padding:25px;
@@ -183,6 +182,20 @@ text-align:left;
 transform:translateY(-10px);
 border-color:#d6b24a;
 box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+/* ICON ANIMATION */
+.card i{
+font-size:22px;
+color:#d6b24a;
+margin-bottom:10px;
+animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
 }
 
 .card h3{
@@ -236,6 +249,7 @@ cursor:pointer;
 background:white;
 }
 
+/* ================= WHATSAPP ================= */
 .whatsapp{
 display:inline-block;
 margin-top:20px;
@@ -249,10 +263,49 @@ font-weight:600;
 
 /* ================= FOOTER ================= */
 footer{
-text-align:center;
-padding:20px;
 background:#020617;
-color:#999;
+padding:50px 9% 20px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-bottom:20px;
+}
+
+.footer-brand h2{
+color:#d6b24a;
+}
+
+.footer-links a{
+display:block;
+color:#ccc;
+text-decoration:none;
+margin:6px 0;
+}
+
+.footer-links a:hover{
+color:#d6b24a;
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:15px;
+color:#888;
+font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:800px){
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+nav{
+display:none;
+}
 }
 
 </style>
@@ -270,7 +323,7 @@ color:#999;
 
 <nav>
 <a href="#home">Home</a>
-<a href="#about">About</a>
+<a href="#why">Why Us</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -284,7 +337,8 @@ color:#999;
 <h1>Scientific Precision.<br><span>Court-Ready Evidence.</span></h1>
 
 <p>
-Professional forensic investigation, document examination, handwriting analysis, fingerprint verification, crime scene investigation and cyber forensic support.
+Professional forensic investigation, document examination, handwriting analysis,
+fingerprint verification, crime scene investigation and cyber forensic support.
 </p>
 
 <div class="hero-buttons">
@@ -305,83 +359,47 @@ Professional forensic investigation, document examination, handwriting analysis,
 
 <div class="grid">
 
-<div class="card"><h3>Scientific Methodology</h3><p>Peer-reviewable forensic protocols ensuring accuracy and repeatability.</p></div>
+<div class="card"><i class="fas fa-microscope"></i><h3>Scientific Methodology</h3><p>Peer-reviewable forensic protocols ensuring accuracy.</p></div>
 
-<div class="card"><h3>Independent Opinions</h3><p>Unbiased scientific findings free from external influence.</p></div>
+<div class="card"><i class="fas fa-scale-balanced"></i><h3>Independent Opinions</h3><p>Unbiased scientific findings free from influence.</p></div>
 
-<div class="card"><h3>Court-Admissible Reports</h3><p>Reports structured for legal proceedings and cross-examination.</p></div>
+<div class="card"><i class="fas fa-file-contract"></i><h3>Court-Admissible Reports</h3><p>Structured legal forensic reporting.</p></div>
 
-<div class="card"><h3>Chain of Custody</h3><p>Complete evidence tracking from intake to testimony.</p></div>
+<div class="card"><i class="fas fa-shield-halved"></i><h3>Chain of Custody</h3><p>Full evidence tracking system.</p></div>
 
-<div class="card"><h3>Pan India Services</h3><p>Forensic support across India for legal and investigative needs.</p></div>
+<div class="card"><i class="fas fa-globe"></i><h3>Pan India Services</h3><p>Nationwide forensic support.</p></div>
 
-<div class="card"><h3>Confidential Investigations</h3><p>Strict confidentiality ensuring client protection.</p></div>
+<div class="card"><i class="fas fa-user-lock"></i><h3>Confidential Investigations</h3><p>Strict confidentiality maintained.</p></div>
 
 </div>
+
 </section>
 
 <!-- SERVICES -->
 <section id="services">
 
 <div class="title">
-<h2>AKSH FORENSICS – Core Services</h2>
-<p>Specialized forensic examination across all major scientific disciplines.</p>
+<h2>AKSH FORENSICS – Services</h2>
+<p>Forensic disciplines, end to end. Specialist examination across evidence types that decide cases.</p>
 </div>
 
 <div class="grid">
 
-<div class="card">
-<h3>Fingerprint Examination</h3>
-<p>Latent prints, AFIS comparison, ridge analysis, and identification reports.</p>
-</div>
+<div class="card"><h3>Fingerprint Examination</h3><p>Latent prints, AFIS matching, ridge analysis.</p></div>
 
-<div class="card">
-<h3>Questioned Documents</h3>
-<p>Handwriting analysis, forgery detection, ink & alteration examination.</p>
-</div>
+<div class="card"><h3>Questioned Documents</h3><p>Handwriting, signature, forgery detection.</p></div>
 
-<div class="card">
-<h3>Crime Scene Investigation</h3>
-<p>Scene analysis, reconstruction, evidence documentation and linkage.</p>
-</div>
+<div class="card"><h3>Crime Scene Investigation</h3><p>Scene reconstruction and evidence mapping.</p></div>
 
-<div class="card">
-<h3>Arson Investigation</h3>
-<p>Fire origin, accelerant detection, insurance fraud investigation.</p>
-</div>
+<div class="card"><h3>Arson Investigation</h3><p>Fire origin and cause analysis.</p></div>
 
-<div class="card">
-<h3>Insurance Investigation</h3>
-<p>Fraud detection, accident reconstruction and claim verification.</p>
-</div>
+<div class="card"><h3>Insurance Investigation</h3><p>Fraud detection and claim verification.</p></div>
 
-<div class="card">
-<h3>Courtroom Expert Support</h3>
-<p>Expert testimony, cross-examination support and report review.</p>
-</div>
+<div class="card"><h3>Courtroom Expert Support</h3><p>Expert testimony and report review.</p></div>
 
-</div>
-</section>
+<div class="card"><h3>Cyber Forensics (Upcoming)</h3><p>Digital evidence recovery and analysis.</p></div>
 
-<!-- UPCOMING -->
-<section>
-
-<div class="title">
-<h2>Upcoming Services</h2>
-<p>Advanced forensic capabilities under development</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>Cyber Forensics</h3>
-<p>Data recovery, mobile forensics, digital evidence and social media analysis.</p>
-</div>
-
-<div class="card">
-<h3>Audio / Video Authentication</h3>
-<p>Voice analysis, CCTV enhancement, deepfake detection and video verification.</p>
-</div>
+<div class="card"><h3>Audio/Video Authentication (Upcoming)</h3><p>Voice, CCTV and deepfake detection.</p></div>
 
 </div>
 
@@ -423,7 +441,35 @@ Chat on WhatsApp
 
 <!-- FOOTER -->
 <footer>
+
+<div class="footer-container">
+
+<div>
+<h2 style="color:#d6b24a;">AKSH FORENSICS</h2>
+<p style="color:#aaa;">Scientific forensic services with legal precision and integrity.</p>
+</div>
+
+<div class="footer-links">
+<h3 style="color:#d6b24a;">Quick Links</h3>
+<a href="#home">Home</a>
+<a href="#why">Why Us</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div>
+<h3 style="color:#d6b24a;">Contact</h3>
+<p>📞 7383532803</p>
+<p>✉ mansi2803@gmail.com</p>
+<p>📍 Ahmedabad</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
 © 2026 AKSH FORENSICS | All Rights Reserved
+</div>
+
 </footer>
 
 </body>
