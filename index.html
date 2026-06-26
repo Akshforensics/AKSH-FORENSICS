@@ -168,14 +168,13 @@ gap:25px;
 margin-top:40px;
 }
 
-/* ================= CARD ================= */
+/* ================= WHY CARDS ================= */
 .card{
-background:#0d1f38;
+background:linear-gradient(145deg,#0b1b33,#0e2747);
 padding:25px;
 border-radius:15px;
 border:1px solid rgba(214,178,74,.15);
 transition:.3s;
-text-align:left;
 }
 
 .card:hover{
@@ -184,7 +183,6 @@ border-color:#d6b24a;
 box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
 
-/* ICON ANIMATION */
 .card i{
 font-size:22px;
 color:#d6b24a;
@@ -205,9 +203,72 @@ margin-bottom:10px;
 }
 
 .card p{
-color:#d0d0d0;
+color:#cfd8e3;
 font-size:14px;
 line-height:1.6;
+}
+
+/* ================= BIG SERVICE BOX ================= */
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.service-card{
+background:linear-gradient(145deg,#0b1b33,#0e2747);
+border:1px solid rgba(214,178,74,.25);
+padding:40px 30px;
+border-radius:22px;
+min-height:220px;
+position:relative;
+overflow:hidden;
+transition:0.4s;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.service-card::before{
+content:"";
+position:absolute;
+top:-60%;
+left:-60%;
+width:220%;
+height:220%;
+background:radial-gradient(circle, rgba(214,178,74,0.15), transparent 60%);
+opacity:0;
+transition:0.5s;
+}
+
+.service-card:hover::before{
+opacity:1;
+}
+
+.service-card:hover{
+transform:translateY(-14px) scale(1.03);
+border-color:#d6b24a;
+box-shadow:0 30px 70px rgba(0,0,0,0.6);
+}
+
+.service-card i{
+font-size:32px;
+color:#d6b24a;
+margin-bottom:15px;
+animation:floatIcon 3s ease-in-out infinite;
+}
+
+.service-card h3{
+font-size:18px;
+color:#d6b24a;
+margin-bottom:12px;
+}
+
+.service-card p{
+color:#cfd8e3;
+font-size:14px;
+line-height:1.7;
 }
 
 /* ================= CONTACT ================= */
@@ -249,18 +310,6 @@ cursor:pointer;
 background:white;
 }
 
-/* ================= WHATSAPP ================= */
-.whatsapp{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:#25D366;
-color:white;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-
 /* ================= FOOTER ================= */
 footer{
 background:#020617;
@@ -274,15 +323,12 @@ gap:30px;
 margin-bottom:20px;
 }
 
-.footer-brand h2{
-color:#d6b24a;
-}
-
 .footer-links a{
 display:block;
 color:#ccc;
 text-decoration:none;
 margin:6px 0;
+transition:0.3s;
 }
 
 .footer-links a:hover{
@@ -337,8 +383,7 @@ display:none;
 <h1>Scientific Precision.<br><span>Court-Ready Evidence.</span></h1>
 
 <p>
-Professional forensic investigation, document examination, handwriting analysis,
-fingerprint verification, crime scene investigation and cyber forensic support.
+Professional forensic investigation, document examination, fingerprint analysis, crime scene investigation and cyber forensic support.
 </p>
 
 <div class="hero-buttons">
@@ -359,13 +404,13 @@ fingerprint verification, crime scene investigation and cyber forensic support.
 
 <div class="grid">
 
-<div class="card"><i class="fas fa-microscope"></i><h3>Scientific Methodology</h3><p>Peer-reviewable forensic protocols ensuring accuracy.</p></div>
+<div class="card"><i class="fas fa-microscope"></i><h3>Scientific Methodology</h3><p>Peer-reviewed forensic protocols ensuring accuracy.</p></div>
 
 <div class="card"><i class="fas fa-scale-balanced"></i><h3>Independent Opinions</h3><p>Unbiased scientific findings free from influence.</p></div>
 
 <div class="card"><i class="fas fa-file-contract"></i><h3>Court-Admissible Reports</h3><p>Structured legal forensic reporting.</p></div>
 
-<div class="card"><i class="fas fa-shield-halved"></i><h3>Chain of Custody</h3><p>Full evidence tracking system.</p></div>
+<div class="card"><i class="fas fa-shield-halved"></i><h3>Chain of Custody</h3><p>Complete evidence tracking system.</p></div>
 
 <div class="card"><i class="fas fa-globe"></i><h3>Pan India Services</h3><p>Nationwide forensic support.</p></div>
 
@@ -383,23 +428,23 @@ fingerprint verification, crime scene investigation and cyber forensic support.
 <p>Forensic disciplines, end to end. Specialist examination across evidence types that decide cases.</p>
 </div>
 
-<div class="grid">
+<div class="service-grid">
 
-<div class="card"><h3>Fingerprint Examination</h3><p>Latent prints, AFIS matching, ridge analysis.</p></div>
+<div class="service-card"><i class="fas fa-fingerprint"></i><h3>Fingerprint Examination</h3><p>Latent prints, AFIS matching, ridge analysis.</p></div>
 
-<div class="card"><h3>Questioned Documents</h3><p>Handwriting, signature, forgery detection.</p></div>
+<div class="service-card"><i class="fas fa-file-signature"></i><h3>Questioned Documents</h3><p>Handwriting, signature, forgery detection.</p></div>
 
-<div class="card"><h3>Crime Scene Investigation</h3><p>Scene reconstruction and evidence mapping.</p></div>
+<div class="service-card"><i class="fas fa-magnifying-glass"></i><h3>Crime Scene Investigation</h3><p>Scene reconstruction and evidence mapping.</p></div>
 
-<div class="card"><h3>Arson Investigation</h3><p>Fire origin and cause analysis.</p></div>
+<div class="service-card"><i class="fas fa-fire"></i><h3>Arson Investigation</h3><p>Fire origin and cause analysis.</p></div>
 
-<div class="card"><h3>Insurance Investigation</h3><p>Fraud detection and claim verification.</p></div>
+<div class="service-card"><i class="fas fa-building-shield"></i><h3>Insurance Investigation</h3><p>Fraud detection and claim verification.</p></div>
 
-<div class="card"><h3>Courtroom Expert Support</h3><p>Expert testimony and report review.</p></div>
+<div class="service-card"><i class="fas fa-scale-balanced"></i><h3>Courtroom Expert Support</h3><p>Expert testimony and report review.</p></div>
 
-<div class="card"><h3>Cyber Forensics (Upcoming)</h3><p>Digital evidence recovery and analysis.</p></div>
+<div class="service-card"><i class="fas fa-laptop-code"></i><h3>Cyber Forensics (Upcoming)</h3><p>Digital evidence recovery and analysis.</p></div>
 
-<div class="card"><h3>Audio/Video Authentication (Upcoming)</h3><p>Voice, CCTV and deepfake detection.</p></div>
+<div class="service-card"><i class="fas fa-video"></i><h3>Audio/Video Authentication (Upcoming)</h3><p>Voice, CCTV and deepfake detection.</p></div>
 
 </div>
 
@@ -413,29 +458,17 @@ fingerprint verification, crime scene investigation and cyber forensic support.
 <p>Submit your case for confidential forensic consultation</p>
 </div>
 
-<form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+<form class="contact-form">
 
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
 
-<select name="service">
-<option>Select Service</option>
-<option>Fingerprint Examination</option>
-<option>Document Examination</option>
-<option>Crime Scene Investigation</option>
-<option>Cyber Forensics</option>
-</select>
-
-<textarea name="message" placeholder="Describe your case..." required></textarea>
+<textarea placeholder="Describe your case..." required></textarea>
 
 <button type="submit">Submit Case</button>
 
 </form>
-
-<a class="whatsapp" href="https://wa.me/917383532803" target="_blank">
-Chat on WhatsApp
-</a>
 
 </section>
 
