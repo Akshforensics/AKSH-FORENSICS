@@ -21,6 +21,27 @@
     /* Hero Section */
     .hero {background:#f5f7fa; max-width:1200px; margin:0 auto; padding:80px 24px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; min-height:600px;}
     .hero-left {display:flex; flex-direction:column; gap:20px;}
+    .company-name {
+      font-size:48px; 
+      font-weight:900; 
+      color:#0a1f44; 
+      font-family:'Times New Roman', serif; 
+      margin-bottom:8px; 
+      letter-spacing:1.5px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      text-shadow:0 2px 4px rgba(10,31,68,0.15);
+      background:linear-gradient(135deg, #0a1f44 0%, #1e3a8a 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .company-name img {
+      height:55px; 
+      width:auto;
+      filter:drop-shadow(0 2px 4px rgba(10,31,68,0.2));
+    }
     .hero-motivation {font-size:32px; font-weight:900; line-height:1.2; color:#0a1f44; font-family:'Times New Roman', serif; margin-bottom:12px;}
     .hero .italic {font-style:italic; font-size:26px; color:#4b5563; margin-bottom:16px; font-family:'Times New Roman', serif;}
     .hero p {color:#6b7280; font-size:17px; line-height:1.6; font-family:'Times New Roman', serif;}
@@ -77,6 +98,8 @@
     }
     @media (max-width:768px) {
       .hero {grid-template-columns:1fr; text-align:center; padding:60px 24px; min-height:auto;}
+      .company-name {font-size:36px; text-align:center; justify-content:center;}
+      .company-name img {height:45px;}
       .hero-motivation {font-size:26px;}
       .hero .italic {font-size:20px;}
       .hero-btn {margin:16px auto 0;}
@@ -113,6 +136,10 @@
   <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-left">
+      <div class="company-name">
+        <img src="LOGO_TRANSPARENT.png" alt="AKSH Logo">
+        AKSH FORENSICS
+      </div>
       <div class="hero-motivation">Every Evidence Tells a Story. We Decode It.</div>
       <div class="italic">Uncovering Truth Through Science</div>
       <p>Independent forensic experts delivering court-admissible scientific analysis, evidence examination, and expert witness support across India.</p>
