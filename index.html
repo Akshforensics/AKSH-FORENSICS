@@ -3,90 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AKSH FORENSICS - Evidence. Analysis. Truth.</title>
+  <title>AKSH FORENSICS - Uncovering Truth Through Science</title>
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Times New Roman', Times, serif; background:#f5f7fa; color:#0a1f44;}
     
-    /* Header - Navy Blue + White */
+    /* Header */
     .header {background:#ffffff; border-bottom:1px solid #d1d5db; position:sticky; top:0; z-index:100;}
     .header-inner {max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
-    .logo {display:flex; align-items:center; gap:12px;}
-    .logo img {height:40px; width:auto;} 
-    .brand {font-weight:800; font-size:18px; color:#0a1f44; font-family:'Times New Roman', serif;}
-    .tagline {font-size:11px; color:#6b7280; font-family:'Times New Roman', serif;}
+    .logo img {height:45px; width:auto;} 
     .nav {display:flex; gap:32px; align-items:center;}
     .nav a {text-decoration:none; color:#0a1f44; font-weight:600; font-size:15px; transition:0.2s; font-family:'Times New Roman', serif;}
     .nav a:hover {color:#6b7280;}
     .btn {background:#0a1f44; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; font-size:14px; transition:0.2s; font-family:'Times New Roman', serif;}
     .btn:hover {background:#1e3a8a;}
     
-    /* STEP 1: Hero Section - Left Logo+Name, Right 3D Effect */
+    /* Hero Section */
     .hero {background:#f5f7fa; max-width:1200px; margin:0 auto; padding:80px 24px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; min-height:600px;}
     .hero-left {display:flex; flex-direction:column; gap:20px;}
-    .hero-logo-name {display:flex; align-items:center; gap:16px; margin-bottom:8px;}
-    .hero-logo-name img {height:70px; width:auto;}
-    .hero-logo-name h1 {font-size:56px; font-weight:900; line-height:1; color:#0a1f44; font-family:'Times New Roman', serif;}
+    .hero-motivation {font-size:32px; font-weight:900; line-height:1.2; color:#0a1f44; font-family:'Times New Roman', serif; margin-bottom:12px;}
     .hero .italic {font-style:italic; font-size:26px; color:#4b5563; margin-bottom:16px; font-family:'Times New Roman', serif;}
     .hero p {color:#6b7280; font-size:17px; line-height:1.6; font-family:'Times New Roman', serif;}
     .hero-btn {background:#0a1f44; color:#fff; padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; display:inline-block; font-size:16px; transition:0.2s; width:fit-content; margin-top:16px; font-family:'Times New Roman', serif;}
     .hero-btn:hover {background:#1e3a8a; transform:translateY(-2px);}
     
-    /* 3D Hologram Effect - Right Side of Tagline */
+    /* 3D Hologram */
     .hologram {position:relative; width:480px; height:480px; margin:0 auto; transform-style:preserve-3d; perspective:1200px;}
     .orbit-ring {position:absolute; border:1px solid rgba(10,31,68,0.3); border-radius:50%; top:50%; left:50%; transform:translate(-50%, -50%) rotateX(60deg); transform-style:preserve-3d;}
     .ring1 {width:420px; height:420px; animation:orbitRotate 18s linear infinite;}
     .ring2 {width:340px; height:340px; animation:orbitRotate 25s linear infinite reverse;}
     .ring3 {width:260px; height:260px; animation:orbitRotate 30s linear infinite;}
     @keyframes orbitRotate {from{transform:translate(-50%, -50%) rotateX(60deg) rotateZ(0deg);} to{transform:translate(-50%, -50%) rotateX(60deg) rotateZ(360deg);}}
-    
     .orbit-icon {position:absolute; width:32px; height:32px; background:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow:0 4px 12px rgba(10,31,68,0.2); top:50%; left:50%;}
     .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(210px) rotateZ(0deg);}
     .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(170px) rotateZ(-90deg);}
     .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(130px) rotateZ(-180deg);}
     .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(170px) rotateZ(-270deg);}
-    
     .center-core {position:absolute; width:120px; height:120px; top:50%; left:50%; transform:translate(-50%, -50%); animation:coreFloat 4s ease-in-out infinite; z-index:10;}
     @keyframes coreFloat {0%, 100% {transform:translate(-50%, -50%) translateY(0px) scale(1);} 50% {transform:translate(-50%, -50%) translateY(-15px) scale(1.05);}}
     .core-box {width:100%; height:100%; background:#ffffff; border-radius:20px; box-shadow:0 0 40px rgba(30,58,138,0.6), 0 20px 40px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; position:relative;}
-    
     .bracket {position:absolute; width:18px; height:18px; border:2px solid #0a1f44;}
     .bracket-tl {top:-4px; left:-4px; border-right:none; border-bottom:none;}
     .bracket-tr {top:-4px; right:-4px; border-left:none; border-bottom:none;}
     .bracket-bl {bottom:-4px; left:-4px; border-right:none; border-top:none;}
     .bracket-br {bottom:-4px; right:-4px; border-left:none; border-top:none;}
-    
     .scan-line {position:absolute; width:100%; height:2px; background:linear-gradient(90deg, transparent, #3b82f6, transparent); top:0; animation:scanSweep 3s linear infinite; box-shadow:0 0 20px #3b82f6;}
     @keyframes scanSweep {0%{top:0; opacity:0;} 10%{opacity:1;} 90%{opacity:1;} 100%{top:100%; opacity:0;}}
-    
     .status-label {position:absolute; background:#0a1f44; padding:8px 16px; border-radius:20px; font-size:11px; font-weight:700; color:#ffffff; display:flex; align-items:center; gap:6px; box-shadow:0 4px 12px rgba(0,0,0,0.2); white-space:nowrap; font-family:'Times New Roman', serif;}
     .status-dot {width:8px; height:8px; background:#10b981; border-radius:50%; animation:blinkDot 2s ease-in-out infinite; box-shadow:0 0 10px #10b981;}
     @keyframes blinkDot {0%, 100%{opacity:1;} 50%{opacity:0.3;}}
     .label-top {top:20px; left:50%; transform:translateX(-50%);}
     .label-bottom {bottom:20px; left:50%; transform:translateX(-50%);}
     
-    /* STEP 2: Stats Bar - Navy Blue + Gray */
+    /* Stats Bar */
     .stats {background:#ffffff; padding:40px 24px; border-bottom:1px solid #d1d5db;}
     .stats-inner {max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px; text-align:center;}
     .stat-box h3 {font-size:48px; font-weight:900; color:#0a1f44; margin-bottom:8px; font-family:'Times New Roman', serif;}
     .stat-box p {color:#6b7280; font-size:16px; font-weight:600; font-family:'Times New Roman', serif;}
     
+    /* STEP 3: Services - Updated to Match Image */
+    .services {background:#f5f7fa; padding:80px 24px;}
+    .services-inner {max-width:1200px; margin:0 auto;}
+    .services-title {text-align:center; font-size:40px; font-weight:900; color:#0a1f44; margin-bottom:60px; font-family:'Times New Roman', serif;}
+    .services-grid {display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+    .service-box {background:#ffffff; border-left:4px solid #d97706; border-radius:8px; padding:28px 24px; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    .service-box:hover {transform:translateY(-4px); box-shadow:0 12px 24px rgba(10,31,68,0.12);}
+    .service-box h3 {font-size:19px; font-weight:700; color:#0a1f44; margin-bottom:12px; font-family:'Times New Roman', serif; display:flex; align-items:center; gap:8px;}
+    .service-box p {color:#4b5563; font-size:15px; line-height:1.7; font-family:'Times New Roman', serif;}
+    .badge {background:#dc2626; color:#ffffff; font-size:11px; font-weight:700; padding:3px 8px; border-radius:4px; display:inline-block; font-family:'Times New Roman', serif;}
+    
+    @media (max-width:1024px) {
+      .services-grid {grid-template-columns:repeat(2,1fr);}
+    }
     @media (max-width:768px) {
       .hero {grid-template-columns:1fr; text-align:center; padding:60px 24px; min-height:auto;}
-      .hero-logo-name {justify-content:center; flex-direction:column;}
-      .hero-logo-name h1 {font-size:40px;}
+      .hero-motivation {font-size:26px;}
       .hero .italic {font-size:20px;}
       .hero-btn {margin:16px auto 0;}
       .nav {display:none;}
       .hologram {width:350px; height:350px;}
       .ring1{width:300px; height:300px;} .ring2{width:240px; height:240px;} .ring3{width:180px; height:180px;}
       .center-core {width:90px; height:90px;}
-      .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(150px) rotateZ(0deg);}
-      .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(120px) rotateZ(-90deg);}
-      .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(90px) rotateZ(-180deg);}
-      .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(120px) rotateZ(-270deg);}
       .stats-inner {grid-template-columns:1fr; gap:32px;}
       .stat-box h3 {font-size:36px;}
+      .services-grid {grid-template-columns:1fr;}
+      .services-title {font-size:32px;}
     }
   </style>
 </head>
@@ -96,10 +97,6 @@
     <div class="header-inner">
       <div class="logo">
         <img src="LOGO_TRANSPARENT.png" alt="AKSH FORENSICS">
-        <div>
-          <div class="brand">AKSH FORENSICS</div>
-          <div class="tagline">Evidence. Analysis. Truth.</div>
-        </div>
       </div>
       <nav class="nav">
         <a href="#home">Home</a>
@@ -111,18 +108,14 @@
     </div>
   </header>
 
-  <!-- STEP 1: Hero - Logo+Name Left, 3D Effect Right -->
+  <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-left">
-      <div class="hero-logo-name">
-        <img src="LOGO_TRANSPARENT.png" alt="AKSH FORENSICS">
-        <h1>AKSH<br>FORENSICS</h1>
-      </div>
-      <div class="italic">Evidence. Analysis. Truth.</div>
+      <div class="hero-motivation">Every Evidence Tells a Story. We Decode It.</div>
+      <div class="italic">Uncovering Truth Through Science</div>
       <p>Independent forensic experts delivering court-admissible scientific analysis, evidence examination, and expert witness support across India.</p>
       <a href="#contact" class="hero-btn">Request Expert Opinion</a>
     </div>
-    
     <div class="hologram">
       <div class="orbit-ring ring1"></div>
       <div class="orbit-ring ring2"></div>
@@ -141,7 +134,7 @@
           <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#0a1f44" stroke-width="1.5">
             <path d="M12 3v18M3 12h18"/>
             <circle cx="12" cy="12" r="3"/>
-            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0-8z"/>
           </svg>
         </div>
       </div>
@@ -156,7 +149,7 @@
     </div>
   </section>
 
-  <!-- STEP 2: Stats Bar - 100% Court Admissible, 6+ Discipline, Pan India -->
+  <!-- Stats Bar -->
   <section class="stats">
     <div class="stats-inner">
       <div class="stat-box">
@@ -170,6 +163,55 @@
       <div class="stat-box">
         <h3>Pan India</h3>
         <p>Coverage</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services - Exact Match from Image -->
+  <section class="services" id="services">
+    <div class="services-inner">
+      <h2 class="services-title">Our Expertise</h2>
+      
+      <div class="services-grid">
+        <div class="service-box">
+          <h3>Fingerprint Examination (FP)</h3>
+          <p>Latent print development, comparison, and expert opinion for criminal & civil matters. Digital fingerprint analysis.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Questioned Document (QD)</h3>
+          <p>Handwriting & signature verification, forgery detection, ink/age analysis, charred & altered document examination.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Crime Scene Investigation</h3>
+          <p>Independent crime scene analysis, evidence documentation, reconstruction, and bloodstain pattern analysis.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Arson Investigation</h3>
+          <p>Fire origin & cause determination, electrical vs intentional fire analysis, expert report for insurance/legal claims.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Insurance Investigation</h3>
+          <p>Fraud detection in claims, accident reconstruction, document verification for insurance companies & TPA.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Courtroom Cross Examination Support</h3>
+          <p>Expert witness testimony, technical support to advocates during cross-examination of forensic evidence.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Cyber Forensics <span class="badge">Upcoming</span></h3>
+          <p>Digital evidence recovery, mobile/computer forensics, email & social media authentication. Launching soon.</p>
+        </div>
+        
+        <div class="service-box">
+          <h3>Audio/Video Authentication <span class="badge">Upcoming</span></h3>
+          <p>Voice identification, video tampering detection, CCTV enhancement and forensic analysis. Launching soon.</p>
+        </div>
       </div>
     </div>
   </section>
