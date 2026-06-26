@@ -27,239 +27,33 @@
     .hero-btn {background:#0a1f44; color:#fff; padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; display:inline-block; font-size:16px; transition:0.2s; width:fit-content; margin-top:16px; font-family:'Times New Roman', serif;}
     .hero-btn:hover {background:#1e3a8a; transform:translateY(-2px);}
     
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Hologram Effect - Blue & White</title>
-    <style>
-        :root {
-            --primary: #0a1f44;
-            --white: #ffffff;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        /* HOLOGRAM - ONLY BLUE & WHITE */
-        .hologram-wrapper { 
-            position: relative; 
-            width: 100%; 
-            max-width: 500px; 
-            margin: auto; 
-            perspective: 1200px; 
-        }
-        
-        .hologram-scene { 
-            position: relative; 
-            width: 100%; 
-            aspect-ratio: 1; 
-            transform-style: preserve-3d; 
-        }
-        
-        .evidence-core { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            width: 180px; 
-            height: 180px; 
-            transform: translate(-50%, -50%); 
-            transform-style: preserve-3d; 
-            animation: coreFloat 4s ease-in-out infinite; 
-        }
-        
-        @keyframes coreFloat { 
-            0%, 100% { transform: translate(-50%, -50%) translateY(0px); } 
-            50% { transform: translate(-50%, -50%) translateY(-15px); } 
-        }
-        
-        .core-frame { 
-            position: absolute; 
-            inset: 0; 
-            border: 2px solid var(--primary); 
-            border-radius: 12px; 
-            background: rgba(10, 31, 68, 0.02); 
-            box-shadow: 0 0 30px rgba(10, 31, 68, 0.1);
-        }
-        
-        .core-frame::before, .core-frame::after { 
-            content: ''; 
-            position: absolute; 
-            width: 30px; 
-            height: 30px; 
-            border: 2px solid var(--primary); 
-        }
-        
-        .core-frame::before { 
-            top: 10px; 
-            left: 10px; 
-            border-right: none; 
-            border-bottom: none; 
-        }
-        
-        .core-frame::after { 
-            bottom: 10px; 
-            right: 10px; 
-            border-left: none; 
-            border-top: none; 
-        }
-        
-        .core-icon { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            font-size: 4rem; 
-            color: var(--primary); 
-        }
-        
-        .orbit-ring { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            border: 1px solid rgba(10, 31, 68, 0.25); 
-            border-radius: 50%; 
-            transform: translate(-50%, -50%); 
-        }
-        
-        .orbit-1 { 
-            width: 280px; 
-            height: 280px; 
-            animation: orbitRotate 18s linear infinite; 
-        }
-        
-        .orbit-2 { 
-            width: 350px; 
-            height: 350px; 
-            animation: orbitRotate 25s linear infinite reverse; 
-        }
-        
-        .orbit-3 { 
-            width: 420px; 
-            height: 420px; 
-            animation: orbitRotate 30s linear infinite; 
-        }
-        
-        @keyframes orbitRotate { 
-            0% { transform: translate(-50%, -50%) rotate(0deg); } 
-            100% { transform: translate(-50%, -50%) rotate(360deg); } 
-        }
-        
-        .orbit-icon { 
-            position: absolute; 
-            width: 50px; 
-            height: 50px; 
-            background: var(--white); 
-            border: 2px solid var(--primary); 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 1.5rem; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            color: var(--primary); 
-        }
-        
-        .icon-1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
-        .icon-2 { top: 50%; right: 0; transform: translate(50%, -50%); }
-        .icon-3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
-        .icon-4 { top: 50%; left: 0; transform: translate(-50%, -50%); }
-        
-        .scan-grid-line { 
-            position: absolute; 
-            width: 100%; 
-            height: 1px; 
-            background: linear-gradient(90deg, transparent, var(--primary), transparent); 
-            top: 50%; 
-            animation: gridScan 3s ease-in-out infinite; 
-        }
-        
-        @keyframes gridScan { 
-            0%, 100% { opacity: 0; top: 0%; } 
-            50% { opacity: 1; top: 100%; } 
-        }
-        
-        .holo-label { 
-            position: absolute; 
-            background: var(--white); 
-            border: 1px solid var(--primary); 
-            padding: 0.7rem 1.3rem; 
-            border-radius: 6px; 
-            font-size: 0.75rem; 
-            font-weight: 600; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08); 
-            white-space: nowrap; 
-        }
-        
-        .label-top { 
-            top: -50px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            color: var(--primary); 
-        }
-        
-        .label-bottom { 
-            bottom: -50px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            color: var(--primary); 
-        }
-        
-        .label-top::before { 
-            content: '● '; 
-            color: #16a34a; 
-            animation: blink 2s infinite; 
-        }
-        
-        @keyframes blink { 
-            0%, 100% { opacity: 1; } 
-            50% { opacity: 0.3; } 
-        }
-
-        @media (max-width: 968px) { 
-            .hologram-wrapper { max-width: 320px; }
-            .evidence-core { width: 140px; height: 140px; }
-            .orbit-1 { width: 220px; height: 220px; }
-            .orbit-2 { width: 270px; height: 270px; }
-            .orbit-3 { width: 320px; height: 320px; }
-        }
-    </style>
-</head>
-<body>
-    <div class="hologram-wrapper">
-        <div class="hologram-scene">
-            <div class="orbit-ring orbit-1">
-                <div class="orbit-icon icon-1">📄</div>
-                <div class="orbit-icon icon-3">🔍</div>
-            </div>
-            <div class="orbit-ring orbit-2">
-                <div class="orbit-icon icon-2">🔥</div>
-                <div class="orbit-icon icon-4">💾</div>
-            </div>
-            <div class="orbit-ring orbit-3"></div>
-            
-            <div class="evidence-core">
-                <div class="core-frame"></div>
-                <div class="core-icon">⚖️</div>
-            </div>
-            
-            <div class="scan-grid-line"></div>
-            
-            <div class="holo-label label-top">FORENSIC ANALYSIS: ACTIVE</div>
-            <div class="holo-label label-bottom">CHAIN OF CUSTODY: VERIFIED</div>
-        </div>
-    </div>
-</body>
-</html>
+    /* NEW 3D HOLOGRAM - Blue & White Only */
+    .hologram-wrapper {position:relative; width:100%; max-width:500px; margin:auto; perspective:1200px;}
+    .hologram-scene {position:relative; width:100%; aspect-ratio:1; transform-style:preserve-3d;}
+    .evidence-core {position:absolute; top:50%; left:50%; width:180px; height:180px; transform:translate(-50%, -50%); transform-style:preserve-3d; animation:coreFloat 4s ease-in-out infinite;}
+    @keyframes coreFloat {0%, 100% {transform:translate(-50%, -50%) translateY(0px);} 50% {transform:translate(-50%, -50%) translateY(-15px);}}
+    .core-frame {position:absolute; inset:0; border:2px solid #0a1f44; border-radius:12px; background:rgba(10, 31, 68, 0.02); box-shadow:0 0 30px rgba(10, 31, 68, 0.1);}
+    .core-frame::before, .core-frame::after {content:''; position:absolute; width:30px; height:30px; border:2px solid #0a1f44;}
+    .core-frame::before {top:10px; left:10px; border-right:none; border-bottom:none;}
+    .core-frame::after {bottom:10px; right:10px; border-left:none; border-top:none;}
+    .core-icon {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4rem; color:#0a1f44;}
+    .orbit-ring {position:absolute; top:50%; left:50%; border:1px solid rgba(10, 31, 68, 0.25); border-radius:50%; transform:translate(-50%, -50%);}
+    .orbit-1 {width:280px; height:280px; animation:orbitRotate 18s linear infinite;}
+    .orbit-2 {width:350px; height:350px; animation:orbitRotate 25s linear infinite reverse;}
+    .orbit-3 {width:420px; height:420px; animation:orbitRotate 30s linear infinite;}
+    @keyframes orbitRotate {0% {transform:translate(-50%, -50%) rotate(0deg);} 100% {transform:translate(-50%, -50%) rotate(360deg);}}
+    .orbit-icon {position:absolute; width:50px; height:50px; background:#ffffff; border:2px solid #0a1f44; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 2px 10px rgba(0,0,0,0.1); color:#0a1f44;}
+    .icon-1 {top:0; left:50%; transform:translate(-50%, -50%);}
+    .icon-2 {top:50%; right:0; transform:translate(50%, -50%);}
+    .icon-3 {bottom:0; left:50%; transform:translate(-50%, 50%);}
+    .icon-4 {top:50%; left:0; transform:translate(-50%, -50%);}
+    .scan-grid-line {position:absolute; width:100%; height:1px; background:linear-gradient(90deg, transparent, #0a1f44, transparent); top:50%; animation:gridScan 3s ease-in-out infinite;}
+    @keyframes gridScan {0%, 100% {opacity:0; top:0%;} 50% {opacity:1; top:100%;}}
+    .holo-label {position:absolute; background:#ffffff; border:1px solid #0a1f44; padding:0.7rem 1.3rem; border-radius:6px; font-size:0.75rem; font-weight:600; box-shadow:0 2px 10px rgba(0,0,0,0.08); white-space:nowrap; font-family:'Times New Roman', serif;}
+    .label-top {top:-50px; left:50%; transform:translateX(-50%); color:#0a1f44;}
+    .label-bottom {bottom:-50px; left:50%; transform:translateX(-50%); color:#0a1f44;}
+    .label-top::before {content:'● '; color:#16a34a; animation:blink 2s infinite;}
+    @keyframes blink {0%, 100% {opacity:1;} 50% {opacity:0.3;}}
     
     /* Stats Bar */
     .stats {background:#ffffff; padding:40px 24px; border-bottom:1px solid #d1d5db;}
@@ -267,7 +61,7 @@
     .stat-box h3 {font-size:48px; font-weight:900; color:#0a1f44; margin-bottom:8px; font-family:'Times New Roman', serif;}
     .stat-box p {color:#6b7280; font-size:16px; font-weight:600; font-family:'Times New Roman', serif;}
     
-    /* STEP 3: Services - Updated to Match Image */
+    /* Services */
     .services {background:#f5f7fa; padding:80px 24px;}
     .services-inner {max-width:1200px; margin:0 auto;}
     .services-title {text-align:center; font-size:40px; font-weight:900; color:#0a1f44; margin-bottom:60px; font-family:'Times New Roman', serif;}
@@ -287,9 +81,11 @@
       .hero .italic {font-size:20px;}
       .hero-btn {margin:16px auto 0;}
       .nav {display:none;}
-      .hologram {width:350px; height:350px;}
-      .ring1{width:300px; height:300px;} .ring2{width:240px; height:240px;} .ring3{width:180px; height:180px;}
-      .center-core {width:90px; height:90px;}
+      .hologram-wrapper {max-width:320px;}
+      .evidence-core {width:140px; height:140px;}
+      .orbit-1 {width:220px; height:220px;}
+      .orbit-2 {width:270px; height:270px;}
+      .orbit-3 {width:320px; height:320px;}
       .stats-inner {grid-template-columns:1fr; gap:32px;}
       .stat-box h3 {font-size:36px;}
       .services-grid {grid-template-columns:1fr;}
@@ -322,35 +118,29 @@
       <p>Independent forensic experts delivering court-admissible scientific analysis, evidence examination, and expert witness support across India.</p>
       <a href="#contact" class="hero-btn">Request Expert Opinion</a>
     </div>
-    <div class="hologram">
-      <div class="orbit-ring ring1"></div>
-      <div class="orbit-ring ring2"></div>
-      <div class="orbit-ring ring3"></div>
-      <div class="orbit-icon icon1">📄</div>
-      <div class="orbit-icon icon2">🔍</div>
-      <div class="orbit-icon icon3">🔥</div>
-      <div class="orbit-icon icon4">💾</div>
-      <div class="center-core">
-        <div class="core-box">
-          <div class="bracket bracket-tl"></div>
-          <div class="bracket bracket-tr"></div>
-          <div class="bracket bracket-bl"></div>
-          <div class="bracket bracket-br"></div>
-          <div class="scan-line"></div>
-          <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#0a1f44" stroke-width="1.5">
-            <path d="M12 3v18M3 12h18"/>
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0-8z"/>
-          </svg>
+    
+    <!-- NEW HOLOGRAM -->
+    <div class="hologram-wrapper">
+      <div class="hologram-scene">
+        <div class="orbit-ring orbit-1">
+          <div class="orbit-icon icon-1">📄</div>
+          <div class="orbit-icon icon-3">🔍</div>
         </div>
-      </div>
-      <div class="status-label label-top">
-        <span class="status-dot"></span>
-        ANALYSIS: ACTIVE
-      </div>
-      <div class="status-label label-bottom">
-        <span class="status-dot"></span>
-        VERIFIED
+        <div class="orbit-ring orbit-2">
+          <div class="orbit-icon icon-2">🔥</div>
+          <div class="orbit-icon icon-4">💾</div>
+        </div>
+        <div class="orbit-ring orbit-3"></div>
+        
+        <div class="evidence-core">
+          <div class="core-frame"></div>
+          <div class="core-icon">⚖️</div>
+        </div>
+        
+        <div class="scan-grid-line"></div>
+        
+        <div class="holo-label label-top">FORENSIC ANALYSIS: ACTIVE</div>
+        <div class="holo-label label-bottom">CHAIN OF CUSTODY: VERIFIED</div>
       </div>
     </div>
   </section>
@@ -373,7 +163,7 @@
     </div>
   </section>
 
-  <!-- Services - Exact Match from Image -->
+  <!-- Services -->
   <section class="services" id="services">
     <div class="services-inner">
       <h2 class="services-title">Our Expertise</h2>
