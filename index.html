@@ -6,171 +6,87 @@
   <title>AKSH FORENSICS - Evidence. Analysis. Truth.</title>
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family:'Segoe UI', Arial, sans-serif; background:#f5f7fa; color:#0a1f44;}
+    body {font-family:'Times New Roman', Times, serif; background:#f5f7fa; color:#0a1f44;}
     
     /* Header - Navy Blue + White */
     .header {background:#ffffff; border-bottom:1px solid #d1d5db; position:sticky; top:0; z-index:100;}
     .header-inner {max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
     .logo {display:flex; align-items:center; gap:12px;}
     .logo img {height:40px; width:auto;} 
-    .brand {font-weight:800; font-size:18px; color:#0a1f44;}
-    .tagline {font-size:11px; color:#6b7280;}
+    .brand {font-weight:800; font-size:18px; color:#0a1f44; font-family:'Times New Roman', serif;}
+    .tagline {font-size:11px; color:#6b7280; font-family:'Times New Roman', serif;}
     .nav {display:flex; gap:32px; align-items:center;}
-    .nav a {text-decoration:none; color:#0a1f44; font-weight:600; font-size:15px; transition:0.2s;}
+    .nav a {text-decoration:none; color:#0a1f44; font-weight:600; font-size:15px; transition:0.2s; font-family:'Times New Roman', serif;}
     .nav a:hover {color:#6b7280;}
-    .btn {background:#0a1f44; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; font-size:14px; transition:0.2s;}
+    .btn {background:#0a1f44; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:700; font-size:14px; transition:0.2s; font-family:'Times New Roman', serif;}
     .btn:hover {background:#1e3a8a;}
     
-    /* Hero Section - CENTER LAYOUT */
-    .hero {
-      background:#f5f7fa; 
-      max-width:1200px; 
-      margin:0 auto; 
-      padding:80px 24px; 
-      text-align:center; 
-      min-height:600px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-    }
-    .hero-logo {width:100%; max-width:380px; margin-bottom:40px;}
-    .hero-logo img {width:100%; height:auto;}
-    .hero h1 {font-size:64px; font-weight:900; line-height:1.1; margin-bottom:16px; color:#0a1f44;}
-    .hero .italic {font-style:italic; font-size:28px; color:#4b5563; margin-bottom:24px;}
-    .hero p {color:#6b7280; margin:0 auto 32px; font-size:18px; max-width:600px;}
-    .hero-btn {background:#0a1f44; color:#fff; padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; display:inline-block; font-size:16px; transition:0.2s;}
+    /* STEP 1: Hero Section - Left Logo+Name, Right 3D Effect */
+    .hero {background:#f5f7fa; max-width:1200px; margin:0 auto; padding:80px 24px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; min-height:600px;}
+    .hero-left {display:flex; flex-direction:column; gap:20px;}
+    .hero-logo-name {display:flex; align-items:center; gap:16px; margin-bottom:8px;}
+    .hero-logo-name img {height:70px; width:auto;}
+    .hero-logo-name h1 {font-size:56px; font-weight:900; line-height:1; color:#0a1f44; font-family:'Times New Roman', serif;}
+    .hero .italic {font-style:italic; font-size:26px; color:#4b5563; margin-bottom:16px; font-family:'Times New Roman', serif;}
+    .hero p {color:#6b7280; font-size:17px; line-height:1.6; font-family:'Times New Roman', serif;}
+    .hero-btn {background:#0a1f44; color:#fff; padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; display:inline-block; font-size:16px; transition:0.2s; width:fit-content; margin-top:16px; font-family:'Times New Roman', serif;}
     .hero-btn:hover {background:#1e3a8a; transform:translateY(-2px);}
     
-    /* 3D Hologram Section - FULL FEATURES */
-    .hologram-section {
-      position:relative;
-      background:linear-gradient(135deg, #0a1f44 0%, #1e3a8a 100%);
-      padding:100px 24px;
-      perspective:1200px;
-      overflow:hidden;
-    }
-    .hologram-content {position:relative; z-index:2;}
-    .hologram-title {text-align:center; font-size:36px; font-weight:900; margin-bottom:16px; color:#ffffff;}
-    .hologram-subtitle {text-align:center; color:#d1d5db; margin-bottom:60px; font-size:18px;}
-    
-    /* Hologram Container */
-    .hologram {position:relative; width:550px; height:550px; margin:0 auto; transform-style:preserve-3d;}
-    
-    /* Orbit Rings - 3 Different Speeds */
-    .orbit-ring {
-      position:absolute; 
-      border:1px solid rgba(255,255,255,0.3); 
-      border-radius:50%; 
-      top:50%; left:50%;
-      transform:translate(-50%, -50%) rotateX(60deg);
-      transform-style:preserve-3d;
-    }
-    .ring1 {width:480px; height:480px; animation:orbitRotate 18s linear infinite;}
-    .ring2 {width:380px; height:380px; animation:orbitRotate 25s linear infinite reverse;}
-    .ring3 {width:280px; height:280px; animation:orbitRotate 30s linear infinite;}
+    /* 3D Hologram Effect - Right Side of Tagline */
+    .hologram {position:relative; width:480px; height:480px; margin:0 auto; transform-style:preserve-3d; perspective:1200px;}
+    .orbit-ring {position:absolute; border:1px solid rgba(10,31,68,0.3); border-radius:50%; top:50%; left:50%; transform:translate(-50%, -50%) rotateX(60deg); transform-style:preserve-3d;}
+    .ring1 {width:420px; height:420px; animation:orbitRotate 18s linear infinite;}
+    .ring2 {width:340px; height:340px; animation:orbitRotate 25s linear infinite reverse;}
+    .ring3 {width:260px; height:260px; animation:orbitRotate 30s linear infinite;}
     @keyframes orbitRotate {from{transform:translate(-50%, -50%) rotateX(60deg) rotateZ(0deg);} to{transform:translate(-50%, -50%) rotateX(60deg) rotateZ(360deg);}}
     
-    /* Orbit Icons - 4 Icons 📄🔍🔥💾 */
-    .orbit-icon {
-      position:absolute;
-      width:36px; height:36px;
-      background:#ffffff;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:18px;
-      box-shadow:0 4px 12px rgba(255,255,255,0.3);
-      top:50%; left:50%;
-    }
-    .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(240px) rotateZ(0deg);}
-    .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(190px) rotateZ(-90deg);}
-    .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(140px) rotateZ(-180deg);}
-    .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(190px) rotateZ(-270deg);}
+    .orbit-icon {position:absolute; width:32px; height:32px; background:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow:0 4px 12px rgba(10,31,68,0.2); top:50%; left:50%;}
+    .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(210px) rotateZ(0deg);}
+    .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(170px) rotateZ(-90deg);}
+    .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(130px) rotateZ(-180deg);}
+    .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(170px) rotateZ(-270deg);}
     
-    /* Floating Center Core */
-    .center-core {
-      position:absolute;
-      width:140px; height:140px;
-      top:50%; left:50%;
-      transform:translate(-50%, -50%);
-      animation:coreFloat 4s ease-in-out infinite;
-      z-index:10;
-    }
-    @keyframes coreFloat {
-      0%, 100% {transform:translate(-50%, -50%) translateY(0px) scale(1);}
-      50% {transform:translate(-50%, -50%) translateY(-15px) scale(1.05);}
-    }
-    .core-box {
-      width:100%; height:100%;
-      background:#ffffff;
-      border-radius:20px;
-      box-shadow:0 0 40px rgba(30,58,138,0.6), 0 20px 40px rgba(0,0,0,0.3);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-    }
+    .center-core {position:absolute; width:120px; height:120px; top:50%; left:50%; transform:translate(-50%, -50%); animation:coreFloat 4s ease-in-out infinite; z-index:10;}
+    @keyframes coreFloat {0%, 100% {transform:translate(-50%, -50%) translateY(0px) scale(1);} 50% {transform:translate(-50%, -50%) translateY(-15px) scale(1.05);}}
+    .core-box {width:100%; height:100%; background:#ffffff; border-radius:20px; box-shadow:0 0 40px rgba(30,58,138,0.6), 0 20px 40px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; position:relative;}
     
-    /* Corner Brackets - L-shape */
-    .bracket {position:absolute; width:20px; height:20px; border:2px solid #0a1f44;}
+    .bracket {position:absolute; width:18px; height:18px; border:2px solid #0a1f44;}
     .bracket-tl {top:-4px; left:-4px; border-right:none; border-bottom:none;}
     .bracket-tr {top:-4px; right:-4px; border-left:none; border-bottom:none;}
     .bracket-bl {bottom:-4px; left:-4px; border-right:none; border-top:none;}
     .bracket-br {bottom:-4px; right:-4px; border-left:none; border-top:none;}
     
-    /* Laser Scan Line */
-    .scan-line {
-      position:absolute;
-      width:100%; height:2px;
-      background:linear-gradient(90deg, transparent, #3b82f6, transparent);
-      top:0;
-      animation:scanSweep 3s linear infinite;
-      box-shadow:0 0 20px #3b82f6;
-    }
+    .scan-line {position:absolute; width:100%; height:2px; background:linear-gradient(90deg, transparent, #3b82f6, transparent); top:0; animation:scanSweep 3s linear infinite; box-shadow:0 0 20px #3b82f6;}
     @keyframes scanSweep {0%{top:0; opacity:0;} 10%{opacity:1;} 90%{opacity:1;} 100%{top:100%; opacity:0;}}
     
-    /* Status Labels with Blinking Dot */
-    .status-label {
-      position:absolute;
-      background:#ffffff;
-      padding:10px 18px;
-      border-radius:20px;
-      font-size:12px;
-      font-weight:700;
-      color:#0a1f44;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
-      white-space:nowrap;
-    }
-    .status-dot {
-      width:8px; height:8px;
-      background:#10b981;
-      border-radius:50%;
-      animation:blinkDot 2s ease-in-out infinite;
-      box-shadow:0 0 10px #10b981;
-    }
+    .status-label {position:absolute; background:#0a1f44; padding:8px 16px; border-radius:20px; font-size:11px; font-weight:700; color:#ffffff; display:flex; align-items:center; gap:6px; box-shadow:0 4px 12px rgba(0,0,0,0.2); white-space:nowrap; font-family:'Times New Roman', serif;}
+    .status-dot {width:8px; height:8px; background:#10b981; border-radius:50%; animation:blinkDot 2s ease-in-out infinite; box-shadow:0 0 10px #10b981;}
     @keyframes blinkDot {0%, 100%{opacity:1;} 50%{opacity:0.3;}}
     .label-top {top:20px; left:50%; transform:translateX(-50%);}
     .label-bottom {bottom:20px; left:50%; transform:translateX(-50%);}
     
+    /* STEP 2: Stats Bar - Navy Blue + Gray */
+    .stats {background:#ffffff; padding:40px 24px; border-bottom:1px solid #d1d5db;}
+    .stats-inner {max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px; text-align:center;}
+    .stat-box h3 {font-size:48px; font-weight:900; color:#0a1f44; margin-bottom:8px; font-family:'Times New Roman', serif;}
+    .stat-box p {color:#6b7280; font-size:16px; font-weight:600; font-family:'Times New Roman', serif;}
+    
     @media (max-width:768px) {
-      .hero {padding:60px 24px; min-height:auto;}
-      .hero-logo {max-width:280px; margin-bottom:32px;}
-      .hero h1 {font-size:40px;}
+      .hero {grid-template-columns:1fr; text-align:center; padding:60px 24px; min-height:auto;}
+      .hero-logo-name {justify-content:center; flex-direction:column;}
+      .hero-logo-name h1 {font-size:40px;}
       .hero .italic {font-size:20px;}
+      .hero-btn {margin:16px auto 0;}
       .nav {display:none;}
-      .hologram {width:400px; height:400px;}
-      .ring1{width:340px; height:340px;} .ring2{width:270px; height:270px;} .ring3{width:200px; height:200px;}
-      .center-core {width:100px; height:100px;}
-      .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(170px) rotateZ(0deg);}
-      .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(135px) rotateZ(-90deg);}
-      .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(100px) rotateZ(-180deg);}
-      .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(135px) rotateZ(-270deg);}
-      .hologram-title {font-size:28px;}
+      .hologram {width:350px; height:350px;}
+      .ring1{width:300px; height:300px;} .ring2{width:240px; height:240px;} .ring3{width:180px; height:180px;}
+      .center-core {width:90px; height:90px;}
+      .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(150px) rotateZ(0deg);}
+      .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(120px) rotateZ(-90deg);}
+      .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(90px) rotateZ(-180deg);}
+      .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(120px) rotateZ(-270deg);}
+      .stats-inner {grid-template-columns:1fr; gap:32px;}
+      .stat-box h3 {font-size:36px;}
     }
   </style>
 </head>
@@ -195,61 +111,65 @@
     </div>
   </header>
 
-  <!-- Hero Heading Section - CENTER LAYOUT -->
+  <!-- STEP 1: Hero - Logo+Name Left, 3D Effect Right -->
   <section class="hero" id="home">
-    <div class="hero-logo">
-      <img src="LOGO_TRANSPARENT.png" alt="AKSH FORENSICS">
+    <div class="hero-left">
+      <div class="hero-logo-name">
+        <img src="LOGO_TRANSPARENT.png" alt="AKSH FORENSICS">
+        <h1>AKSH<br>FORENSICS</h1>
+      </div>
+      <div class="italic">Evidence. Analysis. Truth.</div>
+      <p>Independent forensic experts delivering court-admissible scientific analysis, evidence examination, and expert witness support across India.</p>
+      <a href="#contact" class="hero-btn">Request Expert Opinion</a>
     </div>
-    <h1>AKSH FORENSICS</h1>
-    <div class="italic">Evidence. Analysis. Truth.</div>
-    <p>Providing court-admissible forensic services with scientific precision. We assist law enforcement, legal professionals, and corporate clients across India.</p>
-    <a href="#contact" class="hero-btn">Request Expert Opinion</a>
+    
+    <div class="hologram">
+      <div class="orbit-ring ring1"></div>
+      <div class="orbit-ring ring2"></div>
+      <div class="orbit-ring ring3"></div>
+      <div class="orbit-icon icon1">📄</div>
+      <div class="orbit-icon icon2">🔍</div>
+      <div class="orbit-icon icon3">🔥</div>
+      <div class="orbit-icon icon4">💾</div>
+      <div class="center-core">
+        <div class="core-box">
+          <div class="bracket bracket-tl"></div>
+          <div class="bracket bracket-tr"></div>
+          <div class="bracket bracket-bl"></div>
+          <div class="bracket bracket-br"></div>
+          <div class="scan-line"></div>
+          <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="#0a1f44" stroke-width="1.5">
+            <path d="M12 3v18M3 12h18"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="status-label label-top">
+        <span class="status-dot"></span>
+        ANALYSIS: ACTIVE
+      </div>
+      <div class="status-label label-bottom">
+        <span class="status-dot"></span>
+        VERIFIED
+      </div>
+    </div>
   </section>
 
-  <!-- 3D Hologram Section - FULL FEATURES -->
-  <section class="hologram-section">
-    <div class="hologram-content">
-      <h2 class="hologram-title">Advanced Forensic Technology</h2>
-      <p class="hologram-subtitle">State-of-the-art analysis with scientific precision</p>
-      
-      <div class="hologram">
-        <!-- Orbit Rings -->
-        <div class="orbit-ring ring1"></div>
-        <div class="orbit-ring ring2"></div>
-        <div class="orbit-ring ring3"></div>
-        
-        <!-- Orbit Icons -->
-        <div class="orbit-icon icon1">📄</div>
-        <div class="orbit-icon icon2">🔍</div>
-        <div class="orbit-icon icon3">🔥</div>
-        <div class="orbit-icon icon4">💾</div>
-        
-        <!-- Floating Center Core -->
-        <div class="center-core">
-          <div class="core-box">
-            <div class="bracket bracket-tl"></div>
-            <div class="bracket bracket-tr"></div>
-            <div class="bracket bracket-bl"></div>
-            <div class="bracket bracket-br"></div>
-            <div class="scan-line"></div>
-            <svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="#0a1f44" stroke-width="1.5">
-              <path d="M12 3v18M3 12h18"/>
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
-              <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Status Labels -->
-        <div class="status-label label-top">
-          <span class="status-dot"></span>
-          FORENSIC ANALYSIS: ACTIVE
-        </div>
-        <div class="status-label label-bottom">
-          <span class="status-dot"></span>
-          CHAIN OF CUSTODY: VERIFIED
-        </div>
+  <!-- STEP 2: Stats Bar - 100% Court Admissible, 6+ Discipline, Pan India -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Court Admissible</p>
+      </div>
+      <div class="stat-box">
+        <h3>6+</h3>
+        <p>Disciplines</p>
+      </div>
+      <div class="stat-box">
+        <h3>Pan India</h3>
+        <p>Coverage</p>
       </div>
     </div>
   </section>
