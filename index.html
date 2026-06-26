@@ -27,33 +27,239 @@
     .hero-btn {background:#0a1f44; color:#fff; padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; display:inline-block; font-size:16px; transition:0.2s; width:fit-content; margin-top:16px; font-family:'Times New Roman', serif;}
     .hero-btn:hover {background:#1e3a8a; transform:translateY(-2px);}
     
-    /* 3D Hologram */
-    .hologram {position:relative; width:480px; height:480px; margin:0 auto; transform-style:preserve-3d; perspective:1200px;}
-    .orbit-ring {position:absolute; border:1px solid rgba(10,31,68,0.3); border-radius:50%; top:50%; left:50%; transform:translate(-50%, -50%) rotateX(60deg); transform-style:preserve-3d;}
-    .ring1 {width:420px; height:420px; animation:orbitRotate 18s linear infinite;}
-    .ring2 {width:340px; height:340px; animation:orbitRotate 25s linear infinite reverse;}
-    .ring3 {width:260px; height:260px; animation:orbitRotate 30s linear infinite;}
-    @keyframes orbitRotate {from{transform:translate(-50%, -50%) rotateX(60deg) rotateZ(0deg);} to{transform:translate(-50%, -50%) rotateX(60deg) rotateZ(360deg);}}
-    .orbit-icon {position:absolute; width:32px; height:32px; background:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow:0 4px 12px rgba(10,31,68,0.2); top:50%; left:50%;}
-    .icon1 {transform:translate(-50%, -50%) rotateZ(0deg) translateX(210px) rotateZ(0deg);}
-    .icon2 {transform:translate(-50%, -50%) rotateZ(90deg) translateX(170px) rotateZ(-90deg);}
-    .icon3 {transform:translate(-50%, -50%) rotateZ(180deg) translateX(130px) rotateZ(-180deg);}
-    .icon4 {transform:translate(-50%, -50%) rotateZ(270deg) translateX(170px) rotateZ(-270deg);}
-    .center-core {position:absolute; width:120px; height:120px; top:50%; left:50%; transform:translate(-50%, -50%); animation:coreFloat 4s ease-in-out infinite; z-index:10;}
-    @keyframes coreFloat {0%, 100% {transform:translate(-50%, -50%) translateY(0px) scale(1);} 50% {transform:translate(-50%, -50%) translateY(-15px) scale(1.05);}}
-    .core-box {width:100%; height:100%; background:#ffffff; border-radius:20px; box-shadow:0 0 40px rgba(30,58,138,0.6), 0 20px 40px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; position:relative;}
-    .bracket {position:absolute; width:18px; height:18px; border:2px solid #0a1f44;}
-    .bracket-tl {top:-4px; left:-4px; border-right:none; border-bottom:none;}
-    .bracket-tr {top:-4px; right:-4px; border-left:none; border-bottom:none;}
-    .bracket-bl {bottom:-4px; left:-4px; border-right:none; border-top:none;}
-    .bracket-br {bottom:-4px; right:-4px; border-left:none; border-top:none;}
-    .scan-line {position:absolute; width:100%; height:2px; background:linear-gradient(90deg, transparent, #3b82f6, transparent); top:0; animation:scanSweep 3s linear infinite; box-shadow:0 0 20px #3b82f6;}
-    @keyframes scanSweep {0%{top:0; opacity:0;} 10%{opacity:1;} 90%{opacity:1;} 100%{top:100%; opacity:0;}}
-    .status-label {position:absolute; background:#0a1f44; padding:8px 16px; border-radius:20px; font-size:11px; font-weight:700; color:#ffffff; display:flex; align-items:center; gap:6px; box-shadow:0 4px 12px rgba(0,0,0,0.2); white-space:nowrap; font-family:'Times New Roman', serif;}
-    .status-dot {width:8px; height:8px; background:#10b981; border-radius:50%; animation:blinkDot 2s ease-in-out infinite; box-shadow:0 0 10px #10b981;}
-    @keyframes blinkDot {0%, 100%{opacity:1;} 50%{opacity:0.3;}}
-    .label-top {top:20px; left:50%; transform:translateX(-50%);}
-    .label-bottom {bottom:20px; left:50%; transform:translateX(-50%);}
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Hologram Effect - Blue & White</title>
+    <style>
+        :root {
+            --primary: #0a1f44;
+            --white: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* HOLOGRAM - ONLY BLUE & WHITE */
+        .hologram-wrapper { 
+            position: relative; 
+            width: 100%; 
+            max-width: 500px; 
+            margin: auto; 
+            perspective: 1200px; 
+        }
+        
+        .hologram-scene { 
+            position: relative; 
+            width: 100%; 
+            aspect-ratio: 1; 
+            transform-style: preserve-3d; 
+        }
+        
+        .evidence-core { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            width: 180px; 
+            height: 180px; 
+            transform: translate(-50%, -50%); 
+            transform-style: preserve-3d; 
+            animation: coreFloat 4s ease-in-out infinite; 
+        }
+        
+        @keyframes coreFloat { 
+            0%, 100% { transform: translate(-50%, -50%) translateY(0px); } 
+            50% { transform: translate(-50%, -50%) translateY(-15px); } 
+        }
+        
+        .core-frame { 
+            position: absolute; 
+            inset: 0; 
+            border: 2px solid var(--primary); 
+            border-radius: 12px; 
+            background: rgba(10, 31, 68, 0.02); 
+            box-shadow: 0 0 30px rgba(10, 31, 68, 0.1);
+        }
+        
+        .core-frame::before, .core-frame::after { 
+            content: ''; 
+            position: absolute; 
+            width: 30px; 
+            height: 30px; 
+            border: 2px solid var(--primary); 
+        }
+        
+        .core-frame::before { 
+            top: 10px; 
+            left: 10px; 
+            border-right: none; 
+            border-bottom: none; 
+        }
+        
+        .core-frame::after { 
+            bottom: 10px; 
+            right: 10px; 
+            border-left: none; 
+            border-top: none; 
+        }
+        
+        .core-icon { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            font-size: 4rem; 
+            color: var(--primary); 
+        }
+        
+        .orbit-ring { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            border: 1px solid rgba(10, 31, 68, 0.25); 
+            border-radius: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+        
+        .orbit-1 { 
+            width: 280px; 
+            height: 280px; 
+            animation: orbitRotate 18s linear infinite; 
+        }
+        
+        .orbit-2 { 
+            width: 350px; 
+            height: 350px; 
+            animation: orbitRotate 25s linear infinite reverse; 
+        }
+        
+        .orbit-3 { 
+            width: 420px; 
+            height: 420px; 
+            animation: orbitRotate 30s linear infinite; 
+        }
+        
+        @keyframes orbitRotate { 
+            0% { transform: translate(-50%, -50%) rotate(0deg); } 
+            100% { transform: translate(-50%, -50%) rotate(360deg); } 
+        }
+        
+        .orbit-icon { 
+            position: absolute; 
+            width: 50px; 
+            height: 50px; 
+            background: var(--white); 
+            border: 2px solid var(--primary); 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.5rem; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            color: var(--primary); 
+        }
+        
+        .icon-1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+        .icon-2 { top: 50%; right: 0; transform: translate(50%, -50%); }
+        .icon-3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+        .icon-4 { top: 50%; left: 0; transform: translate(-50%, -50%); }
+        
+        .scan-grid-line { 
+            position: absolute; 
+            width: 100%; 
+            height: 1px; 
+            background: linear-gradient(90deg, transparent, var(--primary), transparent); 
+            top: 50%; 
+            animation: gridScan 3s ease-in-out infinite; 
+        }
+        
+        @keyframes gridScan { 
+            0%, 100% { opacity: 0; top: 0%; } 
+            50% { opacity: 1; top: 100%; } 
+        }
+        
+        .holo-label { 
+            position: absolute; 
+            background: var(--white); 
+            border: 1px solid var(--primary); 
+            padding: 0.7rem 1.3rem; 
+            border-radius: 6px; 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08); 
+            white-space: nowrap; 
+        }
+        
+        .label-top { 
+            top: -50px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            color: var(--primary); 
+        }
+        
+        .label-bottom { 
+            bottom: -50px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            color: var(--primary); 
+        }
+        
+        .label-top::before { 
+            content: '● '; 
+            color: #16a34a; 
+            animation: blink 2s infinite; 
+        }
+        
+        @keyframes blink { 
+            0%, 100% { opacity: 1; } 
+            50% { opacity: 0.3; } 
+        }
+
+        @media (max-width: 968px) { 
+            .hologram-wrapper { max-width: 320px; }
+            .evidence-core { width: 140px; height: 140px; }
+            .orbit-1 { width: 220px; height: 220px; }
+            .orbit-2 { width: 270px; height: 270px; }
+            .orbit-3 { width: 320px; height: 320px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hologram-wrapper">
+        <div class="hologram-scene">
+            <div class="orbit-ring orbit-1">
+                <div class="orbit-icon icon-1">📄</div>
+                <div class="orbit-icon icon-3">🔍</div>
+            </div>
+            <div class="orbit-ring orbit-2">
+                <div class="orbit-icon icon-2">🔥</div>
+                <div class="orbit-icon icon-4">💾</div>
+            </div>
+            <div class="orbit-ring orbit-3"></div>
+            
+            <div class="evidence-core">
+                <div class="core-frame"></div>
+                <div class="core-icon">⚖️</div>
+            </div>
+            
+            <div class="scan-grid-line"></div>
+            
+            <div class="holo-label label-top">FORENSIC ANALYSIS: ACTIVE</div>
+            <div class="holo-label label-bottom">CHAIN OF CUSTODY: VERIFIED</div>
+        </div>
+    </div>
+</body>
+</html>
     
     /* Stats Bar */
     .stats {background:#ffffff; padding:40px 24px; border-bottom:1px solid #d1d5db;}
