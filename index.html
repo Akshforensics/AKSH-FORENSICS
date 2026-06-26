@@ -6,261 +6,71 @@
 
   <title>AKSH FORENSICS</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Montserrat', sans-serif;
-}
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-body{
-  background:#070b14;
-  color:#ffffff;
-  overflow-x:hidden;
-}
-
-/* ===== HEADER ===== */
-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  padding:18px 40px;
-  background:rgba(10,15,25,0.7);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  z-index:1000;
-  text-align:center;
-  animation:fadeDown 0.8s ease;
-}
-
-header h1{
-  color:#00e5ff;
-  letter-spacing:3px;
-  font-size:26px;
-}
-
-header p{
-  font-size:13px;
-  color:#aab4c0;
-}
-
-/* ===== HERO ===== */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-  background:
-    radial-gradient(circle at top,#00e5ff22,transparent 60%),
-    radial-gradient(circle at bottom,#4f46e522,transparent 60%),
-    #070b14;
-}
-
-.hero h2{
-  font-size:50px;
-  animation:fadeUp 1s ease;
-}
-
-.hero p{
-  margin-top:15px;
-  color:#9aa4b2;
-  max-width:750px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* ===== SECTION ===== */
-.section{
-  padding:90px 20px;
-  text-align:center;
-}
-
-.section h2{
-  font-size:34px;
-  margin-bottom:25px;
-  color:#00e5ff;
-  position:relative;
-}
-
-.section h2::after{
-  content:'';
-  width:80px;
-  height:3px;
-  background:#00e5ff;
-  display:block;
-  margin:10px auto;
-  border-radius:10px;
-}
-
-/* ===== GRID ===== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-  max-width:1100px;
-  margin:40px auto 0;
-}
-
-/* ===== CARDS (PREMIUM GLASS EFFECT) ===== */
-.card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:25px;
-  border-radius:14px;
-  transition:0.4s;
-  backdrop-filter:blur(10px);
-  cursor:pointer;
-  position:relative;
-  overflow:hidden;
-}
-
-.card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(90deg,transparent,rgba(0,229,255,0.15),transparent);
-  transition:0.5s;
-}
-
-.card:hover::before{
-  left:100%;
-}
-
-.card:hover{
-  transform:translateY(-10px) scale(1.03);
-  border-color:#00e5ff;
-  box-shadow:0 20px 50px rgba(0,229,255,0.15);
-}
-
-/* ===== CTA STYLE ===== */
-.cta{
-  padding:80px 20px;
-  background:linear-gradient(135deg,#0b1220,#0f172a);
-  text-align:center;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 30px;
-  background:#00e5ff;
-  color:#000;
-  font-weight:700;
-  border-radius:10px;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 25px #00e5ff55;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeDown{
-  from{opacity:0; transform:translateY(-20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* ===== SCROLL EFFECT BASE ===== */
-.section, .hero{
-  opacity:0;
-  transform:translateY(30px);
-  transition:1s ease;
-}
-
-.section.show, .hero.show{
-  opacity:1;
-  transform:translateY(0);
-}
-    .card:hover{
-      transform:translateY(-5px);
-      border-color:#00d9ff;
-    }
-
-    /* CTA */
-    .cta{
-      background:#0f172a;
-      padding:60px 20px;
-      text-align:center;
-    }
-
-    .btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:12px 25px;
-      background:#00d9ff;
-      color:black;
-      font-weight:600;
-      border-radius:8px;
-      text-decoration:none;
-    }
-
-    /* FOOTER */
-    footer{
-      text-align:center;
-      padding:20px;
-      background:#020617;
-      font-size:13px;
-      color:#94a3b8;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
+<div id="particles"></div>
+<div class="cursor"></div>
+
 <!-- HEADER -->
 <header>
-  <h1>AKSH FORENSICS</h1>
-  <p>Scientific Precision • Trusted Expertise • Professional Integrity</p>
+  <div class="logo">AKSH FORENSICS</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div>
-    <h2>Advanced Forensic & Questioned Document Examination Services</h2>
-    <p>
-      Providing reliable forensic analysis for individuals, legal professionals,
-      businesses, and investigative agencies.
-    </p>
-  </div>
+<section id="home" class="hero">
+  <h1>Scientific Precision in Forensic Investigation</h1>
+  <p>
+    Handwriting • Document Examination • Fingerprint Analysis • Signature Verification
+  </p>
+  <a href="#services" class="btn">Explore Services</a>
 </section>
 
-<!-- EXPERTISE -->
-<section class="section">
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About AKSH FORENSICS</h2>
+  <p>
+    We provide advanced forensic science solutions with accuracy, integrity,
+    and scientific validation for legal and investigative requirements.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section dark">
   <h2>Our Expertise</h2>
 
   <div class="grid">
-    <div class="card">✍️ Handwriting Examination</div>
-    <div class="card">📄 Questioned Document Examination</div>
-    <div class="card">👆 Fingerprint Examination</div>
-    <div class="card">✅ Signature Verification</div>
-    <div class="card">🔬 Forensic Document Analysis</div>
-    <div class="card">⚖️ Expert Opinion for Legal Matters</div>
+    <div class="card"><i class="fa fa-pen"></i> Handwriting Examination</div>
+    <div class="card"><i class="fa fa-file"></i> Document Analysis</div>
+    <div class="card"><i class="fa fa-fingerprint"></i> Fingerprint Examination</div>
+    <div class="card"><i class="fa fa-signature"></i> Signature Verification</div>
+    <div class="card"><i class="fa fa-shield"></i> Legal Expert Opinion</div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Request an Expert Opinion</h2>
+  <h2>Need Expert Forensic Opinion?</h2>
   <a href="#contact" class="btn">Contact Us</a>
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section id="contact" class="section">
   <h2>Contact</h2>
   <p>📞 7383532803</p>
   <p>✉ mansi2803@gmail.com</p>
@@ -272,5 +82,229 @@ header p{
   © 2026 AKSH FORENSICS | All Rights Reserved
 </footer>
 
+<script src="js/main.js"></script>
+
 </body>
 </html>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat', sans-serif;
+}
+body{
+  background:#050914;
+  color:white;
+  overflow-x:hidden;
+}
+/* BACKGROUND */
+#particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  background:#050914;
+}
+/* CURSOR */
+.cursor{
+  position:fixed;
+  width:15px;
+  height:15px;
+  background:#00e5ff;
+  border-radius:50%;
+  pointer-events:none;
+  box-shadow:0 0 20px #00e5ff;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:18px 40px;
+  background:rgba(10,15,25,0.6);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  z-index:1000;
+}
+
+.logo{
+  color:#00e5ff;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+nav a{
+  color:#ccc;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00e5ff;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:50px;
+  animation:fadeUp 1s ease;
+}
+
+.hero p{
+  margin-top:15px;
+  color:#94a3b8;
+  max-width:700px;
+}
+
+/* BUTTON */
+.btn{
+  margin-top:25px;
+  display:inline-block;
+  padding:12px 28px;
+  background:#00e5ff;
+  color:black;
+  font-weight:700;
+  border-radius:8px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* SECTIONS */
+.section{
+  padding:90px 20px;
+  text-align:center;
+}
+
+.section h2{
+  font-size:32px;
+  margin-bottom:20px;
+  color:#00e5ff;
+}
+
+/* DARK SECTION */
+.dark{
+  background:#0b1220;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* CARDS */
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  border-color:#00e5ff;
+  box-shadow:0 0 25px rgba(0,229,255,0.2);
+}
+
+/* CTA */
+.cta{
+  padding:70px 20px;
+  text-align:center;
+  background:#0f172a;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  color:#94a3b8;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}// CURSOR EFFECT
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove",(e)=>{
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// PARTICLES
+const canvas = document.createElement("canvas");
+document.getElementById("particles").appendChild(canvas);
+
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+class Particle{
+  constructor(){
+    this.x = Math.random()*canvas.width;
+    this.y = Math.random()*canvas.height;
+    this.size = Math.random()*2;
+    this.speedX = (Math.random()-0.5)*0.6;
+    this.speedY = (Math.random()-0.5)*0.6;
+  }
+
+  update(){
+    this.x += this.speedX;
+    this.y += this.speedY;
+  }
+
+  draw(){
+    ctx.fillStyle = "#00e5ff";
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fill();
+  }
+}
+
+function init(){
+  for(let i=0;i<70;i++){
+    particles.push(new Particle());
+  }
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  particles.forEach(p=>{
+    p.update();
+    p.draw();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+init();
+animate();
