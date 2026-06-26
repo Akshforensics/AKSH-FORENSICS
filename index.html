@@ -1,1359 +1,437 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =====================================================
+AKSH FORENSICS
+Premium Corporate Theme
+Version 1.0
+===================================================== */
 
-<head>
+:root{
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+--primary:#00C8FF;
+--secondary:#0B1D35;
+--dark:#071426;
+--card:#0F223F;
+--gold:#D6B24A;
+--white:#ffffff;
+--text:#C9D6E3;
+--border:rgba(255,255,255,.08);
 
-<title>AKSH FORENSICS | Scientific Precision. Legal Integrity.</title>
+--shadow:0 15px 45px rgba(0,0,0,.35);
 
-<meta name="description"
-content="AKSH FORENSICS provides scientific forensic examination, questioned document analysis, fingerprint examination, crime scene investigation, insurance investigation and courtroom support across India.">
+--radius:22px;
 
-<meta name="keywords"
-content="Forensics, Fingerprint Examination, Questioned Documents, Crime Scene Investigation, Court Expert, AKSH FORENSICS">
+--transition:.4s;
 
-<meta name="author" content="AKSH FORENSICS">
+}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+*{
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+margin:0;
+padding:0;
+box-sizing:border-box;
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+html{
 
-<link rel="stylesheet" href="css/style.css">
+scroll-behavior:smooth;
 
-<link rel="stylesheet" href="css/hologram.css">
+}
 
-<link rel="stylesheet" href="css/responsive.css">
+body{
 
-</head>
+font-family:'Poppins',sans-serif;
 
-<body>
+background:var(--dark);
 
-<div class="loader">
-<div class="loader-circle"></div>
-</div>
+color:var(--white);
 
-<header>
+overflow-x:hidden;
 
-<div class="logo">
+line-height:1.7;
 
-AKSH <span>FORENSICS</span>
+}
 
-</div>
+/* Scrollbar */
 
-<nav>
+::-webkit-scrollbar{
 
-<a href="#home">Home</a>
+width:10px;
 
-<a href="#about">About</a>
+}
 
-<a href="#why">Why Us</a>
+::-webkit-scrollbar-track{
 
-<a href="#services">Services</a>
+background:#05111E;
 
-<a href="#upcoming">Upcoming</a>
+}
 
-<a href="#contact">Contact</a>
+::-webkit-scrollbar-thumb{
 
-</nav>
+background:var(--primary);
 
-<a href="#contact" class="btn-nav">
+border-radius:20px;
 
-Consult Now
+}
 
-</a>
+/* Container */
 
-</header>
+.container{
 
-<section class="hero" id="home">
+width:min(1200px,92%);
 
-<div class="hero-left">
+margin:auto;
 
-<h5>FORENSIC SCIENCE • INVESTIGATION • EXPERT OPINION</h5>
+}
 
-<h1>
+/* Sections */
 
-Scientific Precision.<br>
+.section{
 
-<span>Evidence You Can Trust.</span>
+padding:120px 0;
 
-</h1>
+}
 
-<p>
+/* Heading */
 
-AKSH FORENSICS delivers professional forensic examination,
-questioned document analysis, fingerprint examination,
-crime scene investigation and expert courtroom support
-using scientifically documented methodologies.
+.section-title{
 
-</p>
+text-align:center;
 
-<div class="hero-buttons">
+margin-bottom:70px;
 
-<a href="#services" class="btn-primary">
+}
 
-Explore Services
+.section-title span{
 
-</a>
+display:inline-block;
 
-<a href="#contact" class="btn-secondary">
+padding:8px 18px;
 
-Book Consultation
+border-radius:50px;
 
-</a>
+background:rgba(0,200,255,.08);
 
-</div>
+border:1px solid rgba(0,200,255,.25);
 
-<div class="hero-stats">
+color:var(--primary);
 
-<div>
+font-size:14px;
 
-<h2>500+</h2>
+letter-spacing:2px;
 
-<p>Cases Studied</p>
+text-transform:uppercase;
 
-</div>
+margin-bottom:20px;
 
-<div>
+}
 
-<h2>99%</h2>
+.section-title h2{
 
-<p>Confidential</p>
+font-size:48px;
 
-</div>
+font-weight:700;
 
-<div>
+line-height:1.2;
 
-<h2>Pan India</h2>
+margin-bottom:20px;
 
-<p>Service Network</p>
+}
 
-</div>
+.section-title p{
 
-</div>
+max-width:760px;
 
-</div>
+margin:auto;
 
-<div class="hero-right">
+color:var(--text);
 
-<div class="hologram-container">
+}
 
-<div class="core">
+/* Header */
 
-<div class="core-glow"></div>
+header{
 
-<div class="core-circle"></div>
+position:fixed;
 
-<div class="scan-line"></div>
+top:0;
 
-<div class="status-top">
+left:0;
 
-ONLINE
+width:100%;
 
-<span></span>
+height:90px;
 
-</div>
+display:flex;
 
-<div class="status-bottom">
+align-items:center;
 
-FORENSIC CORE
+justify-content:space-between;
 
-</div>
+padding:0 7%;
 
-</div>
+background:rgba(7,20,38,.75);
 
-<div class="ring ring1"></div>
+backdrop-filter:blur(18px);
 
-<div class="ring ring2"></div>
+border-bottom:1px solid rgba(255,255,255,.05);
 
-<div class="ring ring3"></div>
+z-index:9999;
 
-<div class="orbit orbit1">
+transition:.4s;
 
-<i class="fa-solid fa-fingerprint"></i>
+}
 
-</div>
+.logo{
 
-<div class="orbit orbit2">
+font-size:30px;
 
-<i class="fa-solid fa-file-signature"></i>
+font-weight:800;
 
-</div>
+letter-spacing:2px;
 
-<div class="orbit orbit3">
+}
 
-<i class="fa-solid fa-fire-flame-curved"></i>
+.logo span{
 
-</div>
+color:var(--primary);
 
-<div class="orbit orbit4">
+}
 
-<i class="fa-solid fa-scale-balanced"></i>
+nav{
 
-</div>
+display:flex;
 
-</div>
+gap:35px;
 
-</div>
+}
 
-</section>
-<!-- =========================
-ABOUT
-========================= -->
+nav a{
 
-<section class="about section" id="about">
+text-decoration:none;
 
-<div class="container">
+color:white;
 
-<div class="section-title">
+font-size:15px;
 
-<span>ABOUT US</span>
+transition:.35s;
 
-<h2>Scientific Excellence.<br>Professional Integrity.</h2>
+position:relative;
 
-<p>
+}
 
-AKSH FORENSICS is an independent forensic consultancy committed to
-delivering scientifically reliable examinations and legally defensible
-expert opinions. Every investigation follows documented forensic
-methodologies with strict confidentiality and evidence integrity.
+nav a:hover{
 
-</p>
+color:var(--primary);
 
-</div>
+}
 
-<div class="about-grid">
+nav a::after{
 
-<div class="about-card">
+content:"";
 
-<i class="fa-solid fa-microscope"></i>
+position:absolute;
 
-<h3>Scientific Analysis</h3>
+left:0;
 
-<p>
+bottom:-8px;
 
-Every examination follows structured forensic procedures,
-ensuring objective and reproducible findings.
+width:0;
 
-</p>
+height:2px;
 
-</div>
+background:var(--primary);
 
-<div class="about-card">
+transition:.35s;
 
-<i class="fa-solid fa-scale-balanced"></i>
+}
 
-<h3>Independent Expertise</h3>
+nav a:hover::after{
 
-<p>
+width:100%;
 
-Professional opinions based solely on scientific evidence
-without external influence.
+}
 
-</p>
+/* Buttons */
 
-</div>
+.btn-primary{
 
-<div class="about-card">
+display:inline-flex;
 
-<i class="fa-solid fa-shield-halved"></i>
+align-items:center;
 
-<h3>Confidential Handling</h3>
+justify-content:center;
 
-<p>
+padding:16px 36px;
 
-Strict evidence protection and secure handling throughout
-every stage of the investigation.
+background:linear-gradient(135deg,#00C8FF,#007BFF);
 
-</p>
+border-radius:50px;
 
-</div>
+text-decoration:none;
 
-</div>
+font-weight:600;
 
-</div>
+color:white;
 
-</section>
+transition:.4s;
 
+box-shadow:0 12px 30px rgba(0,200,255,.35);
 
+}
 
+.btn-primary:hover{
 
+transform:translateY(-6px);
 
-<!-- =========================
-WHY AKSH FORENSICS
-========================= -->
+}
 
-<section class="why section" id="why">
+.btn-secondary{
 
-<div class="container">
+display:inline-flex;
 
-<div class="section-title">
+padding:16px 36px;
 
-<span>WHY AKSH FORENSICS</span>
+border-radius:50px;
 
-<h2>Evidence Handled With<br>Scientific Rigour.</h2>
+border:2px solid var(--primary);
 
-<p>
+text-decoration:none;
 
-Every engagement follows documented forensic protocol—from
-initial consultation and evidence examination to expert reporting.
+color:var(--primary);
 
-</p>
+transition:.4s;
 
-</div>
+}
 
-<div class="why-grid">
+.btn-secondary:hover{
 
-<div class="why-card">
+background:var(--primary);
 
-<div class="number">01</div>
+color:white;
 
-<i class="fa-solid fa-flask"></i>
+}
 
-<h3>Scientific Methodology</h3>
+/* Hero */
 
-<p>
+.hero{
 
-Validated forensic methodologies producing reliable,
-repeatable and scientifically defensible conclusions.
+min-height:100vh;
 
-</p>
+display:grid;
 
-</div>
+grid-template-columns:1fr 1fr;
 
-<div class="why-card">
+align-items:center;
 
-<div class="number">02</div>
+gap:70px;
 
-<i class="fa-solid fa-scale-balanced"></i>
+padding:140px 7% 100px;
 
-<h3>Independent Opinions</h3>
+background:
+radial-gradient(circle at top,#0B325D 0%,#071426 65%);
 
-<p>
+position:relative;
 
-Every opinion remains objective, impartial and based
-entirely on scientific findings.
+overflow:hidden;
 
-</p>
+}
 
-</div>
+.hero::before{
 
-<div class="why-card">
+content:"";
 
-<div class="number">03</div>
+position:absolute;
 
-<i class="fa-solid fa-file-contract"></i>
+width:700px;
 
-<h3>Court-Ready Reports</h3>
+height:700px;
 
-<p>
+border-radius:50%;
 
-Reports are prepared in a structured format suitable
-for legal proceedings and expert testimony.
+background:rgba(0,200,255,.08);
 
-</p>
+filter:blur(120px);
 
-</div>
+top:-220px;
 
-<div class="why-card">
+right:-150px;
 
-<div class="number">04</div>
+}
 
-<i class="fa-solid fa-box-archive"></i>
+.hero-left h5{
 
-<h3>Chain of Custody</h3>
+color:var(--primary);
 
-<p>
+letter-spacing:3px;
 
-Every specimen is received, logged, sealed,
-examined and documented under controlled procedures.
+margin-bottom:20px;
 
-</p>
+font-size:15px;
 
-</div>
+}
 
-<div class="why-card">
+.hero-left h1{
 
-<div class="number">05</div>
+font-size:72px;
 
-<i class="fa-solid fa-map-location-dot"></i>
+line-height:1.1;
 
-<h3>Pan India Services</h3>
+margin-bottom:30px;
 
-<p>
+}
 
-Professional forensic consultation and examination
-services available across India.
+.hero-left span{
 
-</p>
+color:var(--primary);
 
-</div>
+}
 
-<div class="why-card">
+.hero-left p{
 
-<div class="number">06</div>
+font-size:18px;
 
-<i class="fa-solid fa-user-secret"></i>
+color:var(--text);
 
-<h3>Confidential Investigations</h3>
+margin-bottom:40px;
 
-<p>
+max-width:600px;
 
-Complete confidentiality is maintained throughout
-the investigation lifecycle.
+}
 
-</p>
+.hero-buttons{
 
-</div>
+display:flex;
 
-</div>
+gap:20px;
 
-</div>
+flex-wrap:wrap;
 
-</section>
+margin-bottom:50px;
 
+}
 
+.hero-stats{
 
+display:flex;
 
+gap:45px;
 
-<!-- =========================
-FEATURE STRIP
-========================= -->
+flex-wrap:wrap;
 
-<section class="feature-strip">
+}
 
-<div class="container">
+.hero-stats h2{
 
-<div class="feature-item">
+font-size:34px;
 
-<h3>100%</h3>
+color:var(--primary);
 
-<p>Independent Scientific Opinion</p>
+}
 
-</div>
+.hero-stats p{
 
-<div class="feature-item">
+font-size:14px;
 
-<h3>Secure</h3>
+color:#AFC3D6;
 
-<p>Evidence Handling Protocol</p>
-
-</div>
-
-<div class="feature-item">
-
-<h3>Pan India</h3>
-
-<p>Professional Support</p>
-
-</div>
-
-<div class="feature-item">
-
-<h3>Confidential</h3>
-
-<p>Every Investigation</p>
-
-</div>
-
-</div>
-
-</section>
-<!-- =======================================================
-OUR EXPERTISE
-======================================================= -->
-
-<section class="services section" id="services">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>OUR EXPERTISE</span>
-
-<h2>Forensic Disciplines.<br>End-to-End Scientific Examination.</h2>
-
-<p>
-
-Specialist forensic examination across evidence types that help
-establish facts with scientific accuracy and legal reliability.
-
-</p>
-
-</div>
-
-<div class="services-grid">
-
-<!-- CARD -->
-
-<div class="service-card">
-
-<div class="service-icon">
-<i class="fa-solid fa-fingerprint"></i>
-</div>
-
-<h3>Fingerprint Examination</h3>
-
-<p>
-
-Development, comparison, verification and identification of
-latent, patent and plastic fingerprints using ACE-V methodology.
-
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Latent Print Development</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Fingerprint Comparison</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Identity Verification</li>
-
-</ul>
-
-<a href="#" class="service-btn">
-
-Learn More
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="service-card">
-
-<div class="service-icon">
-
-<i class="fa-solid fa-file-signature"></i>
-
-</div>
-
-<h3>Questioned Documents</h3>
-
-<p>
-
-Scientific examination of handwriting, signatures, alterations,
-erasures, forged documents and document authenticity.
-
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Handwriting Analysis</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Signature Verification</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Forgery Detection</li>
-
-</ul>
-
-<a href="#" class="service-btn">
-
-Learn More
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="service-card">
-
-<div class="service-icon">
-
-<i class="fa-solid fa-camera"></i>
-
-</div>
-
-<h3>Crime Scene Investigation</h3>
-
-<p>
-
-Professional crime scene documentation, photography,
-evidence recovery and reconstruction.
-
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Scene Documentation</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Evidence Collection</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Scene Reconstruction</li>
-
-</ul>
-
-<a href="#" class="service-btn">
-
-Learn More
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="service-card">
-
-<div class="service-icon">
-
-<i class="fa-solid fa-fire-flame-curved"></i>
-
-</div>
-
-<h3>Arson Investigation</h3>
-
-<p>
-
-Scientific determination of fire origin, burn pattern
-analysis and technical investigation.
-
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Fire Origin</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Burn Pattern Analysis</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Incident Reconstruction</li>
-
-</ul>
-
-<a href="#" class="service-btn">
-
-Learn More
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="service-card">
-
-<div class="service-icon">
-
-<i class="fa-solid fa-building-shield"></i>
-
-</div>
-
-<h3>Insurance Investigation</h3>
-
-<p>
-
-Independent verification of claims, fraud detection
-and technical investigation support.
-
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Claim Verification</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Fraud Investigation</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Technical Reports</li>
-
-</ul>
-
-<a href="#" class="service-btn">
-
-Learn More
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-<!-- CARD -->
-
-<div class="service-card">
-
-<div class="service-icon">
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-</div>
-
-<h3>Courtroom Support</h3>
-
-<p>
-
-Preparation of expert reports,
-technical consultation and courtroom testimony.
-
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Expert Reports</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Court Testimony</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Legal Consultation</li>
-
-</ul>
-
-<a href="#" class="service-btn">
-
-Learn More
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- =======================================================
-UPCOMING SERVICES
-======================================================= -->
-
-<section class="upcoming section" id="upcoming">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>COMING SOON</span>
-
-<h2>Upcoming Services</h2>
-
-<p>
-
-AKSH FORENSICS is expanding its capabilities with advanced
-digital forensic solutions and multimedia authentication.
-
-</p>
-
-</div>
-
-<div class="upcoming-grid">
-
-<div class="coming-card">
-
-<div class="coming-badge">
-
-COMING SOON
-
-</div>
-
-<div class="coming-icon">
-
-<i class="fa-solid fa-laptop-code"></i>
-
-</div>
-
-<h3>Cyber Forensics</h3>
-
-<p>
-
-Digital evidence acquisition, computer forensics,
-mobile forensics and forensic data analysis.
-
-</p>
-
-</div>
-
-<div class="coming-card">
-
-<div class="coming-badge">
-
-COMING SOON
-
-</div>
-
-<div class="coming-icon">
-
-<i class="fa-solid fa-photo-film"></i>
-
-</div>
-
-<h3>Audio & Video Authentication</h3>
-
-<p>
-
-Scientific examination of digital media,
-tampering detection and authenticity verification.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ======================================================
-INVESTIGATION PROCESS
-====================================================== -->
-
-<section class="process section" id="process">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>OUR PROCESS</span>
-
-<h2>Every Case Follows a<br>Scientific Workflow</h2>
-
-<p>
-
-From evidence intake to expert reporting, every investigation
-is performed using documented forensic methodology.
-
-</p>
-
-</div>
-
-<div class="timeline">
-
-<div class="timeline-item">
-
-<div class="timeline-number">01</div>
-
-<h3>Consultation</h3>
-
-<p>
-
-Understand the case requirements and define the scope of forensic examination.
-
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-number">02</div>
-
-<h3>Evidence Intake</h3>
-
-<p>
-
-Evidence is received, documented and secured under chain of custody.
-
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-number">03</div>
-
-<h3>Scientific Examination</h3>
-
-<p>
-
-Detailed laboratory examination using validated forensic techniques.
-
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-number">04</div>
-
-<h3>Analysis & Verification</h3>
-
-<p>
-
-Results are analysed and independently verified before reporting.
-
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-number">05</div>
-
-<h3>Expert Report</h3>
-
-<p>
-
-Comprehensive report prepared for legal, investigative or private use.
-
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-number">06</div>
-
-<h3>Courtroom Support</h3>
-
-<p>
-
-Expert opinion and testimony whenever required.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ======================================================
-STATISTICS
-====================================================== -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div class="stat-box">
-
-<h2 class="counter" data-target="500">0</h2>
-
-<p>Cases Examined</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2 class="counter" data-target="100">0</h2>
-
-<p>Confidential Handling</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2 class="counter" data-target="28">0</h2>
-
-<p>States Supported</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2 class="counter" data-target="24">0</h2>
-
-<p>Professional Support</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ======================================================
-INDUSTRIES
-====================================================== -->
-
-<section class="industries section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>WHO WE SERVE</span>
-
-<h2>Trusted Across Multiple Sectors</h2>
-
-</div>
-
-<div class="industry-grid">
-
-<div class="industry-card">
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-<h3>Legal Professionals</h3>
-
-</div>
-
-<div class="industry-card">
-
-<i class="fa-solid fa-building"></i>
-
-<h3>Corporate Sector</h3>
-
-</div>
-
-<div class="industry-card">
-
-<i class="fa-solid fa-user-secret"></i>
-
-<h3>Private Investigations</h3>
-
-</div>
-
-<div class="industry-card">
-
-<i class="fa-solid fa-file-shield"></i>
-
-<h3>Insurance Companies</h3>
-
-</div>
-
-<div class="industry-card">
-
-<i class="fa-solid fa-landmark"></i>
-
-<h3>Government Agencies</h3>
-
-</div>
-
-<div class="industry-card">
-
-<i class="fa-solid fa-user-group"></i>
-
-<h3>Individuals</h3>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ======================================================
-CALL TO ACTION
-====================================================== -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>
-
-Need Professional Forensic Assistance?
-
-</h2>
-
-<p>
-
-Speak with AKSH FORENSICS for scientific examination,
-expert consultation and independent forensic opinions.
-
-</p>
-
-<a href="#contact" class="btn-primary">
-
-Request Consultation
-
-</a>
-
-</div>
-
-</section>
-
-
-
-<!-- ======================================================
-CONTACT
-====================================================== -->
-
-<section class="contact section" id="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>CONTACT</span>
-
-<h2>Let's Discuss Your Case</h2>
-
-</div>
-
-<div class="contact-wrapper">
-
-<div class="contact-info">
-
-<h3>AKSH FORENSICS</h3>
-
-<p>
-
-Professional Forensic Investigation & Scientific Examination
-
-</p>
-
-<div class="info">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<span>Ahmedabad, Gujarat, India</span>
-
-</div>
-
-<div class="info">
-
-<i class="fa-solid fa-phone"></i>
-
-<span>+91 XXXXX XXXXX</span>
-
-</div>
-
-<div class="info">
-
-<i class="fa-solid fa-envelope"></i>
-
-<span>info@akshforensics.in</span>
-
-</div>
-
-</div>
-
-<div class="contact-form">
-
-<form>
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Email Address" required>
-
-<input type="tel" placeholder="Phone Number">
-
-<select>
-
-<option>Select Service</option>
-
-<option>Fingerprint Examination</option>
-
-<option>Questioned Documents</option>
-
-<option>Crime Scene Investigation</option>
-
-<option>Arson Investigation</option>
-
-<option>Insurance Investigation</option>
-
-<option>Courtroom Support</option>
-
-</select>
-
-<textarea rows="6" placeholder="Describe Your Requirement"></textarea>
-
-<button type="submit" class="btn-primary">
-
-Send Enquiry
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ==========================================
-FOOTER
-========================================== -->
-
-<footer class="footer">
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<h2>AKSH FORENSICS</h2>
-
-<p>
-
-Scientific Precision. Legal Integrity.
-
-Providing independent forensic examination,
-expert consultation and courtroom support
-through documented scientific methodology.
-
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#upcoming">Upcoming Services</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Core Services</h3>
-
-<ul>
-
-<li>Fingerprint Examination</li>
-
-<li>Questioned Documents</li>
-
-<li>Crime Scene Investigation</li>
-
-<li>Arson Investigation</li>
-
-<li>Insurance Investigation</li>
-
-<li>Courtroom Support</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Upcoming</h3>
-
-<ul>
-
-<li>Cyber Forensics</li>
-
-<li>Audio & Video Authentication</li>
-
-</ul>
-
-<div class="social-icons">
-
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-<a href="#"><i class="fab fa-instagram"></i></a>
-
-<a href="#"><i class="fab fa-youtube"></i></a>
-
-</div>
-
-</div>
-
-</div>
-
-<hr>
-
-<div class="footer-bottom">
-
-<p>
-
-© 2026 AKSH FORENSICS.
-All Rights Reserved.
-
-</p>
-
-<p>
-
-Designed for Scientific Excellence.
-
-</p>
-
-</div>
-
-</div>
-
-</footer>
-
-
-
-<!-- ==========================================
-BACK TO TOP
-========================================== -->
-
-<button id="topBtn">
-
-<i class="fas fa-arrow-up"></i>
-
-</button>
-
-
-
-<!-- ==========================================
-WHATSAPP BUTTON
-========================================== -->
-
-<a href="#contact" class="whatsapp">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-
-
-<!-- ==========================================
-SCROLL PROGRESS BAR
-========================================== -->
-
-<div class="progress-bar"></div>
-
-
-
-<!-- ==========================================
-BACKGROUND PARTICLES
-========================================== -->
-
-<div id="particles"></div>
-
-
-
-<!-- ==========================================
-JAVASCRIPT FILES
-========================================== -->
-
-<script src="js/main.js"></script>
-
-<script src="js/hologram.js"></script>
-
-</body>
-
-</html>
+}
