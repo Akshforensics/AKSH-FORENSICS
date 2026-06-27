@@ -293,173 +293,6 @@
       animation:badgePulse 2s ease-in-out infinite;
     }
     @keyframes badgePulse {0%,100%{transform:scale(1);} 50%{transform:scale(1.05);}}
-    
-    .process-timeline {
-      position:relative; padding-left:40px;
-    }
-    .process-timeline::before {
-      content:''; position:absolute; left:15px; top:0; bottom:0;
-      width:2px; background:linear-gradient(180deg, var(--gold), transparent);
-    }
-    .process-item {
-      position:relative; margin-bottom:40px;
-      background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-      border:1px solid var(--glass-border); border-radius:12px;
-      padding:28px; transition:0.3s;
-      box-shadow:0 4px 20px rgba(10,31,68,0.08);
-    }
-    .process-item:hover {
-      border-color:var(--gold); transform:translateX(10px);
-      box-shadow:0 10px 30px rgba(217,119,6,0.2);
-    }
-    .process-item::before {
-      content:''; position:absolute; left:-33px; top:32px;
-      width:16px; height:16px; background:var(--gold);
-      border-radius:50%; box-shadow:0 0 20px var(--gold);
-      animation:dotPulse 2s ease-in-out infinite;
-    }
-    @keyframes dotPulse {0%,100%{transform:scale(1);} 50%{transform:scale(1.3);}}
-    .process-num {
-      font-size:14px; color:var(--gold); font-weight:700;
-      letter-spacing:2px; margin-bottom:8px;
-    }
-    .process-item h3 {
-      font-size:22px; font-weight:700; color:var(--navy); margin-bottom:10px;
-    }
-    .process-item p {color:#475569; font-size:15px; line-height:1.7;}
-    
-    .industries-grid {
-      display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
-    }
-    .industry-box {
-      background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-      border:1px solid var(--glass-border); border-radius:12px;
-      padding:32px 20px; text-align:center; transition:0.3s;
-      box-shadow:0 4px 20px rgba(10,31,68,0.08);
-    }
-    .industry-box:hover {
-      border-color:var(--gold); transform:translateY(-5px);
-      box-shadow:0 15px 35px rgba(217,119,6,0.2);
-    }
-    .industry-box .icon {font-size:3rem; margin-bottom:16px; filter:drop-shadow(0 0 12px var(--gold));}
-    .industry-box h4 {font-size:16px; font-weight:700; color:var(--navy);}
-    
-    .cta {
-      background:rgba(255,255,255,0.85); backdrop-filter:blur(30px);
-      border:1px solid var(--glass-border); border-radius:20px;
-      padding:60px 40px; text-align:center;
-      box-shadow:0 20px 60px rgba(10,31,68,0.1);
-    }
-    .cta h2 {font-size:42px; font-weight:900; color:var(--navy); margin-bottom:16px;}
-    .cta p {font-size:18px; color:#475569; margin-bottom:32px;}
-    .cta-btn {
-      background:linear-gradient(135deg, var(--gold), var(--gold-light));
-      color:#fff; padding:20px 48px; border-radius:12px;
-      text-decoration:none; font-weight:700; font-size:17px;
-      display:inline-block; transition:0.3s;
-      box-shadow:0 6px 25px rgba(217,119,6,0.4);
-      cursor:pointer; border:none;
-    }
-    .cta-btn:hover {transform:translateY(-3px); box-shadow:0 10px 40px rgba(217,119,6,0.6);}
-    
-    .footer {
-      background:rgba(255,255,255,0.95); backdrop-filter:blur(20px);
-      border-top:1px solid var(--glass-border);
-      padding:60px 24px 24px; margin-top:100px;
-      box-shadow:0 -4px 20px rgba(10,31,68,0.08);
-    }
-    .footer-inner {
-      max-width:1400px; margin:0 auto;
-      display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px;
-      margin-bottom:40px;
-    }
-    .footer-col h3 {font-size:20px; font-weight:700; color:var(--navy); margin-bottom:20px;}
-    .footer-col p, .footer-col a {
-      color:#475569; font-size:15px; line-height:1.8;
-      text-decoration:none; display:block; margin-bottom:10px; transition:0.3s;
-    }
-    .footer-col a:hover {color:var(--gold);}
-    .footer-bottom {
-      border-top:1px solid var(--glass-border); padding-top:24px;
-      text-align:center; color:#64748b; font-size:14px;
-    }
-    
-    /* Modal Forms */
-    .modal {
-      display:none; position:fixed; z-index:2000; left:0; top:0;
-      width:100%; height:100%; background:rgba(0,0,0,0.7);
-      backdrop-filter:blur(5px); overflow:auto;
-    }
-    .modal-content {
-      background:#fff; margin:5% auto; padding:40px;
-      border-radius:20px; max-width:600px; position:relative;
-      box-shadow:0 20px 60px rgba(0,0,0,0.3);
-      animation:modalSlide 0.3s ease-out;
-    }
-    @keyframes modalSlide {from{transform:translateY(-50px); opacity:0;} to{transform:translateY(0); opacity:1;}}
-    .close-modal {
-      position:absolute; top:20px; right:25px;
-      font-size:32px; font-weight:700; color:#64748b;
-      cursor:pointer; transition:0.3s;
-    }
-    .close-modal:hover {color:var(--gold);}
-    .modal h2 {
-      font-size:28px; font-weight:900; color:var(--navy); margin-bottom:8px;
-    }
-    .modal-subtitle {
-      color:#64748b; font-size:15px; margin-bottom:30px;
-    }
-    .form-group {
-      margin-bottom:20px;
-    }
-    .form-group label {
-      display:block; font-weight:600; color:#334155; margin-bottom:8px; font-size:14px;
-    }
-    .form-group input, .form-group textarea, .form-group select {
-      width:100%; padding:12px 16px; border:2px solid #e2e8f0;
-      border-radius:8px; font-size:15px; font-family:inherit;
-      transition:0.3s; outline:none;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      border-color:var(--gold); box-shadow:0 0 0 3px rgba(217,119,6,0.1);
-    }
-    .form-group textarea {
-      resize:vertical; min-height:100px;
-    }
-    .form-submit {
-      background:linear-gradient(135deg, var(--gold), var(--gold-light));
-      color:#fff; padding:14px 32px; border-radius:8px;
-      font-weight:700; font-size:16px; border:none; cursor:pointer;
-      width:100%; transition:0.3s; box-shadow:0 4px 15px rgba(217,119,6,0.4);
-    }
-    .form-submit:hover {transform:translateY(-2px); box-shadow:0 6px 25px rgba(217,119,6,0.6);}
-    
-    /* WhatsApp Float Button */
-    .whatsapp-float {
-      position:fixed; bottom:30px; right:30px; z-index:1500;
-      background:#25D366; width:60px; height:60px; border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:2rem; box-shadow:0 4px 20px rgba(37,211,102,0.5);
-      cursor:pointer; transition:0.3s; text-decoration:none;
-      animation:whatsappPulse 2s ease-in-out infinite;
-    }
-    .whatsapp-float:hover {transform:scale(1.1); box-shadow:0 6px 30px rgba(37,211,102,0.7);}
-    @keyframes whatsappPulse {0%,100%{transform:scale(1);} 50%{transform:scale(1.05);}}
-    
-    @media (max-width:1200px) {
-      .hero {grid-template-columns:1fr; text-align:center;}
-      .hero-left {align-items:center;}
-      .why-grid, .expertise-grid {grid-template-columns:repeat(2,1fr);}
-      .industries-grid {grid-template-columns:repeat(3,1fr);}
-    }
-    @media (max-width:768px) {
-      .hero-title {font-size:36px;}
-      .section-title {font-size:32px;}
-      .why-grid, .expertise-grid, .industries-grid {grid-template-columns:1fr;}
-      .footer-inner {grid-template-columns:1fr; gap:40px;}
-      .hologram-wrapper {max-width:350px;}
-      .modal-content {margin:10% 20px; padding:30px 20px;}
-    }
   </style>
 </head>
 <body>
@@ -615,8 +448,7 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
+    <section class="section">
     <div class="section-tag">03 / OUR INVESTIGATION PROCESS</div>
     <h2 class="section-title">A documented chain — from consultation to courtroom</h2>
     
@@ -685,4 +517,196 @@
         <h4>Law Enforcement</h4>
       </div>
       <div class="industry-box">
-        <div class
+        <div class="icon">🏦</div>
+        <h4>Banking</h4>
+      </div>
+      <div class="industry-box">
+        <div class="icon">🏥</div>
+        <h4>Healthcare</h4>
+      </div>
+      <div class="industry-box">
+        <div class="icon">👤</div>
+        <h4>Individuals</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-tag">05 / EXPERT CONSULTATION</div>
+    <div class="cta">
+      <h2>Need an independent forensic opinion?</h2>
+      <p>Speak directly with a forensic expert about your case. Confidential, no-obligation initial consultation.</p>
+      <button class="cta-btn" onclick="openRequestModal()">Speak With An Expert</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>AKSH FORENSICS</h3>
+        <p>Independent forensic experts providing court-admissible scientific analysis and expert witness support across India.</p>
+        <p style="color:var(--gold); font-weight:700; letter-spacing:2px; margin-top:20px;">EVIDENCE · ANALYSIS · TRUTH</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>NAVIGATE</h3>
+        <a href="#home">Home</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="footer-col">
+        <h3>EXPERTISE</h3>
+        <a href="#expertise">Fingerprint Examination</a>
+        <a href="#expertise">Questioned Documents</a>
+        <a href="#expertise">Cyber Forensics</a>
+        <a href="#expertise">Courtroom Support</a>
+      </div>
+      
+      <div class="footer-col">
+        <h3>CONTACT</h3>
+        <a href="mailto:akshforensics@gmail.com">akshforensics@gmail.com</a>
+        <a href="tel:+917861041617">+91 78610 41617</a>
+        <p>Pan India Service</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2026 Aksh Forensics. All rights reserved.<br>
+      CONFIDENTIAL · INDEPENDENT · COURT-ADMISSIBLE
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/917861041617?text=Hi%2C%20I%20need%20forensic%20expert%20consultation" target="_blank" class="whatsapp-float">💬</a>
+
+  <!-- Request Expert Opinion Modal -->
+  <div id="requestModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeRequestModal()">&times;</span>
+      <h2>Request Expert Opinion</h2>
+      <p class="modal-subtitle">Fill details and our expert will contact you within 24 hours</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="form_type" value="Expert Opinion Request">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label>Case Type *</label>
+          <select name="case_type" required>
+            <option value="">Select Case Type</option>
+            <option value="Fingerprint Examination">Fingerprint Examination</option>
+            <option value="Questioned Documents">Questioned Documents</option>
+            <option value="Crime Scene Investigation">Crime Scene Investigation</option>
+            <option value="Arson Investigation">Arson Investigation</option>
+            <option value="Insurance Investigation">Insurance Investigation</option>
+            <option value="Courtroom Support">Courtroom Support</option>
+            <option value="Cyber Forensics">Cyber Forensics</option>
+            <option value="Audio & Video Authentication">Audio & Video Authentication</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Case Details *</label>
+          <textarea name="message" placeholder="Brief description of your case..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Service Specific Modal -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeServiceModal()">&times;</span>
+      <h2 id="serviceTitle">Submit Case Details</h2>
+      <p class="modal-subtitle">Provide your case information for expert analysis</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="form_type" id="serviceTypeInput" value="">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label>Location/City *</label>
+          <input type="text" name="location" required>
+        </div>
+        <div class="form-group">
+          <label>Case Details *</label>
+          <textarea name="message" placeholder="Describe your case, evidence available, timeline..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Submit Details</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.nav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      if (nav.style.display === 'flex') {
+        nav.style.position = 'absolute';
+        nav.style.top = '70px';
+        nav.style.right = '24px';
+        nav.style.flexDirection = 'column';
+        nav.style.background = 'rgba(255,255,255,0.95)';
+        nav.style.backdropFilter = 'blur(20px)';
+        nav.style.padding = '20px';
+        nav.style.borderRadius = '12px';
+        nav.style.border = '1px solid rgba(10,31,68,0.15)';
+      }
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Modal Functions
+    function openRequestModal() {
+      document.getElementById('requestModal').style.display = 'block';
+    }
+    function closeRequestModal() {
+      document.getElementById('requestModal').style.display = 'none';
+    }
+    function openServiceModal(serviceName) {
+      document.getElementById('serviceTitle').textContent = serviceName + ' - Case Details';
+      document.getElementById('serviceTypeInput').value = serviceName;
+      document.getElementById('serviceModal').style.display = 'block';
+    }
+    function closeServiceModal() {
+      document.getElementById('serviceModal').style.display = 'none';
+    }
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
