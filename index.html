@@ -33,7 +33,6 @@
       position: relative;
     }
 
-    /* 3D EFFECT BACK ME */
     .watermark {
       position: fixed;
       top: 50%;
@@ -344,12 +343,8 @@
       margin-bottom: 50px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-top: 40px;
-      align-items: start;
+    .about-content {
+      max-width: 900px;
     }
 
     .about-content h3 {
@@ -357,6 +352,11 @@
       font-weight: 800;
       color: var(--navy);
       margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    .about-content h3:first-child {
+      margin-top: 0;
     }
 
     .about-content p {
@@ -369,14 +369,16 @@
     .examiner-list {
       list-style: none;
       margin-top: 16px;
+      margin-bottom: 40px;
     }
 
     .examiner-list li {
-      padding: 10px 0;
+      padding: 12px 0;
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 12px;
       color: #475569;
+      font-size: 15px;
     }
 
     .examiner-list li::before {
@@ -386,44 +388,7 @@
       background: var(--gold);
       border-radius: 50%;
       flex-shrink: 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin: 40px 0;
-    }
-
-    .stat-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(10, 31, 68, 0.08);
-    }
-
-    .stat-number {
-      font-size: 42px;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: #475569;
-      font-weight: 600;
-    }
-
-    .vision-mission {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 40px;
+      margin-top: 8px;
     }
 
     .vm-card {
@@ -433,6 +398,7 @@
       border-radius: 16px;
       padding: 32px;
       box-shadow: 0 4px 20px rgba(10, 31, 68, 0.08);
+      margin-bottom: 24px;
     }
 
     .vm-card h4 {
@@ -583,14 +549,13 @@
     }
 
     @media (max-width: 968px) {
-      .hero, .why-grid, .expertise-grid, .about-grid, .vision-mission {grid-template-columns: 1fr;}
+      .hero, .why-grid, .expertise-grid {grid-template-columns: 1fr;}
       .hero-title {font-size: 40px;}
       .hero-title .dot-separator {margin: 0 10px; top: -0.1em;}
       .section-title {font-size: 36px;}
       .tagline {gap: 10px; font-size: 12px;}
       .nav {display: none;}
       .menu-toggle {display: block;}
-      .stats-grid {grid-template-columns: 1fr;}
     }
   </style>
 </head>
@@ -654,54 +619,31 @@
 
   <section class="section" id="about">
     <div class="section-tag">01 / ABOUT AKSH</div>
-    <h2 class="section-title">20+ Years of Courtroom-Tested Expertise</h2>
+    <h2 class="section-title">Independent Forensic Authority</h2>
     <p class="section-desc">AKSH Forensics is led by senior court-recognized examiners delivering independent, unbiased forensic analysis across India.</p>
     
-    <div class="about-grid">
-      <div class="about-content">
-        <h3>Our Experience</h3>
-        <p>With over two decades of hands-on forensic investigation, our team has examined 5000+ cases across criminal, civil, and insurance matters. Every report is peer-reviewed by senior examiners who have testified in High Courts and Supreme Court of India.</p>
-        
-        <p>We combine traditional forensic disciplines with modern analytical technology to deliver findings that withstand the most rigorous cross-examination.</p>
+    <div class="about-content">
+      <h3>Examiner Background</h3>
+      <p>Our senior examiners bring specialized expertise across core forensic disciplines, ensuring every case receives rigorous scientific examination that meets judicial standards.</p>
+      
+      <ul class="examiner-list">
+        <li><strong>Fingerprint Examination</strong> — Latent print development, comparison and individualization using ACE-V methodology</li>
+        <li><strong>Questioned Documents</strong> — Handwriting, signature verification, ink analysis and document authentication</li>
+        <li><strong>Crime Scene Investigation</strong> — Systematic evidence documentation, collection and reconstruction support</li>
+      </ul>
 
-        <h3 style="margin-top: 40px;">Examiner Background</h3>
-        <p>Our senior examiners bring specialized expertise across core forensic disciplines:</p>
-        <ul class="examiner-list">
-          <li><strong>Fingerprint Examination</strong> — Latent print development, comparison and individualization</li>
-          <li><strong>Questioned Documents</strong> — Handwriting, signature verification and document authentication</li>
-          <li><strong>Crime Scene Investigation</strong> — Evidence documentation, collection and reconstruction</li>
-        </ul>
+      <p>Every examination follows established scientific protocols with documented chain of custody, ensuring findings withstand judicial scrutiny.</p>
 
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">5000+</div>
-            <div class="stat-label">Cases Examined</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Chain of Custody</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">PAN</div>
-            <div class="stat-label">India Coverage</div>
-          </div>
-        </div>
+      <h3>Our Vision</h3>
+      <div class="vm-card">
+        <h4><span class="vm-icon">🎯</span>Vision</h4>
+        <p>To be India's most trusted independent forensic authority — setting the standard for scientific integrity, legal precision, and ethical investigation in every case we examine.</p>
       </div>
 
-      <div class="vision-mission">
-        <div class="vm-card">
-          <h4><span class="vm-icon">🎯</span>Our Vision</h4>
-          <p>To be India's most trusted independent forensic authority — setting the standard for scientific integrity, legal precision, and ethical investigation in every case we examine.</p>
-        </div>
-        
-        <div class="vm-card">
-          <h4><span class="vm-icon">⚖️</span>Our Mission</h4>
-          <p>Deliver court-admissible forensic analysis that serves justice. We uphold scientific rigour, maintain absolute chain of custody, and provide clear, defensible expert opinions that lawyers and judges rely upon.</p>
-        </div>
+      <h3>Our Mission</h3>
+      <div class="vm-card">
+        <h4><span class="vm-icon">⚖️</span>Mission</h4>
+        <p>Deliver court-admissible forensic analysis that serves justice. We uphold scientific rigour, maintain absolute chain of custody, and provide clear, defensible expert opinions that lawyers and judges rely upon.</p>
       </div>
     </div>
   </section>
