@@ -26,85 +26,43 @@
 
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      background: #ffffff;
       color: var(--navy);
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* CIRCLE WALI 3D EFFECT + LADY JUSTICE BACKGROUND */
-    .watermark {
+    /* LADY JUSTICE BACKGROUND - EXACT LIKE YOUR SCREENSHOT */
+    body::before {
+      content: '';
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50vw;
-      height: 50vw;
-      max-width: 600px;
-      max-height: 600px;
-      background-image: url('PASTE_LADY_JUSTICE_IMAGE_URL_HERE');
-      background-size: contain;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/mnt/data/An8uk1ZW1fPJMkpcmYiJL_u8OD2u7txzFBZEfPH40j_E3uR9fKsUOtN8pH3ouQ2UIO__8UTrXV5OXiWcazL5OkrEka-OpU85IL2ZAAs3tUATXgVuhFbvsI2g');
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.04;
+      opacity: 0.06;
       z-index: -1;
       pointer-events: none;
-      user-select: none;
-      border-radius: 50%;
-      filter: drop-shadow(0 8px 16px rgba(10, 31, 68, 0.2)) 
-              drop-shadow(0 16px 32px rgba(10, 31, 68, 0.15))
-              drop-shadow(0 24px 48px rgba(10, 31, 68, 0.1));
-    }
-
-    /* CIRCLE GLOW EFFECT */
-    .watermark::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, rgba(217, 119, 6, 0.03) 40%, transparent 70%);
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    /* AKSH FORENSICS TEXT 3D - FONT FORMAT SAME */
-    .watermark::after {
-      content: 'AKSH FORENSICS';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 7vw;
-      font-weight: 900;
-      color: rgba(10, 31, 68, 0.02);
-      letter-spacing: 0.2em;
-      text-shadow: 
-        0 1px 0 rgba(255,255,255,0.8),
-        0 2px 0 rgba(10,31,68,0.1),
-        0 3px 0 rgba(10,31,68,0.08),
-        0 4px 0 rgba(10,31,68,0.06),
-        0 5px 0 rgba(10,31,68,0.04),
-        0 6px 10px rgba(10,31,68,0.1);
     }
 
     .header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
-      box-shadow: 0 4px 20px rgba(10, 31, 68, 0.05);
     }
 
     .header-inner {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 20px 24px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -113,33 +71,33 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       text-decoration: none;
     }
 
     .brand-logo {
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       font-weight: 900;
-      font-size: 24px;
+      font-size: 22px;
       box-shadow: 0 4px 20px rgba(217, 119, 6, 0.3);
     }
 
     .brand-text h1 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
       color: var(--navy);
       letter-spacing: -0.5px;
     }
 
     .brand-text p {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--gold);
       font-weight: 600;
       letter-spacing: 1.5px;
@@ -158,44 +116,37 @@
       font-weight: 600;
       font-size: 15px;
       transition: 0.3s;
-      position: relative;
-    }
-
-    .nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: 0.3s;
-    }
-
-    .nav a:hover::after {
-      width: 100%;
     }
 
     .nav a:hover {
       color: var(--gold);
     }
 
-    .menu-toggle {
-      display: none;
-      background: none;
+    .btn-nav {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.3s;
       border: none;
-      font-size: 28px;
-      color: var(--navy);
       cursor: pointer;
+    }
+
+    .btn-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4);
     }
 
     .hero {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 100px 24px 80px;
+      padding: 80px 24px 100px;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
       align-items: center;
       position: relative;
       z-index: 10;
@@ -205,65 +156,64 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--gold);
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .hero-title {
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 900;
       line-height: 1.1;
       color: var(--navy);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       letter-spacing: -1px;
     }
 
     .dot-separator {
       display: inline-block;
-      font-size: 1.3em;
+      font-size: 1.2em;
       line-height: 0;
       color: var(--gold);
       font-weight: 900;
       position: relative;
       top: -0.05em;
-    }
-
-    .hero-title .dot-separator {
-      font-size: 0.65em;
-      margin: 0 16px;
-      top: -0.15em;
+      margin: 0 12px;
     }
 
     .hero-desc {
-      font-size: 18px;
+      font-size: 16px;
       color: #475569;
-      line-height: 1.8;
-      margin-bottom: 40px;
-      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      max-width: 550px;
     }
 
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    .hero-desc-bold {
+      font-size: 15px;
+      color: var(--navy);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 550px;
+      font-weight: 600;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
       color: #fff;
-      padding: 16px 32px;
-      border-radius: 10px;
+      padding: 14px 28px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       transition: 0.3s;
       border: none;
       cursor: pointer;
       box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
+      display: inline-block;
     }
 
     .btn-primary:hover {
@@ -271,77 +221,70 @@
       box-shadow: 0 8px 30px rgba(217, 119, 6, 0.6);
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(20px);
-      color: var(--navy);
-      padding: 16px 32px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      transition: 0.3s;
-      border: 2px solid var(--glass-border);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      background: #fff;
-      transform: translateY(-3px);
-    }
-
+    /* ORBITAL CIRCLE ICONS - LIKE YOUR SCREENSHOT */
     .hero-visual {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
     }
 
-    .hero-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 20px 60px rgba(10, 31, 68, 0.1);
+    .orbital-container {
+      position: relative;
+      width: 350px;
+      height: 350px;
     }
 
-    .hero-card h3 {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 20px;
+    .orbit-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(217, 119, 6, 0.15);
+      border-radius: 50%;
     }
 
-    .hero-card ul {
-      list-style: none;
-    }
+    .orbit-1 { width: 350px; height: 350px; }
+    .orbit-2 { width: 280px; height: 280px; }
+    .orbit-3 { width: 210px; height: 210px; }
 
-    .hero-card li {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(10, 31, 68, 0.08);
-      color: #475569;
-      font-size: 15px;
+    .center-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border: 3px solid var(--gold);
+      border-radius: 12px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      font-size: 48px;
+      box-shadow: 0 8px 30px rgba(217, 119, 6, 0.25);
+      z-index: 10;
     }
 
-    .hero-card li:last-child {
-      border-bottom: none;
-    }
-
-    .hero-card li::before {
-      content: '✓';
-      width: 24px;
-      height: 24px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: #fff;
+    .orbit-icon {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border: 2px solid rgba(217, 119, 6, 0.3);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      font-size: 14px;
-      flex-shrink: 0;
+      font-size: 22px;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.15);
     }
+
+    .icon-1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+    .icon-2 { top: 50%; right: 0; transform: translate(50%, -50%); }
+    .icon-3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+    .icon-4 { top: 50%; left: 0; transform: translate(-50%, -50%); }
 
     .section {
       max-width: 1400px;
@@ -581,19 +524,13 @@
     @media (max-width: 968px) {
       .hero, .why-grid, .expertise-grid {grid-template-columns: 1fr;}
       .hero-title {font-size: 40px;}
-      .hero-title .dot-separator {margin: 0 10px; top: -0.1em;}
       .section-title {font-size: 36px;}
-      .tagline {gap: 10px; font-size: 12px;}
       .nav {display: none;}
-      .menu-toggle {display: block;}
-      .watermark {width: 80vw; height: 80vw;}
-      .watermark::after {font-size: 10vw;}
+      .hero-visual {display: none;}
     }
   </style>
 </head>
 <body>
-  <div class="watermark"></div>
-
   <header class="header">
     <div class="header-inner">
       <a href="#home" class="brand">
@@ -605,12 +542,11 @@
       </a>
       <nav class="nav">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
+        <button class="btn-nav">Request Expert Opinion</button>
       </nav>
-      <button class="menu-toggle">☰</button>
     </div>
   </header>
 
@@ -626,29 +562,134 @@
       </h1>
       
       <p class="hero-desc">
-        Evidence handled with scientific rigour and legal precision. Court-admissible forensic analysis, expert witness testimony and investigative support across India.
+        Independent forensic experts delivering court-admissible scientific analysis, evidence examination, and expert witness support across India
+      </p>
+
+      <p class="hero-desc-bold">
+        Professional forensic investigation, questioned document examination, fingerprint analysis, cyber forensics, crime scene investigation and expert courtroom support across India
       </p>
       
-      <div class="hero-cta">
-        <button class="btn-primary" onclick="openRequestModal()">Request Expert Opinion</button>
-        <a href="#about" class="btn-secondary">About AKSH</a>
-      </div>
+      <button class="btn-primary">Speak With An Expert</button>
     </div>
     
     <div class="hero-visual">
-      <div class="hero-card">
-        <h3>Why Leading Counsel Choose Us</h3>
-        <ul>
-          <li>Court-admissible documentation</li>
-          <li>ISO-aligned laboratory protocols</li>
-          <li>Clear, defensible expert opinions</li>
-          <li>Chain of custody guaranteed</li>
-          <li>Pan-India case support</li>
-        </ul>
+      <div class="orbital-container">
+        <div class="orbit-ring orbit-1"></div>
+        <div class="orbit-ring orbit-2"></div>
+        <div class="orbit-ring orbit-3"></div>
+        <div class="center-icon">⚖️</div>
+        <div class="orbit-icon icon-1">🔍</div>
+        <div class="orbit-icon icon-2">📄</div>
+        <div class="orbit-icon icon-3">🔬</div>
+        <div class="orbit-icon icon-4">💻</div>
       </div>
     </div>
   </section>
 
+  <section class="section" id="about">
+    <div class="section-tag">01 / ABOUT AKSH</div>
+    <h2 class="section-title">Independent Forensic Authority</h2>
+    <p class="section-desc">AKSH Forensics is led by senior court-recognized examiners delivering independent, unbiased forensic analysis across India.</p>
+    
+    <div class="about-content">
+      <h3>Examiner Background</h3>
+      <p>Our senior examiners bring specialized expertise across core forensic disciplines, ensuring every case receives rigorous scientific examination that meets judicial standards.</p>
+      
+      <ul class="examiner-list">
+        <li><strong>Fingerprint Examination</strong> — Latent print development, comparison and individualization using ACE-V methodology</li>
+        <li><strong>Questioned Documents</strong> — Handwriting, signature verification, ink analysis and document authentication</li>
+        <li><strong>Crime Scene Investigation</strong> — Systematic evidence documentation, collection and reconstruction support</li>
+      </ul>
+
+      <p>Every examination follows established scientific protocols with documented chain of custody, ensuring findings withstand judicial scrutiny.</p>
+
+      <h3>Our Vision</h3>
+      <div class="vm-card">
+        <h4><span class="vm-icon">🎯</span>Vision</h4>
+        <p>To be India's most trusted independent forensic authority — setting the standard for scientific integrity, legal precision, and ethical investigation in every case we examine.</p>
+      </div>
+
+      <h3>Our Mission</h3>
+      <div class="vm-card">
+        <h4><span class="vm-icon">⚖️</span>Mission</h4>
+        <p>Deliver court-admissible forensic analysis that serves justice. We uphold scientific rigour, maintain absolute chain of custody, and provide clear, defensible expert opinions that lawyers and judges rely upon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="expertise">
+    <div class="section-tag">02 / EXPERTISE</div>
+    <h2 class="section-title">Scientific disciplines, courtroom clarity</h2>
+    <p class="section-desc">Comprehensive forensic services delivered with scientific rigor and legal precision.</p>
+    
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-icon">🔍</div>
+        <h3>Fingerprint Examination</h3>
+        <p>Latent print development, comparison and verification to identification standards.</p>
+        <a class="expertise-link">Submit Case Details →</a>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-icon">📄</div>
+        <h3>Questioned Documents</h3>
+        <p>Handwriting, signature, ink-age and document-authentication analysis.</p>
+        <a class="expertise-link">Submit Case Details →</a>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-icon">🔬</div>
+        <h3>Crime Scene Investigation</h3>
+        <p>Systematic evidence documentation, collection and reconstruction support.</p>
+        <a class="expertise-link">Submit Case Details →</a>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-icon">🔥</div>
+        <h3>Arson Investigation</h3>
+        <p>Fire-origin, cause and accelerant analysis for insurance and legal matters.</p>
+        <a class="expertise-link">Submit Case Details →</a>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-icon">🛡️</div>
+        <h3>Insurance Investigation</h3>
+        <p>Claim-verification, fraud detection and forensic accounting support.</p>
+        <a class="expertise-link">Submit Case Details →</a>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-icon">⚖️</div>
+        <h3>Courtroom Support</h3>
+        <p>Expert-witness testimony, exhibits and cross-examination preparation.</p>
+        <a class="expertise-link">Submit Case Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="section-tag">03 / WHY AKSH FORENSICS</div>
+    <h2 class="section-title">Unmatched expertise. Uncompromising integrity.</h2>
+    
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Courtroom-Tested Methods</h3>
+        <p>Protocols and reporting that withstand judicial scrutiny across jurisdictions.</p>
+      </div>
+      
+      <div class="why-card">
+        <h3>Transparent Process</h3>
+        <p>Clear timelines, documented chain of custody and court-admissible documentation.</p>
+      </div>
+      
+      <div class="why-card">
+        <h3>Senior Examiner Oversight</h3>
+        <p>Every case reviewed by court-recognized senior forensic examiners.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
   <section class="section" id="about">
     <div class="section-tag">01 / ABOUT AKSH</div>
     <h2 class="section-title">Independent Forensic Authority</h2>
