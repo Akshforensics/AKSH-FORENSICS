@@ -8,18 +8,20 @@
     * {margin:0; padding:0; box-sizing:border-box;}
     
     :root {
-      --navy:#0a1f44;
-      --navy-light:#1e3a5f;
-      --gold:#d97706;
-      --gold-light:#f59e0b;
+      --blue:#00B4D8;
+      --blue-light:#90E0EF;
+      --blue-dark:#0077B6;
+      --white:#FFFFFF;
+      --off-white:#F0FDFF;
+      --navy:#023E8A;
       --glass:rgba(255,255,255,0.7);
-      --glass-border:rgba(10,31,68,0.15);
+      --glass-border:rgba(0,180,216,0.15);
     }
     
     body {
       font-family:'Georgia', 'Times New Roman', serif;
       background:#ffffff;
-      color:#0a1f44;
+      color:#023E8A;
       overflow-x:hidden;
       position:relative;
     }
@@ -42,8 +44,8 @@
       position:fixed;
       top:0; left:0;
       width:100%; height:100%;
-      background:radial-gradient(circle at 20% 50%, rgba(217,119,6,0.04) 0%, transparent 50%),
-                 radial-gradient(circle at 80% 80%, rgba(30,58,95,0.06) 0%, transparent 50%);
+      background:radial-gradient(circle at 20% 50%, rgba(0,180,216,0.04) 0%, transparent 50%),
+                 radial-gradient(circle at 80% 80%, rgba(144,224,239,0.06) 0%, transparent 50%);
       animation:bgMove 15s ease-in-out infinite;
       z-index:0;
     }
@@ -54,7 +56,7 @@
       background:rgba(255,255,255,0.9);
       backdrop-filter:blur(20px);
       border-bottom:1px solid var(--glass-border);
-      box-shadow:0 2px 20px rgba(10,31,68,0.08);
+      box-shadow:0 2px 20px rgba(0,180,216,0.08);
     }
     .header-inner {
       max-width:1400px; margin:0 auto; padding:16px 24px;
@@ -64,17 +66,16 @@
       display:flex; align-items:center; gap:14px;
       font-size:28px; font-weight:900; color:var(--navy);
       letter-spacing:2px;
-      text-shadow:0 2px 10px rgba(217,119,6,0.2);
+      text-shadow:0 2px 10px rgba(0,180,216,0.2);
     }
     .logo-3d {
       width:45px; height:45px;
       border-radius:8px;
       object-fit:contain;
-      filter:drop-shadow(0 0 15px rgba(217,119,6,0.5));
+      filter:drop-shadow(0 0 15px rgba(0,180,216,0.5));
       animation:logoFloat 3s ease-in-out infinite;
-      transform-style:preserve-3d;
     }
-    @keyframes logoFloat {0%,100%{transform:rotateY(0deg) translateY(0);} 50%{transform:rotateY(180deg) translateY(-5px);}}
+    @keyframes logoFloat {0%,100%{transform:translateY(0);} 50%{transform:translateY(-5px);}}
     .nav {display:flex; gap:32px; align-items:center;}
     .nav a {
       text-decoration:none; color:#334155; font-weight:600; font-size:15px;
@@ -82,19 +83,19 @@
     }
     .nav a::after {
       content:''; position:absolute; bottom:-5px; left:0;
-      width:0; height:2px; background:var(--gold);
+      width:0; height:2px; background:var(--blue);
       transition:0.3s;
     }
-    .nav a:hover {color:var(--gold);}
+    .nav a:hover {color:var(--blue);}
     .nav a:hover::after {width:100%;}
     .btn {
-      background:linear-gradient(135deg, var(--gold), var(--gold-light));
+      background:linear-gradient(135deg, var(--blue), var(--blue-light));
       color:#fff; padding:12px 24px; border-radius:8px;
       text-decoration:none; font-weight:700; font-size:14px;
-      transition:0.3s; box-shadow:0 4px 15px rgba(217,119,6,0.3);
+      transition:0.3s; box-shadow:0 4px 15px rgba(0,180,216,0.3);
       cursor:pointer; border:none;
     }
-    .btn:hover {transform:translateY(-2px); box-shadow:0 6px 25px rgba(217,119,6,0.5);}
+    .btn:hover {transform:translateY(-2px); box-shadow:0 6px 25px rgba(0,180,216,0.5);}
     
     .menu-toggle {display:none; font-size:28px; color:var(--navy); cursor:pointer;}
     @media (max-width:968px) {
@@ -110,12 +111,12 @@
     }
     .hero-left {display:flex; flex-direction:column; gap:24px;}
     .tagline {
-      font-size:14px; color:var(--gold); letter-spacing:3px; font-weight:700;
+      font-size:14px; color:var(--blue); letter-spacing:3px; font-weight:700;
       text-transform:uppercase;
     }
     .hero-title {
       font-size:56px; font-weight:900; line-height:1.1; color:var(--navy);
-      text-shadow:0 2px 20px rgba(217,119,6,0.15);
+      text-shadow:0 2px 20px rgba(0,180,216,0.15);
     }
     .hero-desc {
       font-size:18px; line-height:1.8; color:#475569;
@@ -125,14 +126,14 @@
       margin-top:8px;
     }
     .hero-btn {
-      background:linear-gradient(135deg, var(--gold), var(--gold-light));
+      background:linear-gradient(135deg, var(--blue), var(--blue-light));
       color:#fff; padding:18px 40px; border-radius:10px;
       text-decoration:none; font-weight:700; font-size:16px;
       width:fit-content; transition:0.3s;
-      box-shadow:0 4px 20px rgba(217,119,6,0.4);
+      box-shadow:0 4px 20px rgba(0,180,216,0.4);
       cursor:pointer; border:none;
     }
-    .hero-btn:hover {transform:translateY(-3px); box-shadow:0 8px 30px rgba(217,119,6,0.6);}
+    .hero-btn:hover {transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,180,216,0.6);}
     
     .hologram-wrapper {
       position:relative; width:100%; max-width:550px; margin:auto;
@@ -148,27 +149,26 @@
       position:absolute; top:50%; left:50%;
       width:200px; height:200px;
       transform:translate(-50%, -50%);
-      transform-style:preserve-3d;
       animation:corePulse 3s ease-in-out infinite;
     }
     @keyframes corePulse {0%,100%{transform:translate(-50%, -50%) scale(1);} 50%{transform:translate(-50%, -50%) scale(1.1);}}
     .core-layer {
       position:absolute; inset:0;
-      border:2px solid var(--gold);
+      border:2px solid var(--blue);
       border-radius:16px;
       background:rgba(255,255,255,0.8);
       backdrop-filter:blur(10px);
-      box-shadow:0 0 40px rgba(217,119,6,0.3), inset 0 0 20px rgba(217,119,6,0.1);
+      box-shadow:0 0 40px rgba(0,180,216,0.3), inset 0 0 20px rgba(0,180,216,0.1);
     }
     .core-icon {
       position:absolute; top:50%; left:50%;
       transform:translate(-50%, -50%);
       font-size:5rem;
-      filter:drop-shadow(0 0 15px var(--gold));
+      filter:drop-shadow(0 0 15px var(--blue));
     }
     .orbit {
       position:absolute; top:50%; left:50%;
-      border:1px solid rgba(217,119,6,0.4);
+      border:1px solid rgba(0,180,216,0.4);
       border-radius:50%;
       transform:translate(-50%, -50%);
     }
@@ -179,9 +179,9 @@
     .orbit-item {
       position:absolute; width:60px; height:60px;
       background:rgba(255,255,255,0.9); backdrop-filter:blur(10px);
-      border:2px solid var(--gold); border-radius:50%;
+      border:2px solid var(--blue); border-radius:50%;
       display:flex; align-items:center; justify-content:center;
-      font-size:1.8rem; box-shadow:0 0 20px rgba(217,119,6,0.4);
+      font-size:1.8rem; box-shadow:0 0 20px rgba(0,180,216,0.4);
     }
     .item-1 {top:0; left:50%; transform:translate(-50%, -50%);}
     .item-2 {top:50%; right:0; transform:translate(50%, -50%);}
@@ -193,18 +193,17 @@
       max-width:1400px; margin:0 auto; padding:100px 24px;
     }
     .section-tag {
-      font-size:13px; color:var(--gold); letter-spacing:3px; font-weight:700;
+      font-size:13px; color:var(--blue); letter-spacing:3px; font-weight:700;
       margin-bottom:16px; text-transform:uppercase;
     }
     .section-title {
       font-size:48px; font-weight:900; color:var(--navy); margin-bottom:20px;
-      text-shadow:0 2px 15px rgba(217,119,6,0.1);
+      text-shadow:0 2px 15px rgba(0,180,216,0.1);
     }
     .section-desc {
       font-size:18px; color:#475569; line-height:1.8; max-width:800px; margin-bottom:60px;
     }
     
-    /* ABOUT SECTION - TERA NAYA CONTENT */
     .about-content {
       max-width: 900px;
     }
@@ -245,7 +244,7 @@
       border: 1px solid var(--glass-border);
       border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 4px 20px rgba(10, 31, 68, 0.08);
+      box-shadow: 0 4px 20px rgba(0,180,216,0.08);
       margin-bottom: 24px;
     }
     .vm-card h4 {
@@ -260,7 +259,7 @@
     .vm-icon {
       width: 40px;
       height: 40px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -281,22 +280,22 @@
       border:1px solid var(--glass-border); border-radius:16px;
       padding:32px; transition:0.4s;
       position:relative; overflow:hidden;
-      box-shadow:0 4px 20px rgba(10,31,68,0.08);
+      box-shadow:0 4px 20px rgba(0,180,216,0.08);
     }
     .why-card::before {
       content:''; position:absolute; top:0; left:0;
       width:100%; height:100%;
-      background:linear-gradient(135deg, rgba(217,119,6,0.08), transparent);
+      background:linear-gradient(135deg, rgba(0,180,216,0.08), transparent);
       opacity:0; transition:0.4s;
     }
-    .why-card:hover {transform:translateY(-8px); border-color:var(--gold); box-shadow:0 20px 40px rgba(217,119,6,0.2);}
+    .why-card:hover {transform:translateY(-8px); border-color:var(--blue); box-shadow:0 20px 40px rgba(0,180,216,0.2);}
     .why-card:hover::before {opacity:1;}
     .why-icon {
       width:60px; height:60px;
-      background:linear-gradient(135deg, var(--gold), var(--gold-light));
+      background:linear-gradient(135deg, var(--blue), var(--blue-light));
       border-radius:12px; display:flex; align-items:center; justify-content:center;
       font-size:2rem; margin-bottom:20px;
-      box-shadow:0 0 30px rgba(217,119,6,0.4);
+      box-shadow:0 0 30px rgba(0,180,216,0.4);
       animation:iconFloat 3s ease-in-out infinite;
     }
     @keyframes iconFloat {0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);}}
@@ -309,65 +308,11 @@
       position:relative; z-index:1;
     }
     
-    .expertise-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-    }
-    .expertise-card {
-      background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-      border:1px solid var(--glass-border); border-radius:16px;
-      padding:36px 28px; transition:0.4s;
-      position:relative; overflow:hidden;
-      transform-style:preserve-3d;
-      box-shadow:0 4px 20px rgba(10,31,68,0.08);
-    }
-    .expertise-card::after {
-      content:''; position:absolute; top:-50%; right:-50%;
-      width:200%; height:200%;
-      background:radial-gradient(circle, rgba(217,119,6,0.1), transparent);
-      opacity:0; transition:0.4s;
-    }
-    .expertise-card:hover {
-      transform:translateY(-10px) rotateX(5deg);
-      border-color:var(--gold);
-      box-shadow:0 25px 50px rgba(217,119,6,0.25);
-    }
-    .expertise-card:hover::after {opacity:1;}
-    .exp-icon {
-      font-size:3rem; margin-bottom:20px;
-      filter:drop-shadow(0 0 12px var(--gold));
-      animation:expIconSpin 4s ease-in-out infinite;
-    }
-    @keyframes expIconSpin {0%,100%{transform:rotateY(0deg);} 50%{transform:rotateY(180deg);}}
-    .expertise-card h3 {
-      font-size:21px; font-weight:700; color:var(--navy); margin-bottom:14px;
-      position:relative; z-index:1;
-    }
-    .expertise-card p {
-      color:#475569; font-size:15px; line-height:1.7; margin-bottom:20px;
-      position:relative; z-index:1;
-    }
-    .service-btn {
-      background:linear-gradient(135deg, var(--gold), var(--gold-light));
-      color:#fff; padding:10px 20px; border-radius:8px;
-      text-decoration:none; font-weight:600; font-size:14px;
-      display:inline-block; transition:0.3s; border:none; cursor:pointer;
-      position:relative; z-index:1;
-    }
-    .service-btn:hover {transform:translateY(-2px); box-shadow:0 6px 20px rgba(217,119,6,0.5);}
-    .badge {
-      background:linear-gradient(135deg, #dc2626, #ef4444);
-      color:#fff; font-size:11px; font-weight:700;
-      padding:4px 10px; border-radius:6px; display:inline-block;
-      margin-left:8px; box-shadow:0 0 15px rgba(220,38,38,0.4);
-      animation:badgePulse 2s ease-in-out infinite;
-    }
-    @keyframes badgePulse {0%,100%{transform:scale(1);} 50%{transform:scale(1.05);}}
-    
     @media (max-width:968px) {
       .hero {grid-template-columns:1fr; gap:40px;}
       .hero-title {font-size:40px;}
       .section-title {font-size:36px;}
-      .why-grid, .expertise-grid {grid-template-columns:1fr;}
+      .why-grid {grid-template-columns:1fr;}
       .hologram-wrapper {max-width:400px;}
     }
   </style>
@@ -382,6 +327,7 @@
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#expertise">Expertise</a>
+        <a href="#knowledge">Knowledge Hub</a>
         <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
         <button class="btn" onclick="openRequestModal()">Request Expert Opinion</button>
@@ -451,7 +397,7 @@
   </section>
 
   <section class="section" id="why">
-    <div class="section-tag">01 / WHY AKSH FORENSICS</div>
+    <div class="section-tag">02 / WHY AKSH FORENSICS</div>
     <h2 class="section-title">Evidence handled with scientific rigour and legal precision</h2>
     
     <div class="why-grid">
@@ -491,755 +437,332 @@
         <p>Strict confidentiality protocols protecting clients, parties, and case integrity.</p>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="expertise">
-    <div class="section-tag">02 / OUR EXPERTISE</div>
+  </section>  <section class="section" id="expertise">
+    <div class="section-tag">03 / OUR EXPERTISE</div>
     <h2 class="section-title">Forensic disciplines, end to end</h2>
     <p class="section-desc">Specialist examination across the evidence types that decide cases — each with documented methodology and court-ready reporting.</p>
     
     <div class="expertise-grid">
       <div class="expertise-card">
-        <div class="exp-icon">👆</div>
+        <div class="exp-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/2956/2956758.png" alt="Fingerprint" width="48">
+        </div>
         <h3>Fingerprint Examination</h3>
         <p>Latent print development, comparison, and expert opinion for criminal & civil matters. Digital fingerprint analysis.</p>
         <button class="service-btn" onclick="openServiceModal('Fingerprint Examination')">Submit Case Details</button>
       </div>
       
       <div class="expertise-card">
-        <div class="exp-icon">📝</div>
+        <div class="exp-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Document" width="48">
+        </div>
         <h3>Questioned Documents</h3>
         <p>Handwriting & signature verification, forgery detection, ink/age analysis, charred & altered document examination.</p>
         <button class="service-btn" onclick="openServiceModal('Questioned Documents')">Submit Case Details</button>
       </div>
       
       <div class="expertise-card">
-        <div class="exp-icon">🔍</div>
+        <div class="exp-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/4413/4413081.png" alt="Crime Scene" width="48">
+        </div>
         <h3>Crime Scene Investigation</h3>
         <p>Independent crime scene analysis, evidence documentation, reconstruction, and bloodstain pattern analysis.</p>
         <button class="service-btn" onclick="openServiceModal('Crime Scene Investigation')">Submit Case Details</button>
       </div>
       
       <div class="expertise-card">
-        <div class="exp-icon">🔥</div>
-        <h3>Arson Investigation</h3>
-        <p>Fire origin & cause determination, electrical vs intentional fire analysis, expert report for insurance/legal claims.</p>
-        <button class="service-btn" onclick="openServiceModal('Arson Investigation')">Submit Case Details</button>
-      </div>
-      
-      <div class="expertise-card">
-        <div class="exp-icon">🛡️</div>
-        <h3>Insurance Investigation</h3>
-        <p>Fraud detection in claims, accident reconstruction, document verification for insurance companies & TPA.</p>
-        <button class="service-btn" onclick="openServiceModal('Insurance Investigation')">Submit Case Details</button>
-      </div>
-      
-      <div class="expertise-card">
-        <div class="exp-icon">⚖️</div>
-        <h3>Courtroom Support</h3>
-        <p>Expert witness testimony, technical support to advocates during cross-examination of forensic evidence.</p>
-        <button class="service-btn" onclick="openServiceModal('Courtroom Support')">Submit Case Details</button>
-      </div>
-      
-      <div class="expertise-card">
-        <div class="exp-icon">💻</div>
+        <div class="exp-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Cyber" width="48">
+        </div>
         <h3>Cyber Forensics <span class="badge">Coming Soon</span></h3>
         <p>Digital evidence recovery, mobile/computer forensics, email & social media authentication. Launching soon.</p>
         <button class="service-btn" onclick="openServiceModal('Cyber Forensics')">Register Interest</button>
       </div>
       
       <div class="expertise-card">
-        <div class="exp-icon">🎥</div>
+        <div class="exp-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1179/1179120.png" alt="Audio Video" width="48">
+        </div>
         <h3>Audio & Video Authentication <span class="badge">Coming Soon</span></h3>
         <p>Voice identification, video tampering detection, CCTV enhancement and forensic analysis. Launching soon.</p>
         <button class="service-btn" onclick="openServiceModal('Audio & Video Authentication')">Register Interest</button>
       </div>
     </div>
   </section>
-</body>
-</html>
-      
-      <div class="expertise-card">
-        <div class="expertise-icon">🔥</div>
-        <h3>Arson Investigation</h3>
-        <p>Fire-origin, cause and accelerant analysis for insurance and legal matters.</p>
-        <a class="expertise-link">Submit Case Details →</a>
-      </div>
-      
-      <div class="expertise-card">
-        <div class="expertise-icon">🛡️</div>
-        <h3>Insurance Investigation</h3>
-        <p>Claim-verification, fraud detection and forensic accounting support.</p>
-        <a class="expertise-link">Submit Case Details →</a>
-      </div>
-      
-      <div class="expertise-card">
-        <div class="expertise-icon">⚖️</div>
-        <h3>Courtroom Support</h3>
-        <p>Expert-witness testimony, exhibits and cross-examination preparation.</p>
-        <a class="expertise-link">Submit Case Details →</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="why">
-    <div class="section-tag">03 / WHY AKSH FORENSICS</div>
-    <h2 class="section-title">Unmatched expertise. Uncompromising integrity.</h2>
+  <section class="section" id="knowledge">
+    <div class="section-tag">04 / KNOWLEDGE HUB</div>
+    <h2 class="section-title">Forensic Science Resources</h2>
+    <p class="section-desc">Educational resources to understand forensic methodologies, legal standards, and scientific principles behind our investigations.</p>
     
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>Courtroom-Tested Methods</h3>
-        <p>Protocols and reporting that withstand judicial scrutiny across jurisdictions.</p>
-      </div>
-      
-      <div class="why-card">
-        <h3>Transparent Process</h3>
-        <p>Clear timelines, documented chain of custody and court-admissible documentation.</p>
-      </div>
-      
-      <div class="why-card">
-        <h3>Senior Examiner Oversight</h3>
-        <p>Every case reviewed by court-recognized senior forensic examiners.</p>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
-  <section class="section" id="about">
-    <div class="section-tag">01 / ABOUT AKSH</div>
-    <h2 class="section-title">Independent Forensic Authority</h2>
-    <p class="section-desc">AKSH Forensics is led by senior court-recognized examiners delivering independent, unbiased forensic analysis across India.</p>
-    
-    <div class="about-content">
-      <h3>Examiner Background</h3>
-      <p>Our senior examiners bring specialized expertise across core forensic disciplines, ensuring every case receives rigorous scientific examination that meets judicial standards.</p>
-      
-      <ul class="examiner-list">
-        <li><strong>Fingerprint Examination</strong> — Latent print development, comparison and individualization using ACE-V methodology</li>
-        <li><strong>Questioned Documents</strong> — Handwriting, signature verification, ink analysis and document authentication</li>
-        <li><strong>Crime Scene Investigation</strong> — Systematic evidence documentation, collection and reconstruction support</li>
-      </ul>
-
-      <p>Every examination follows established scientific protocols with documented chain of custody, ensuring findings withstand judicial scrutiny.</p>
-
-      <h3>Our Vision</h3>
-      <div class="vm-card">
-        <h4><span class="vm-icon">🎯</span>Vision</h4>
-        <p>To be India's most trusted independent forensic authority — setting the standard for scientific integrity, legal precision, and ethical investigation in every case we examine.</p>
-      </div>
-
-      <h3>Our Mission</h3>
-      <div class="vm-card">
-        <h4><span class="vm-icon">⚖️</span>Mission</h4>
-        <p>Deliver court-admissible forensic analysis that serves justice. We uphold scientific rigour, maintain absolute chain of custody, and provide clear, defensible expert opinions that lawyers and judges rely upon.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="expertise">
-    <div class="section-tag">02 / EXPERTISE</div>
-    <h2 class="section-title">Scientific disciplines, courtroom clarity</h2>
-    <p class="section-desc">Comprehensive forensic services delivered with scientific rigor and legal precision.</p>
-    
-    <div class="expertise-grid">
-      <div class="expertise-card" onclick="openServiceModal('Fingerprint Examination')">
-        <div class="expertise-icon">🔍</div>
+    <div class="knowledge-grid">
+      <div class="knowledge-card">
+        <div class="knowledge-icon">📘</div>
         <h3>Fingerprint Examination</h3>
-        <p>Latent print development, comparison and verification to identification standards.</p>
-        <a class="expertise-link">Submit Case Details →</a>
+        <div class="knowledge-content">
+          <h4>Understanding Fingerprint Examination</h4>
+          <p>Fingerprint examination is one of the most reliable methods of personal identification in forensic science. The uniqueness and permanence of friction ridge patterns make fingerprints invaluable for linking individuals to crime scenes and verifying identity.</p>
+          
+          <h5>Types of Fingerprints</h5>
+          <ul>
+            <li><strong>Latent Prints:</strong> Invisible impressions left by sweat and natural skin secretions, requiring forensic development techniques.</li>
+            <li><strong>Patent Prints:</strong> Visible fingerprints created by substances such as blood, ink, paint, grease, or dust.</li>
+            <li><strong>Plastic Prints:</strong> Three-dimensional impressions left on soft materials like wax, soap, clay, or putty.</li>
+          </ul>
+
+          <h5>Development Techniques</h5>
+          <ul>
+            <li>Powder Dusting</li>
+            <li>Cyanoacrylate (Super Glue) Fuming</li>
+            <li>Ninhydrin Treatment</li>
+            <li>Iodine Fuming</li>
+            <li>Silver Nitrate Processing</li>
+            <li>Fluorescent Dye Staining</li>
+            <li>Alternate Light Source (ALS) Examination</li>
+          </ul>
+
+          <h5>Examination Process</h5>
+          <ol>
+            <li>Evidence Collection</li>
+            <li>Development of Latent Prints</li>
+            <li>Digital Enhancement</li>
+            <li>Comparison with Known Prints</li>
+            <li>Verification by Independent Examiner</li>
+            <li>Expert Report Preparation</li>
+          </ol>
+
+          <h5>Applications</h5>
+          <p>Criminal Investigations, Civil Disputes, Identity Verification, Employee Fraud Cases, Property Crime Investigation, Court Evidence</p>
+        </div>
       </div>
-      
-      <div class="expertise-card" onclick="openServiceModal('Questioned Documents')">
-        <div class="expertise-icon">📄</div>
-        <h3>Questioned Documents</h3>
-        <p>Handwriting, signature, ink-age and document-authentication analysis.</p>
-        <a class="expertise-link">Submit Case Details →</a>
+
+      <div class="knowledge-card">
+        <div class="knowledge-icon">📄</div>
+        <h3>Questioned Document Examination</h3>
+        <div class="knowledge-content">
+          <h4>Scientific Examination of Disputed Documents</h4>
+          <p>Questioned Document Examination involves the scientific analysis of documents to determine authenticity, detect forgery, identify alterations, and establish authorship.</p>
+          
+          <h5>Common Types of Cases</h5>
+          <ul>
+            <li>Signature Forgery</li>
+            <li>Handwriting Disputes</li>
+            <li>Altered Contracts</li>
+            <li>Cheque Fraud</li>
+            <li>Will and Testament Verification</li>
+            <li>Property Documents</li>
+            <li>Anonymous Letters</li>
+            <li>Fake Certificates</li>
+          </ul>
+
+          <h5>Areas of Examination</h5>
+          <ul>
+            <li>Handwriting Characteristics</li>
+            <li>Signature Comparison</li>
+            <li>Ink Analysis</li>
+            <li>Paper Examination</li>
+            <li>Printing Technology</li>
+            <li>Stamp and Seal Verification</li>
+            <li>Erasures and Alterations</li>
+            <li>Indented Writing</li>
+            <li>Sequence of Strokes</li>
+          </ul>
+
+          <h5>Scientific Methods</h5>
+          <ul>
+            <li>Stereo Microscopy</li>
+            <li>Video Spectral Comparator (VSC)</li>
+            <li>Infrared Examination</li>
+            <li>Ultraviolet Examination</li>
+            <li>Electrostatic Detection Apparatus (ESDA)</li>
+            <li>Digital Image Analysis</li>
+          </ul>
+
+          <h5>Outcome</h5>
+          <p>Detailed forensic opinions prepared for judicial proceedings and legal investigations.</p>
+        </div>
       </div>
-      
-      <div class="expertise-card" onclick="openServiceModal('Crime Scene Investigation')">
-        <div class="expertise-icon">🔬</div>
+
+      <div class="knowledge-card">
+        <div class="knowledge-icon">🔍</div>
         <h3>Crime Scene Investigation</h3>
-        <p>Systematic evidence documentation, collection and reconstruction support.</p>
-        <a class="expertise-link">Submit Case Details →</a>
+        <div class="knowledge-content">
+          <h4>Scientific Crime Scene Management</h4>
+          <p>Crime scene investigation is the systematic documentation, examination, collection, and preservation of physical evidence while maintaining its evidentiary value.</p>
+          
+          <h5>Major Objectives</h5>
+          <ul>
+            <li>Preserve the Crime Scene</li>
+            <li>Identify Physical Evidence</li>
+            <li>Prevent Contamination</li>
+            <li>Document Every Observation</li>
+            <li>Reconstruct Events</li>
+            <li>Support Investigation</li>
+          </ul>
+
+          <h5>Evidence Types</h5>
+          <ul>
+            <li>Fingerprints</li>
+            <li>Biological Evidence</li>
+            <li>Footwear Impressions</li>
+            <li>Tool Marks</li>
+            <li>Firearms Evidence</li>
+            <li>Documents</li>
+            <li>Digital Devices</li>
+            <li>Trace Evidence</li>
+          </ul>
+
+          <h5>Investigation Procedure</h5>
+          <ol>
+            <li>Scene Security</li>
+            <li>Initial Survey</li>
+            <li>Photography & Videography</li>
+            <li>Scene Sketching</li>
+            <li>Evidence Documentation</li>
+            <li>Evidence Collection</li>
+            <li>Packaging & Preservation</li>
+            <li>Chain of Custody</li>
+            <li>Laboratory Submission</li>
+            <li>Reconstruction</li>
+          </ol>
+
+          <h5>Importance</h5>
+          <p>Proper crime scene investigation significantly influences the success of criminal investigations and judicial outcomes.</p>
+        </div>
       </div>
-      
-      <div class="expertise-card" onclick="openServiceModal('Arson Investigation')">
-        <div class="expertise-icon">🔥</div>
+
+      <div class="knowledge-card">
+        <div class="knowledge-icon">🔥</div>
         <h3>Arson Investigation</h3>
-        <p>Fire-origin, cause and accelerant analysis for insurance and legal matters.</p>
-        <a class="expertise-link">Submit Case Details →</a>
+        <div class="knowledge-content">
+          <h4>Scientific Investigation of Fire Incidents</h4>
+          <p>Arson investigation focuses on determining how and where a fire started, identifying its cause, and distinguishing accidental fires from intentionally set fires.</p>
+          
+          <h5>Objectives</h5>
+          <ul>
+            <li>Determine Fire Origin</li>
+            <li>Identify Cause</li>
+            <li>Detect Accelerants</li>
+            <li>Evaluate Burn Patterns</li>
+            <li>Identify Ignition Sources</li>
+          </ul>
+
+          <h5>Areas of Investigation</h5>
+          <ul>
+            <li>Residential Fires</li>
+            <li>Commercial Fires</li>
+            <li>Industrial Fires</li>
+            <li>Vehicle Fires</li>
+            <li>Explosion Scenes</li>
+          </ul>
+
+          <h5>Scientific Techniques</h5>
+          <ul>
+            <li>Burn Pattern Analysis</li>
+            <li>Fire Dynamics</li>
+            <li>Accelerant Sampling</li>
+            <li>Electrical System Examination</li>
+            <li>Debris Analysis</li>
+            <li>Laboratory Testing</li>
+          </ul>
+
+          <h5>Applications</h5>
+          <p>Criminal Cases, Insurance Claims, Civil Litigation, Fire Safety Investigation</p>
+        </div>
       </div>
-      
-      <div class="expertise-card" onclick="openServiceModal('Insurance Investigation')">
-        <div class="expertise-icon">🛡️</div>
+
+      <div class="knowledge-card">
+        <div class="knowledge-icon">🛡️</div>
         <h3>Insurance Investigation</h3>
-        <p>Claim-verification, fraud detection and forensic accounting support.</p>
-        <a class="expertise-link">Submit Case Details →</a>
+        <div class="knowledge-content">
+          <h4>Independent Insurance Fraud Investigation</h4>
+          <p>Insurance investigations help determine whether claims are genuine, exaggerated, or fraudulent through scientific evidence evaluation and investigative techniques.</p>
+          
+          <h5>Types of Claims</h5>
+          <ul>
+            <li>Fire Claims</li>
+            <li>Theft Claims</li>
+            <li>Property Damage</li>
+            <li>Vehicle Claims</li>
+            <li>Commercial Losses</li>
+            <li>Liability Claims</li>
+          </ul>
+
+          <h5>Investigation Includes</h5>
+          <ul>
+            <li>Evidence Examination</li>
+            <li>Document Verification</li>
+            <li>Accident Analysis</li>
+            <li>Witness Interviews</li>
+            <li>Site Inspection</li>
+            <li>Loss Assessment</li>
+            <li>Fraud Detection</li>
+          </ul>
+
+          <h5>Benefits</h5>
+          <ul>
+            <li>Reduced Fraud</li>
+            <li>Faster Claim Resolution</li>
+            <li>Reliable Decision Making</li>
+            <li>Legal Compliance</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="expertise-card" onclick="openServiceModal('Courtroom Support')">
-        <div class="expertise-icon">⚖️</div>
+
+      <div class="knowledge-card">
+        <div class="knowledge-icon">💻</div>
+        <h3>Cyber Forensics <span class="badge">Coming Soon</span></h3>
+        <div class="knowledge-content">
+          <h4>Digital Evidence Investigation</h4>
+          <p>Cyber Forensics involves the scientific preservation, acquisition, examination, and analysis of electronic evidence while maintaining legal admissibility.</p>
+          
+          <h5>Future Services</h5>
+          <ul>
+            <li>Computer Forensics</li>
+            <li>Mobile Device Forensics</li>
+            <li>Email Investigation</li>
+            <li>Cloud Forensics</li>
+            <li>Data Recovery</li>
+            <li>Network Investigation</li>
+            <li>Malware Analysis</li>
+            <li>Log Analysis</li>
+            <li>Social Media Investigation</li>
+          </ul>
+
+          <h5>Investigation Process</h5>
+          <ol>
+            <li>Evidence Preservation</li>
+            <li>Forensic Imaging</li>
+            <li>Data Recovery</li>
+            <li>Artifact Analysis</li>
+            <li>Timeline Reconstruction</li>
+            <li>Report Preparation</li>
+          </ol>
+
+          <h5>Applications</h5>
+          <p>Corporate Investigations, Cybercrime, Financial Fraud, Intellectual Property Theft, Digital Evidence for Court</p>
+          
+          <p><strong>Status:</strong> Coming Soon</p>
+        </div>
+      </div>
+
+      <div class="knowledge-card">
+        <div class="knowledge-icon">⚖️</div>
         <h3>Courtroom Support</h3>
-        <p>Expert-witness testimony, exhibits and cross-examination preparation.</p>
-        <a class="expertise-link">Submit Case Details →</a>
-      </div>
-    </div>
-  </section>
+        <div class="knowledge-content">
+          <h4>Scientific Support for Legal Proceedings</h4>
+          <p>Courtroom support ensures that forensic findings are presented clearly, accurately, and objectively during judicial proceedings.</p>
+          
+          <h5>Services Include</h5>
+          <ul>
+            <li>Expert Witness Testimony</li>
+            <li>Scientific Report Preparation</li>
+            <li>Evidence Interpretation</li>
+            <li>Technical Consultation</li>
+            <li>Cross-Examination Support</li>
+            <li>Rebuttal Opinions</li>
+          </ul>
 
-  <section class="section" id="why">
-    <div class="section-tag">03 / WHY AKSH FORENSICS</div>
-    <h2 class="section-title">Unmatched expertise. Uncompromising integrity.</h2>
-    
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>Courtroom-Tested Methods</h3>
-        <p>Protocols and reporting that withstand judicial scrutiny across jurisdictions.</p>
-      </div>
-      
-      <div class="why-card">
-        <h3>Transparent Process</h3>
-        <p>Clear timelines, documented chain of custody and court-admissible documentation.</p>
-      </div>
-      
-      <div class="why-card">
-        <h3>Senior Examiner Oversight</h3>
-        <p>Every case reviewed by court-recognized senior forensic examiners.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-tag">03 / OUR INVESTIGATION PROCESS</div>
-    <h2 class="section-title">A documented chain — from consultation to courtroom</h2>
-    
-    <div class="process-timeline">
-      <div class="process-item">
-        <div class="process-num">01</div>
-        <h3>Consultation</h3>
-        <p>Case scope, objectives and feasibility reviewed with the client.</p>
-      </div>
-      
-      <div class="process-item">
-        <div class="process-num">02</div>
-        <h3>Evidence Collection</h3>
-        <p>Specimens recovered and sealed under documented chain of custody.</p>
-      </div>
-      
-      <div class="process-item">
-        <div class="process-num">03</div>
-        <h3>Scientific Examination</h3>
-        <p>Discipline-specific protocols applied by qualified examiners.</p>
-      </div>
-      
-      <div class="process-item">
-        <div class="process-num">04</div>
-        <h3>Laboratory Analysis</h3>
-        <p>Instrumental and comparative analysis under controlled conditions.</p>
-      </div>
-      
-      <div class="process-item">
-        <div class="process-num">05</div>
-        <h3>Expert Opinion Report</h3>
-        <p>Findings compiled to evidentiary, court-admissible standards.</p>
-      </div>
-      
-      <div class="process-item">
-        <div class="process-num">06</div>
-        <h3>Courtroom Support</h3>
-        <p>Expert testimony and exhibits presented and defended.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-tag">04 / INDUSTRIES WE SERVE</div>
-    <h2 class="section-title">Trusted across the legal & commercial spectrum</h2>
-    
-    <div class="industries-grid">
-      <div class="industry-box">
-        <div class="icon">⚖️</div>
-        <h4>Law Firms</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">🏛️</div>
-        <h4>Courts</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">🏢</div>
-        <h4>Corporates</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">🛡️</div>
-        <h4>Insurance</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">👮</div>
-        <h4>Law Enforcement</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">🏦</div>
-        <h4>Banking</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">🏥</div>
-        <h4>Healthcare</h4>
-      </div>
-      <div class="industry-box">
-        <div class="icon">👤</div>
-        <h4>Individuals</h4>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="section-tag">05 / EXPERT CONSULTATION</div>
-    <div class="cta">
-      <h2>Need an independent forensic opinion?</h2>
-      <p>Speak directly with a forensic expert about your case. Confidential, no-obligation initial consultation.</p>
-      <button class="cta-btn" onclick="openRequestModal()">Speak With An Expert</button>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-tag">06 / CLIENT FEEDBACK</div>
-    <h2 class="section-title">Your experience matters to us</h2>
-    <p class="section-desc">Help us improve our services. Share your feedback about our forensic expertise and support.</p>
-    
-    <div class="feedback-container">
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="feedback-form">
-        <input type="hidden" name="form_type" value="Client Feedback">
-        
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" name="name" placeholder="Full Name" required>
-          </div>
-          <div class="form-group">
-            <label>Email Address *</label>
-            <input type="email" name="email" placeholder="your@email.com" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Service Availed *</label>
-          <select name="service" required>
-            <option value="">Select Service</option>
-            <option value="Fingerprint Examination">Fingerprint Examination</option>
-            <option value="Questioned Documents">Questioned Documents</option>
-            <option value="Crime Scene Investigation">Crime Scene Investigation</option>
-            <option value="Arson Investigation">Arson Investigation</option>
-            <option value="Insurance Investigation">Insurance Investigation</option>
-            <option value="Courtroom Support">Courtroom Support</option>
-            <option value="Consultation">Expert Consultation</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Rate Your Experience *</label>
-          <div class="rating-group">
-            <input type="radio" id="star5" name="rating" value="5" required>
-            <label for="star5">⭐⭐⭐⭐⭐ Excellent</label>
-            
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4">⭐⭐⭐⭐ Good</label>
-            
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3">⭐⭐⭐ Average</label>
-            
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2">⭐⭐ Needs Improvement</label>
-            
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1">⭐ Poor</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Your Feedback *</label>
-          <textarea name="feedback" placeholder="Tell us about your experience, what we did well, what we can improve..." required></textarea>
-        </div>
-
-        <div class="form-group checkbox-group">
-          <input type="checkbox" id="testimonial" name="allow_testimonial" value="yes">
-          <label for="testimonial">I allow AKSH Forensics to use my feedback as a testimonial on the website</label>
-        </div>
-
-        <button type="submit" class="form-submit">Submit Feedback</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h3>AKSH FORENSICS</h3>
-        <p>Independent forensic experts providing court-admissible scientific analysis and expert witness support across India.</p>
-        <p style="color:var(--gold); font-weight:700; letter-spacing:2px; margin-top:20px;">EVIDENCE · ANALYSIS · TRUTH</p>
-      </div>
-      
-      <div class="footer-col">
-        <h3>NAVIGATE</h3>
-        <a href="#home">Home</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#why">Why Us</a>
-        <a href="#contact">Contact</a>
-      </div>
-      
-      <div class="footer-col">
-        <h3>EXPERTISE</h3>
-        <a href="#expertise">Fingerprint Examination</a>
-        <a href="#expertise">Questioned Documents</a>
-        <a href="#expertise">Cyber Forensics</a>
-        <a href="#expertise">Courtroom Support</a>
-      </div>
-      
-      <div class="footer-col">
-        <h3>CONTACT</h3>
-        <a href="mailto:akshforensics@gmail.com">akshforensics@gmail.com</a>
-        <a href="tel:+917861041617">+91 78610 41617</a>
-        <p>Pan India Service</p>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      © 2026 Aksh Forensics. All rights reserved.<br>
-      CONFIDENTIAL · INDEPENDENT · COURT-ADMISSIBLE
-    </div>
-  </footer>
-
-  <a href="https://wa.me/917861041617?text=Hi%2C%20I%20need%20forensic%20expert%20consultation" target="_blank" class="whatsapp-float">💬</a>
-
-  <div id="requestModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeRequestModal()">&times;</span>
-      <h2>Request Expert Opinion</h2>
-      <p class="modal-subtitle">Fill details and our expert will contact you within 24 hours</p>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="form_type" value="Expert Opinion Request">
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" name="phone" required>
-        </div>
-        <div class="form-group">
-          <label>Case Type *</label>
-          <select name="case_type" required>
-            <option value="">Select Case Type</option>
-            <option value="Fingerprint Examination">Fingerprint Examination</option>
-            <option value="Questioned Documents">Questioned Documents</option>
-            <option value="Crime Scene Investigation">Crime Scene Investigation</option>
-            <option value="Arson Investigation">Arson Investigation</option>
-            <option value="Insurance Investigation">Insurance Investigation</option>
-            <option value="Courtroom Support">Courtroom Support</option>
-            <option value="Cyber Forensics">Cyber Forensics</option>
-            <option value="Audio & Video Authentication">Audio & Video Authentication</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Case Details *</label>
-          <textarea name="message" placeholder="Brief description of your case..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Submit Request</button>
-      </form>
-    </div>
-  </div>
-
-  <div id="serviceModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeServiceModal()">&times;</span>
-      <h2 id="serviceTitle">Submit Case Details</h2>
-      <p class="modal-subtitle">Provide your case information for expert analysis</p>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="form_type" id="serviceTypeInput" value="">
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" name="phone" required>
-        </div>
-        <div class="form-group">
-          <label>Location/City *</label>
-          <input type="text" name="location" required>
-        </div>
-        <div class="form-group">
-          <label>Case Details *</label>
-          <textarea name="message" placeholder="Describe your case, evidence available, timeline..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Submit Details</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const nav = document.querySelector('.nav');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-      if (nav.style.display === 'flex') {
-        nav.style.position = 'absolute';
-        nav.style.top = '70px';
-        nav.style.right = '24px';
-        nav.style.flexDirection = 'column';
-        nav.style.background = 'rgba(255,255,255,0.95)';
-        nav.style.backdropFilter = 'blur(20px)';
-        nav.style.padding = '20px';
-        nav.style.borderRadius = '12px';
-        nav.style.border = '1px solid rgba(10,31,68,0.15)';
-      }
-    });
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    function openRequestModal() {
-      document.getElementById('requestModal').style.display = 'block';
-    }
-    function closeRequestModal() {
-      document.getElementById('requestModal').style.display = 'none';
-    }
-    function openServiceModal(serviceName) {
-      document.getElementById('serviceTitle').textContent = serviceName + ' - Case Details';
-      document.getElementById('serviceTypeInput').value = serviceName;
-      document.getElementById('serviceModal').style.display = 'block';
-    }
-    function closeServiceModal() {
-      document.getElementById('serviceModal').style.display = 'none';
-    }
-    
-    window.onclick = function(event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-      }
-    }
-  </script>
-</body>
-</html>
-
-<style>
-.process-timeline {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px;
-}
-.process-item {
-  background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border); border-radius:16px;
-  padding:32px; transition:0.4s; position:relative;
-  box-shadow:0 4px 20px rgba(10,31,68,0.08);
-}
-.process-item:hover {
-  transform:translateY(-8px); border-color:var(--gold);
-  box-shadow:0 20px 40px rgba(217,119,6,0.2);
-}
-.process-num {
-  width:50px; height:50px;
-  background:linear-gradient(135deg, var(--gold), var(--gold-light));
-  color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center;
-  font-size:1.5rem; font-weight:900; margin-bottom:20px;
-  box-shadow:0 0 30px rgba(217,119,6,0.4);
-}
-.process-item h3 {
-  font-size:20px; font-weight:700; color:var(--navy); margin-bottom:12px;
-}
-.process-item p {
-  color:#475569; font-size:15px; line-height:1.7;
-}
-
-.industries-grid {
-  display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:40px;
-}
-.industry-box {
-  background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border); border-radius:16px;
-  padding:32px 20px; text-align:center; transition:0.4s;
-  box-shadow:0 4px 20px rgba(10,31,68,0.08);
-}
-.industry-box:hover {
-  transform:translateY(-8px); border-color:var(--gold);
-  box-shadow:0 20px 40px rgba(217,119,6,0.2);
-}
-.industry-box .icon {
-  font-size:3rem; margin-bottom:16px;
-  filter:drop-shadow(0 0 12px var(--gold));
-}
-.industry-box h4 {
-  font-size:16px; font-weight:700; color:var(--navy);
-}
-
-.cta {
-  background:linear-gradient(135deg, rgba(217,119,6,0.1), rgba(245,158,11,0.1));
-  border:2px solid var(--gold); border-radius:20px;
-  padding:60px 40px; text-align:center;
-  box-shadow:0 10px 40px rgba(217,119,6,0.2);
-}
-.cta h2 {
-  font-size:42px; font-weight:900; color:var(--navy); margin-bottom:20px;
-}
-.cta p {
-  font-size:18px; color:#475569; margin-bottom:32px; max-width:700px; margin-left:auto; margin-right:auto;
-}
-.cta-btn {
-  background:linear-gradient(135deg, var(--gold), var(--gold-light));
-  color:#fff; padding:18px 40px; border-radius:10px;
-  text-decoration:none; font-weight:700; font-size:16px;
-  display:inline-block; transition:0.3s; border:none; cursor:pointer;
-  box-shadow:0 4px 20px rgba(217,119,6,0.4);
-}
-.cta-btn:hover {transform:translateY(-3px); box-shadow:0 8px 30px rgba(217,119,6,0.6);}
-
-.feedback-container {
-  max-width:800px; margin:40px auto 0;
-  background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border); border-radius:20px;
-  padding:40px; box-shadow:0 10px 40px rgba(10,31,68,0.1);
-}
-.feedback-form .form-row {
-  display:grid; grid-template-columns:1fr 1fr; gap:20px;
-}
-.rating-group {
-  display:flex; flex-direction:column; gap:12px;
-  padding:16px; background:#f8fafc; border-radius:12px;
-  border:2px solid #e2e8f0;
-}
-.rating-group input[type="radio"] {
-  display:none;
-}
-.rating-group label {
-  cursor:pointer; padding:12px 16px; border-radius:8px;
-  transition:0.3s; font-weight:600; color:#475569;
-  display:flex; align-items:center; gap:8px;
-}
-.rating-group input[type="radio"]:checked + label {
-  background:linear-gradient(135deg, var(--gold), var(--gold-light));
-  color:#fff; box-shadow:0 4px 15px rgba(217,119,6,0.3);
-}
-.rating-group label:hover {
-  background:#e2e8f0;
-}
-.checkbox-group {
-  display:flex; align-items:center; gap:12px;
-}
-.checkbox-group input[type="checkbox"] {
-  width:20px; height:20px; cursor:pointer;
-}
-.checkbox-group label {
-  margin:0; font-weight:500; cursor:pointer;
-}
-
-.footer {
-  background:linear-gradient(180deg, #f8fafc, #ffffff);
-  border-top:1px solid var(--glass-border);
-  padding:80px 24px 40px; position:relative; z-index:1;
-}
-.footer-inner {
-  max-width:1400px; margin:0 auto;
-  display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px;
-}
-.footer-col h3 {
-  font-size:16px; font-weight:700; color:var(--navy); margin-bottom:20px;
-  letter-spacing:1px;
-}
-.footer-col p, .footer-col a {
-  color:#475569; font-size:14px; line-height:1.8;
-  text-decoration:none; display:block; margin-bottom:12px; transition:0.3s;
-}
-.footer-col a:hover {color:var(--gold); transform:translateX(5px);}
-.footer-bottom {
-  text-align:center; padding-top:40px; margin-top:40px;
-  border-top:1px solid var(--glass-border);
-  color:#64748b; font-size:13px;
-}
-
-.whatsapp-float {
-  position:fixed; bottom:30px; right:30px; z-index:999;
-  width:60px; height:60px;
-  background:linear-gradient(135deg, #25D366, #128C7E);
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  font-size:2rem; box-shadow:0 8px 25px rgba(37,211,102,0.5);
-  animation:whatsappPulse 2s ease-in-out infinite;
-  text-decoration:none;
-}
-@keyframes whatsappPulse {0%,100%{transform:scale(1);} 50%{transform:scale(1.1);}}
-
-.modal {
-  display:none; position:fixed; z-index:2000; left:0; top:0;
-  width:100%; height:100%; background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px); animation:fadeIn 0.3s;
-}
-@keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
-.modal-content {
-  background:#fff; margin:5% auto; padding:40px;
-  border:2px solid var(--gold); border-radius:20px;
-  max-width:600px; position:relative;
-  box-shadow:0 20px 60px rgba(0,0,0,0.3);
-  animation:slideDown 0.4s;
-}
-@keyframes slideDown {from{transform:translateY(-50px); opacity:0;} to{transform:translateY(0); opacity:1;}}
-.close-modal {
-  position:absolute; right:20px; top:20px;
-  font-size:2rem; color:#64748b; cursor:pointer; transition:0.3s;
-}
-.close-modal:hover {color:var(--gold); transform:rotate(90deg);}
-.modal-content h2 {
-  font-size:32px; color:var(--navy); margin-bottom:12px;
-}
-.modal-subtitle {
-  color:#475569; margin-bottom:30px; font-size:15px;
-}
-.form-group {
-  margin-bottom:20px;
-}
-.form-group label {
-  display:block; font-weight:600; color:var(--navy); margin-bottom:8px; font-size:14px;
-}
-.form-group input, .form-group select, .form-group textarea {
-  width:100%; padding:12px 16px; border:2px solid #e2e8f0;
-  border-radius:8px; font-size:15px; font-family:inherit;
-  transition:0.3s; background:#fff;
-}
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  outline:none; border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(217,119,6,0.1);
-}
-.form-group textarea {
-  min-height:120px; resize:vertical;
-}
-.form-submit {
-  background:linear-gradient(135deg, var(--gold), var(--gold-light));
-  color:#fff; padding:16px 40px; border-radius:10px;
-  border:none; font-weight:700; font-size:16px;
-  cursor:pointer; width:100%; transition:0.3s;
-  box-shadow:0 4px 20px rgba(217,119,6,0.4);
-}
-.form-submit:hover {transform:translateY(-2px); box-shadow:0 6px 30px rgba(217,119,6,0.6);}
-
-@media (max-width:968px) {
-  .hero, .why-grid, .expertise-grid, .process-timeline {grid-template-columns:1fr;}
-  .industries-grid {grid-template-columns:repeat(2,1fr);}
-  .footer-inner {grid-template-columns:1fr;}
-  .hero-title {font-size:40px;}
-  .section-title {font-size:36px;}
-  .feedback-form .form-row {grid-template-columns:1fr;}
-  .feedback-container {padding:30px 20px;}
-}
-@media (max-width:640px) {
-  .industries-grid {grid-template-columns:1fr;}
-}
-</style>
+          <h5>Who Benefits?</h5>
+          <ul>
+           
