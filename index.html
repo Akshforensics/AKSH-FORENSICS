@@ -33,18 +33,55 @@
       position: relative;
     }
 
+    /* CIRCLE WALI 3D EFFECT + LADY JUSTICE BACKGROUND */
     .watermark {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 15vw;
-      font-weight: 900;
-      color: rgba(10, 31, 68, 0.02);
+      width: 50vw;
+      height: 50vw;
+      max-width: 600px;
+      max-height: 600px;
+      background-image: url('PASTE_LADY_JUSTICE_IMAGE_URL_HERE');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.04;
       z-index: -1;
       pointer-events: none;
-      letter-spacing: 0.2em;
       user-select: none;
+      border-radius: 50%;
+      filter: drop-shadow(0 8px 16px rgba(10, 31, 68, 0.2)) 
+              drop-shadow(0 16px 32px rgba(10, 31, 68, 0.15))
+              drop-shadow(0 24px 48px rgba(10, 31, 68, 0.1));
+    }
+
+    /* CIRCLE GLOW EFFECT */
+    .watermark::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, rgba(217, 119, 6, 0.03) 40%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    /* AKSH FORENSICS TEXT 3D - FONT FORMAT SAME */
+    .watermark::after {
+      content: 'AKSH FORENSICS';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 7vw;
+      font-weight: 900;
+      color: rgba(10, 31, 68, 0.02);
+      letter-spacing: 0.2em;
       text-shadow: 
         0 1px 0 rgba(255,255,255,0.8),
         0 2px 0 rgba(10,31,68,0.1),
@@ -355,7 +392,7 @@
       margin-top: 40px;
     }
 
-    .about-content h3:first-child {
+    .about-content h3:first-of-type {
       margin-top: 0;
     }
 
@@ -374,21 +411,14 @@
 
     .examiner-list li {
       padding: 12px 0;
-      display: flex;
-      align-items: start;
-      gap: 12px;
       color: #475569;
       font-size: 15px;
+      line-height: 1.8;
     }
 
-    .examiner-list li::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 8px;
+    .examiner-list li strong {
+      color: var(--navy);
+      font-weight: 700;
     }
 
     .vm-card {
@@ -556,11 +586,13 @@
       .tagline {gap: 10px; font-size: 12px;}
       .nav {display: none;}
       .menu-toggle {display: block;}
+      .watermark {width: 80vw; height: 80vw;}
+      .watermark::after {font-size: 10vw;}
     }
   </style>
 </head>
 <body>
-  <div class="watermark">AKSH FORENSICS</div>
+  <div class="watermark"></div>
 
   <header class="header">
     <div class="header-inner">
