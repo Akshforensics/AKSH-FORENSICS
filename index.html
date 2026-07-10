@@ -135,59 +135,6 @@
     }
     .hero-btn:hover {transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,180,216,0.6);}
     
-    .hologram-wrapper {
-      position:relative; width:100%; max-width:550px; margin:auto;
-      perspective:1500px;
-    }
-    .hologram-scene {
-      position:relative; width:100%; aspect-ratio:1;
-      transform-style:preserve-3d;
-      animation:sceneRotate 20s linear infinite;
-    }
-    @keyframes sceneRotate {0%{transform:rotateY(0deg);} 100%{transform:rotateY(360deg);}}
-    .holo-core {
-      position:absolute; top:50%; left:50%;
-      width:200px; height:200px;
-      transform:translate(-50%, -50%);
-      animation:corePulse 3s ease-in-out infinite;
-    }
-    @keyframes corePulse {0%,100%{transform:translate(-50%, -50%) scale(1);} 50%{transform:translate(-50%, -50%) scale(1.1);}}
-    .core-layer {
-      position:absolute; inset:0;
-      border:2px solid var(--blue);
-      border-radius:16px;
-      background:rgba(255,255,255,0.8);
-      backdrop-filter:blur(10px);
-      box-shadow:0 0 40px rgba(0,180,216,0.3), inset 0 0 20px rgba(0,180,216,0.1);
-    }
-    .core-icon {
-      position:absolute; top:50%; left:50%;
-      transform:translate(-50%, -50%);
-      font-size:5rem;
-      filter:drop-shadow(0 0 15px var(--blue));
-    }
-    .orbit {
-      position:absolute; top:50%; left:50%;
-      border:1px solid rgba(0,180,216,0.4);
-      border-radius:50%;
-      transform:translate(-50%, -50%);
-    }
-    .orbit-1 {width:300px; height:300px; animation:orbitSpin 15s linear infinite;}
-    .orbit-2 {width:380px; height:380px; animation:orbitSpin 20s linear infinite reverse;}
-    .orbit-3 {width:460px; height:460px; animation:orbitSpin 25s linear infinite;}
-    @keyframes orbitSpin {0%{transform:translate(-50%, -50%) rotate(0deg);} 100%{transform:translate(-50%, -50%) rotate(360deg);}}
-    .orbit-item {
-      position:absolute; width:60px; height:60px;
-      background:rgba(255,255,255,0.9); backdrop-filter:blur(10px);
-      border:2px solid var(--blue); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:1.8rem; box-shadow:0 0 20px rgba(0,180,216,0.4);
-    }
-    .item-1 {top:0; left:50%; transform:translate(-50%, -50%);}
-    .item-2 {top:50%; right:0; transform:translate(50%, -50%);}
-    .item-3 {bottom:0; left:50%; transform:translate(-50%, 50%);}
-    .item-4 {top:50%; left:0; transform:translate(-50%, -50%);}
-    
     .section {
       position:relative; z-index:1;
       max-width:1400px; margin:0 auto; padding:100px 24px;
@@ -203,117 +150,100 @@
     .section-desc {
       font-size:18px; color:#475569; line-height:1.8; max-width:800px; margin-bottom:60px;
     }
-    
-    .about-content {
-      max-width: 900px;
+
+    /* EXPERTISE GRID - NEW BOXES */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
     }
-    .about-content h3 {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 20px;
-      margin-top: 40px;
-    }
-    .about-content h3:first-of-type {
-      margin-top: 0;
-    }
-    .about-content p {
-      color: #475569;
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-    .examiner-list {
-      list-style: none;
-      margin-top: 16px;
-      margin-bottom: 40px;
-    }
-    .examiner-list li {
-      padding: 12px 0;
-      color: #475569;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-    .examiner-list li strong {
-      color: var(--navy);
-      font-weight: 700;
-    }
-    .vm-card {
-      background: rgba(255, 255, 255, 0.85);
+    .expertise-card {
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 18px;
+      padding: 32px 28px;
+      transition: 0.4s;
       box-shadow: 0 4px 20px rgba(0,180,216,0.08);
-      margin-bottom: 24px;
-    }
-    .vm-card h4 {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 16px;
       display: flex;
-      align-items: center;
-      gap: 12px;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
     }
-    .vm-icon {
-      width: 40px;
-      height: 40px;
+    .expertise-card::before {
+      content:'';
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: linear-gradient(135deg, rgba(0,180,216,0.06), transparent);
+      opacity:0;
+      transition:0.4s;
+    }
+    .expertise-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--blue);
+      box-shadow: 0 20px 40px rgba(0,180,216,0.2);
+    }
+    .expertise-card:hover::before {opacity:1;}
+    .exp-icon {
+      width: 70px;
+      height: 70px;
       background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      border-radius: 10px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      box-shadow: 0 0 25px rgba(0,180,216,0.3);
     }
-    .vm-card p {
+    .exp-icon img {filter: brightness(0) invert(1);}
+    .expertise-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .expertise-card p {
       color: #475569;
       font-size: 15px;
       line-height: 1.7;
+      flex-grow: 1;
     }
-    
-    .why-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    .service-btn {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      width: fit-content;
+      box-shadow: 0 4px 15px rgba(0,180,216,0.3);
     }
-    .why-card {
-      background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
-      border:1px solid var(--glass-border); border-radius:16px;
-      padding:32px; transition:0.4s;
-      position:relative; overflow:hidden;
-      box-shadow:0 4px 20px rgba(0,180,216,0.08);
+    .service-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0,180,216,0.5);
     }
-    .why-card::before {
-      content:''; position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      background:linear-gradient(135deg, rgba(0,180,216,0.08), transparent);
-      opacity:0; transition:0.4s;
-    }
-    .why-card:hover {transform:translateY(-8px); border-color:var(--blue); box-shadow:0 20px 40px rgba(0,180,216,0.2);}
-    .why-card:hover::before {opacity:1;}
-    .why-icon {
-      width:60px; height:60px;
-      background:linear-gradient(135deg, var(--blue), var(--blue-light));
-      border-radius:12px; display:flex; align-items:center; justify-content:center;
-      font-size:2rem; margin-bottom:20px;
-      box-shadow:0 0 30px rgba(0,180,216,0.4);
-      animation:iconFloat 3s ease-in-out infinite;
-    }
-    @keyframes iconFloat {0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);}}
-    .why-card h3 {
-      font-size:20px; font-weight:700; color:var(--navy); margin-bottom:12px;
-      position:relative; z-index:1;
-    }
-    .why-card p {
-      color:#475569; font-size:15px; line-height:1.7;
-      position:relative; z-index:1;
+    .badge {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
     
     @media (max-width:968px) {
       .hero {grid-template-columns:1fr; gap:40px;}
       .hero-title {font-size:40px;}
       .section-title {font-size:36px;}
-      .why-grid {grid-template-columns:1fr;}
-      .hologram-wrapper {max-width:400px;}
     }
   </style>
 </head>
@@ -344,100 +274,9 @@
       <p class="hero-desc-main">Professional forensic investigation, questioned document examination, fingerprint analysis, cyber forensics, crime scene investigation and expert courtroom support across India</p>
       <button class="hero-btn" onclick="openRequestModal()">Speak With An Expert</button>
     </div>
-    
-    <div class="hologram-wrapper">
-      <div class="hologram-scene">
-        <div class="orbit orbit-1">
-          <div class="orbit-item item-1">📄</div>
-          <div class="orbit-item item-3">🔍</div>
-        </div>
-        <div class="orbit orbit-2">
-          <div class="orbit-item item-2">🔥</div>
-          <div class="orbit-item item-4">💾</div>
-        </div>
-        <div class="orbit orbit-3"></div>
-        
-        <div class="holo-core">
-          <div class="core-layer"></div>
-          <div class="core-icon">⚖️</div>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="section-tag">01 / ABOUT AKSH</div>
-    <h2 class="section-title">Independent Forensic Authority</h2>
-    <p class="section-desc">AKSH Forensics is led by senior court-recognized examiners delivering independent, unbiased forensic analysis across India.</p>
-    
-    <div class="about-content">
-      <h3>Examiner Background</h3>
-      <p>Our senior examiners bring specialized expertise across core forensic disciplines, ensuring every case receives rigorous scientific examination that meets judicial standards.</p>
-      
-      <ul class="examiner-list">
-        <li><strong>Fingerprint Examination</strong> — Latent print development, comparison and individualization using ACE-V methodology</li>
-        <li><strong>Questioned Documents</strong> — Handwriting, signature verification, ink analysis and document authentication</li>
-        <li><strong>Crime Scene Investigation</strong> — Systematic evidence documentation, collection and reconstruction support</li>
-      </ul>
-
-      <p>Every examination follows established scientific protocols with documented chain of custody, ensuring findings withstand judicial scrutiny.</p>
-
-      <h3>Our Vision</h3>
-      <div class="vm-card">
-        <h4><span class="vm-icon">🎯</span>Vision</h4>
-        <p>To be India's most trusted independent forensic authority — setting the standard for scientific integrity, legal precision, and ethical investigation in every case we examine.</p>
-      </div>
-
-      <h3>Our Mission</h3>
-      <div class="vm-card">
-        <h4><span class="vm-icon">⚖️</span>Mission</h4>
-        <p>Deliver court-admissible forensic analysis that serves justice. We uphold scientific rigour, maintain absolute chain of custody, and provide clear, defensible expert opinions that lawyers and judges rely upon.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="why">
-    <div class="section-tag">02 / WHY AKSH FORENSICS</div>
-    <h2 class="section-title">Evidence handled with scientific rigour and legal precision</h2>
-    
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🔬</div>
-        <h3>Scientific Methodology</h3>
-        <p>Documented, peer-reviewable protocols applied to every examination — repeatable and defensible.</p>
-      </div>
-      
-      <div class="why-card">
-        <div class="why-icon">⚖️</div>
-        <h3>Independent Opinions</h3>
-        <p>Unbiased expert findings, free of influence — the science leads, not the brief.</p>
-      </div>
-      
-      <div class="why-card">
-        <div class="why-icon">📋</div>
-        <h3>Court-Admissible Reports</h3>
-        <p>Reports structured to evidentiary standards and ready for submission and cross-examination.</p>
-      </div>
-      
-      <div class="why-card">
-        <div class="why-icon">🔗</div>
-        <h3>Chain of Custody</h3>
-        <p>Sealed, logged, and traceable handling of every specimen from intake to testimony.</p>
-      </div>
-      
-      <div class="why-card">
-        <div class="why-icon">🇮🇳</div>
-        <h3>Pan India Services</h3>
-        <p>Field response and laboratory analysis coordinated across jurisdictions nationwide.</p>
-      </div>
-      
-      <div class="why-card">
-        <div class="why-icon">🔒</div>
-        <h3>Confidential Investigations</h3>
-        <p>Strict confidentiality protocols protecting clients, parties, and case integrity.</p>
-      </div>
-    </div>
-  </section>  <section class="section" id="expertise">
+  <section class="section" id="expertise">
     <div class="section-tag">03 / OUR EXPERTISE</div>
     <h2 class="section-title">Forensic disciplines, end to end</h2>
     <p class="section-desc">Specialist examination across the evidence types that decide cases — each with documented methodology and court-ready reporting.</p>
@@ -445,7 +284,7 @@
     <div class="expertise-grid">
       <div class="expertise-card">
         <div class="exp-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/2956/2956758.png" alt="Fingerprint" width="48">
+          <img src="https://cdn-icons-png.flaticon.com/512/2956/2956758.png" alt="Fingerprint" width="40">
         </div>
         <h3>Fingerprint Examination</h3>
         <p>Latent print development, comparison, and expert opinion for criminal & civil matters. Digital fingerprint analysis.</p>
@@ -454,7 +293,7 @@
       
       <div class="expertise-card">
         <div class="exp-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Document" width="48">
+          <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Document" width="40">
         </div>
         <h3>Questioned Documents</h3>
         <p>Handwriting & signature verification, forgery detection, ink/age analysis, charred & altered document examination.</p>
@@ -463,7 +302,7 @@
       
       <div class="expertise-card">
         <div class="exp-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/4413/4413081.png" alt="Crime Scene" width="48">
+          <img src="https://cdn-icons-png.flaticon.com/512/4413/4413081.png" alt="Crime Scene" width="40">
         </div>
         <h3>Crime Scene Investigation</h3>
         <p>Independent crime scene analysis, evidence documentation, reconstruction, and bloodstain pattern analysis.</p>
@@ -472,7 +311,7 @@
       
       <div class="expertise-card">
         <div class="exp-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Cyber" width="48">
+          <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Cyber" width="40">
         </div>
         <h3>Cyber Forensics <span class="badge">Coming Soon</span></h3>
         <p>Digital evidence recovery, mobile/computer forensics, email & social media authentication. Launching soon.</p>
@@ -481,7 +320,7 @@
       
       <div class="expertise-card">
         <div class="exp-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/1179/1179120.png" alt="Audio Video" width="48">
+          <img src="https://cdn-icons-png.flaticon.com/512/1179/1179120.png" alt="Audio Video" width="40">
         </div>
         <h3>Audio & Video Authentication <span class="badge">Coming Soon</span></h3>
         <p>Voice identification, video tampering detection, CCTV enhancement and forensic analysis. Launching soon.</p>
@@ -490,279 +329,9 @@
     </div>
   </section>
 
-  <section class="section" id="knowledge">
-    <div class="section-tag">04 / KNOWLEDGE HUB</div>
-    <h2 class="section-title">Forensic Science Resources</h2>
-    <p class="section-desc">Educational resources to understand forensic methodologies, legal standards, and scientific principles behind our investigations.</p>
-    
-    <div class="knowledge-grid">
-      <div class="knowledge-card">
-        <div class="knowledge-icon">📘</div>
-        <h3>Fingerprint Examination</h3>
-        <div class="knowledge-content">
-          <h4>Understanding Fingerprint Examination</h4>
-          <p>Fingerprint examination is one of the most reliable methods of personal identification in forensic science. The uniqueness and permanence of friction ridge patterns make fingerprints invaluable for linking individuals to crime scenes and verifying identity.</p>
-          
-          <h5>Types of Fingerprints</h5>
-          <ul>
-            <li><strong>Latent Prints:</strong> Invisible impressions left by sweat and natural skin secretions, requiring forensic development techniques.</li>
-            <li><strong>Patent Prints:</strong> Visible fingerprints created by substances such as blood, ink, paint, grease, or dust.</li>
-            <li><strong>Plastic Prints:</strong> Three-dimensional impressions left on soft materials like wax, soap, clay, or putty.</li>
-          </ul>
-
-          <h5>Development Techniques</h5>
-          <ul>
-            <li>Powder Dusting</li>
-            <li>Cyanoacrylate (Super Glue) Fuming</li>
-            <li>Ninhydrin Treatment</li>
-            <li>Iodine Fuming</li>
-            <li>Silver Nitrate Processing</li>
-            <li>Fluorescent Dye Staining</li>
-            <li>Alternate Light Source (ALS) Examination</li>
-          </ul>
-
-          <h5>Examination Process</h5>
-          <ol>
-            <li>Evidence Collection</li>
-            <li>Development of Latent Prints</li>
-            <li>Digital Enhancement</li>
-            <li>Comparison with Known Prints</li>
-            <li>Verification by Independent Examiner</li>
-            <li>Expert Report Preparation</li>
-          </ol>
-
-          <h5>Applications</h5>
-          <p>Criminal Investigations, Civil Disputes, Identity Verification, Employee Fraud Cases, Property Crime Investigation, Court Evidence</p>
-        </div>
-      </div>
-
-      <div class="knowledge-card">
-        <div class="knowledge-icon">📄</div>
-        <h3>Questioned Document Examination</h3>
-        <div class="knowledge-content">
-          <h4>Scientific Examination of Disputed Documents</h4>
-          <p>Questioned Document Examination involves the scientific analysis of documents to determine authenticity, detect forgery, identify alterations, and establish authorship.</p>
-          
-          <h5>Common Types of Cases</h5>
-          <ul>
-            <li>Signature Forgery</li>
-            <li>Handwriting Disputes</li>
-            <li>Altered Contracts</li>
-            <li>Cheque Fraud</li>
-            <li>Will and Testament Verification</li>
-            <li>Property Documents</li>
-            <li>Anonymous Letters</li>
-            <li>Fake Certificates</li>
-          </ul>
-
-          <h5>Areas of Examination</h5>
-          <ul>
-            <li>Handwriting Characteristics</li>
-            <li>Signature Comparison</li>
-            <li>Ink Analysis</li>
-            <li>Paper Examination</li>
-            <li>Printing Technology</li>
-            <li>Stamp and Seal Verification</li>
-            <li>Erasures and Alterations</li>
-            <li>Indented Writing</li>
-            <li>Sequence of Strokes</li>
-          </ul>
-
-          <h5>Scientific Methods</h5>
-          <ul>
-            <li>Stereo Microscopy</li>
-            <li>Video Spectral Comparator (VSC)</li>
-            <li>Infrared Examination</li>
-            <li>Ultraviolet Examination</li>
-            <li>Electrostatic Detection Apparatus (ESDA)</li>
-            <li>Digital Image Analysis</li>
-          </ul>
-
-          <h5>Outcome</h5>
-          <p>Detailed forensic opinions prepared for judicial proceedings and legal investigations.</p>
-        </div>
-      </div>
-
-      <div class="knowledge-card">
-        <div class="knowledge-icon">🔍</div>
-        <h3>Crime Scene Investigation</h3>
-        <div class="knowledge-content">
-          <h4>Scientific Crime Scene Management</h4>
-          <p>Crime scene investigation is the systematic documentation, examination, collection, and preservation of physical evidence while maintaining its evidentiary value.</p>
-          
-          <h5>Major Objectives</h5>
-          <ul>
-            <li>Preserve the Crime Scene</li>
-            <li>Identify Physical Evidence</li>
-            <li>Prevent Contamination</li>
-            <li>Document Every Observation</li>
-            <li>Reconstruct Events</li>
-            <li>Support Investigation</li>
-          </ul>
-
-          <h5>Evidence Types</h5>
-          <ul>
-            <li>Fingerprints</li>
-            <li>Biological Evidence</li>
-            <li>Footwear Impressions</li>
-            <li>Tool Marks</li>
-            <li>Firearms Evidence</li>
-            <li>Documents</li>
-            <li>Digital Devices</li>
-            <li>Trace Evidence</li>
-          </ul>
-
-          <h5>Investigation Procedure</h5>
-          <ol>
-            <li>Scene Security</li>
-            <li>Initial Survey</li>
-            <li>Photography & Videography</li>
-            <li>Scene Sketching</li>
-            <li>Evidence Documentation</li>
-            <li>Evidence Collection</li>
-            <li>Packaging & Preservation</li>
-            <li>Chain of Custody</li>
-            <li>Laboratory Submission</li>
-            <li>Reconstruction</li>
-          </ol>
-
-          <h5>Importance</h5>
-          <p>Proper crime scene investigation significantly influences the success of criminal investigations and judicial outcomes.</p>
-        </div>
-      </div>
-
-      <div class="knowledge-card">
-        <div class="knowledge-icon">🔥</div>
-        <h3>Arson Investigation</h3>
-        <div class="knowledge-content">
-          <h4>Scientific Investigation of Fire Incidents</h4>
-          <p>Arson investigation focuses on determining how and where a fire started, identifying its cause, and distinguishing accidental fires from intentionally set fires.</p>
-          
-          <h5>Objectives</h5>
-          <ul>
-            <li>Determine Fire Origin</li>
-            <li>Identify Cause</li>
-            <li>Detect Accelerants</li>
-            <li>Evaluate Burn Patterns</li>
-            <li>Identify Ignition Sources</li>
-          </ul>
-
-          <h5>Areas of Investigation</h5>
-          <ul>
-            <li>Residential Fires</li>
-            <li>Commercial Fires</li>
-            <li>Industrial Fires</li>
-            <li>Vehicle Fires</li>
-            <li>Explosion Scenes</li>
-          </ul>
-
-          <h5>Scientific Techniques</h5>
-          <ul>
-            <li>Burn Pattern Analysis</li>
-            <li>Fire Dynamics</li>
-            <li>Accelerant Sampling</li>
-            <li>Electrical System Examination</li>
-            <li>Debris Analysis</li>
-            <li>Laboratory Testing</li>
-          </ul>
-
-          <h5>Applications</h5>
-          <p>Criminal Cases, Insurance Claims, Civil Litigation, Fire Safety Investigation</p>
-        </div>
-      </div>
-
-      <div class="knowledge-card">
-        <div class="knowledge-icon">🛡️</div>
-        <h3>Insurance Investigation</h3>
-        <div class="knowledge-content">
-          <h4>Independent Insurance Fraud Investigation</h4>
-          <p>Insurance investigations help determine whether claims are genuine, exaggerated, or fraudulent through scientific evidence evaluation and investigative techniques.</p>
-          
-          <h5>Types of Claims</h5>
-          <ul>
-            <li>Fire Claims</li>
-            <li>Theft Claims</li>
-            <li>Property Damage</li>
-            <li>Vehicle Claims</li>
-            <li>Commercial Losses</li>
-            <li>Liability Claims</li>
-          </ul>
-
-          <h5>Investigation Includes</h5>
-          <ul>
-            <li>Evidence Examination</li>
-            <li>Document Verification</li>
-            <li>Accident Analysis</li>
-            <li>Witness Interviews</li>
-            <li>Site Inspection</li>
-            <li>Loss Assessment</li>
-            <li>Fraud Detection</li>
-          </ul>
-
-          <h5>Benefits</h5>
-          <ul>
-            <li>Reduced Fraud</li>
-            <li>Faster Claim Resolution</li>
-            <li>Reliable Decision Making</li>
-            <li>Legal Compliance</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="knowledge-card">
-        <div class="knowledge-icon">💻</div>
-        <h3>Cyber Forensics <span class="badge">Coming Soon</span></h3>
-        <div class="knowledge-content">
-          <h4>Digital Evidence Investigation</h4>
-          <p>Cyber Forensics involves the scientific preservation, acquisition, examination, and analysis of electronic evidence while maintaining legal admissibility.</p>
-          
-          <h5>Future Services</h5>
-          <ul>
-            <li>Computer Forensics</li>
-            <li>Mobile Device Forensics</li>
-            <li>Email Investigation</li>
-            <li>Cloud Forensics</li>
-            <li>Data Recovery</li>
-            <li>Network Investigation</li>
-            <li>Malware Analysis</li>
-            <li>Log Analysis</li>
-            <li>Social Media Investigation</li>
-          </ul>
-
-          <h5>Investigation Process</h5>
-          <ol>
-            <li>Evidence Preservation</li>
-            <li>Forensic Imaging</li>
-            <li>Data Recovery</li>
-            <li>Artifact Analysis</li>
-            <li>Timeline Reconstruction</li>
-            <li>Report Preparation</li>
-          </ol>
-
-          <h5>Applications</h5>
-          <p>Corporate Investigations, Cybercrime, Financial Fraud, Intellectual Property Theft, Digital Evidence for Court</p>
-          
-          <p><strong>Status:</strong> Coming Soon</p>
-        </div>
-      </div>
-
-      <div class="knowledge-card">
-        <div class="knowledge-icon">⚖️</div>
-        <h3>Courtroom Support</h3>
-        <div class="knowledge-content">
-          <h4>Scientific Support for Legal Proceedings</h4>
-          <p>Courtroom support ensures that forensic findings are presented clearly, accurately, and objectively during judicial proceedings.</p>
-          
-          <h5>Services Include</h5>
-          <ul>
-            <li>Expert Witness Testimony</li>
-            <li>Scientific Report Preparation</li>
-            <li>Evidence Interpretation</li>
-            <li>Technical Consultation</li>
-            <li>Cross-Examination Support</li>
-            <li>Rebuttal Opinions</li>
-          </ul>
-
-          <h5>Who Benefits?</h5>
-          <ul>
-           
+<script>
+  function openRequestModal(){ alert('Request Expert Opinion Modal'); }
+  function openServiceModal(service){ alert(service + ' - Case Form'); }
+</script>
+</body>
+</html>
